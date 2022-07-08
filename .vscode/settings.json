@@ -22,10 +22,16 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[mdx]": {
+    "editor.formatOnSave": false,
+    "editor.wordWrapColumn": 120,
+    "editor.wordWrap": "bounded"
+  },
   "scss.lint.emptyRules": "ignore",
   "less.lint.emptyRules": "ignore",
   "css.lint.emptyRules": "ignore",
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.tabSize": 2
 }

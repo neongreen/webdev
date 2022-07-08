@@ -11,6 +11,9 @@
 # typescript
 *.tsbuildinfo
 
+# misc
+.DS_Store
+
 # yarn
 .yarn/*
 !.yarn/patches
