@@ -44,7 +44,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.1"],\
             ["react", "npm:18.2.0"],\
             ["react-bootstrap", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:2.4.0"],\
-            ["react-curved-arrow", "npm:0.1.0"],\
             ["react-device-frameset", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:1.3.2"],\
             ["react-dom", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:18.2.0"],\
             ["react-icons", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:4.4.0"],\
@@ -3740,16 +3739,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["react", [\
-        ["npm:16.12.0", {\
-          "packageLocation": "./.yarn/cache/react-npm-16.12.0-55f18a7792-6c5b5740c7.zip/node_modules/react/",\
-          "packageDependencies": [\
-            ["react", "npm:16.12.0"],\
-            ["loose-envify", "npm:1.4.0"],\
-            ["object-assign", "npm:4.1.1"],\
-            ["prop-types", "npm:15.8.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:18.2.0", {\
           "packageLocation": "./.yarn/cache/react-npm-18.2.0-1eae08fee2-88e38092da.zip/node_modules/react/",\
           "packageDependencies": [\
@@ -3793,16 +3782,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react",\
             "react-dom",\
             "react"\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["react-curved-arrow", [\
-        ["npm:0.1.0", {\
-          "packageLocation": "./.yarn/cache/react-curved-arrow-npm-0.1.0-e003b414b2-e8f3b5f80a.zip/node_modules/react-curved-arrow/",\
-          "packageDependencies": [\
-            ["react-curved-arrow", "npm:0.1.0"],\
-            ["react", "npm:16.12.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4819,7 +4798,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.1"],\
             ["react", "npm:18.2.0"],\
             ["react-bootstrap", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:2.4.0"],\
-            ["react-curved-arrow", "npm:0.1.0"],\
             ["react-device-frameset", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:1.3.2"],\
             ["react-dom", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:18.2.0"],\
             ["react-icons", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:4.4.0"],\

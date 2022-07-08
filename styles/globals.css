@@ -96,15 +96,6 @@ main {
   h2:before {
     height: 1rem;
   }
-  html {
-    font-size: 0.8em;
-  }
-  .border {
-    border: 1px dashed gray !important;
-  }
-  .aside {
-    border: 1px solid gray;
-  }
 }
 
 .reset {

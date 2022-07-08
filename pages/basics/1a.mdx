@@ -1,0 +1,199 @@
+import { Figure } from '@components/figure'
+import { Ann } from '@components/ann'
+import { Box, Boxes } from '@components/box'
+import { Exercise, Step, Mistake } from '@components/exercise'
+import { Mac } from '@components/device'
+import { FileName, NoPageBreak } from '@components/misc'
+
+# 1a — основы основ
+
+Сайты пишутся с помощью сразу трех языков:
+
+<Boxes type="green">
+  <Box>
+    <Ann text="HyperText Markup Language"><h4>HTML</h4></Ann>
+    
+    Структура сайта.
+    
+    Где какой текст, где какие кнопки, картинки и так далее.
+  </Box>
+  <Box>
+    <Ann text="Cascading Style Sheets"><h4>CSS</h4></Ann>
+
+    Как выглядит сайт.
+    
+    Какого размера текст, какого цвета фон, как выглядят кнопки.
+  </Box>
+  <Box>
+    <Ann text="...потому что Java типа клево"><h4>JavaScript</h4></Ann>
+
+    Как ведет себя сайт.
+
+    Например, что случится, если нажать на кнопку.
+  </Box>
+</Boxes>
+
+В файле <FileName><Ann text="указатель">index</Ann>.html</FileName> лежит код на HTML. Что туда напишем, то на сайте и будет.
+
+<Exercise>
+  <Step>
+    Напишите в <FileName>index.html</FileName> любой текст.
+  </Step>
+  <Step>
+    <Boxes>
+      <Box>
+        Нажмите на три точки в просмотре сайта и выберите "Open in new window". Должен открыться сайт, в котором будет введенный текст.
+      </Box>
+      <Box>
+        <Figure image="https://cdn.glitch.global/b440acff-73fa-4601-905d-20cd4b0a18e9/709688e5-f5c1-4ad4-a99c-7f9a0639adfd.image.png?v=1655990667833" />
+      </Box>
+    </Boxes>
+  </Step>
+</Exercise>
+
+## HTML
+
+Надо знать две вещи:
+
+1. HTML состоит из _элементов_.
+2. Элементы могут быть внутри других элементов.
+
+<NoPageBreak>
+
+Пример:
+
+<Boxes type="plain">
+  <Box>
+    **Если написать:**
+
+    ```html index.html
+    <body>
+      <h1>Заголовок</h1>
+      <p>какой-то текст</p>
+    </body>
+    ```
+  </Box>
+  <Box>
+    **...то получится:**
+
+    <Figure>
+      <Mac size="small">
+        <div className="reset">
+          <h1>Заголовок</h1>
+          <p>какой-то текст</p>
+        </div>
+      </Mac>
+    </Figure>
+  </Box>
+</Boxes>
+
+В примере выше три элемента:
+
+<div style={{marginLeft: '5rem', marginRight: '5rem'}}>
+
+<Boxes type="plain" center>
+  <Box>
+    1️⃣ Элемент <Ann text="тело">`<body>`</Ann> — вся страница. У каждой страницы он должен быть.
+  </Box>
+  <Box>
+    ```html mark=1:4
+    <body>
+      <h1>Заголовок</h1>
+      <p>какой-то текст</p>
+    </body>
+    ```
+  </Box>
+</Boxes>
+
+---
+
+<Boxes type="plain" center>
+  <Box>
+    2️⃣ Внутри `<body>` есть элемент `<h1>` — заголовок.
+  </Box>
+  <Box>
+    ```html mark=2:2
+    <body>
+      <h1>Заголовок</h1>
+      <p>какой-то текст</p>
+    </body>
+    ```
+  </Box>
+</Boxes>
+
+---
+
+<Boxes type="plain" center>
+  <Box>
+    3️⃣ И еще внутри `<body>` есть элемент `<p>` — абзац.
+  </Box>
+  <Box>
+    ```html mark=3:3
+    <body>
+      <h1>Заголовок</h1>
+      <p>какой-то текст</p>
+    </body>
+    ```
+  </Box>
+</Boxes>
+
+</div>
+
+У каждой страницы должен быть ровно один элемент `<body>`. Все заголовки, текст, картинки, кнопки, и так далее должны быть внутри него.
+
+</NoPageBreak>
+
+<Exercise>
+  <Step>
+    <p>Перепечатайте пример выше. Должно получиться, как на картинке (тоже которая выше).</p>
+  </Step>
+  <Step>
+    <p>Добавьте еще один заголовок после абзаца. Должно получиться так:</p>
+    <Figure>
+      <Mac size="small">
+        <div className="reset">
+          <h1>Заголовок</h1>
+          <p>какой-то текст</p>
+          <h1>Еще заголовок</h1>
+        </div>
+      </Mac>
+    </Figure>
+  </Step>
+  <Mistake>
+    **Элемент `<body>` должен быть только один.**
+
+    Все элементы — `<h1>` и `<p>` — должны жить внутри одного и того же `<body>`. Если сделали два, объедините их. (Браузер так-то стерпит, но браузер вообще очень много неправильных вещей может стерпеть.)
+  </Mistake>
+    <Mistake>
+    **Оба заголовка должны быть `<h1>`.**
+
+    Если один сделали `<h1>`, а другой — `<h2>`, переделайте. Число означает не номер заголовка, а его размер — 1 большой, 2 поменьше, 3 еще поменьше.
+  </Mistake>
+</Exercise>
+
+Конкретно штуки `<p>` и `</p>` (а также `<h1>` и `</h1>` и так далее) называются **открывающими и закрывающими тегами**.
+
+<Figure image="/element-anatomy.png"/>
+
+<Exercise>
+  <Step>
+    Элемент `<u>` добавляет подчеркивание.
+      
+    Напишите `<u>` и `</u>` вокруг любого слова в абзаце. Оно должно стать подчеркнутым:
+
+    <Figure>
+      <Mac size="small">
+        <div className="reset">
+          <h1>Заголовок</h1>
+          <p>какой-то <u>текст</u></p>
+        </div>
+      </Mac>
+    </Figure>
+  </Step>
+  <Step>
+    Проверьте сами, что делают элементы `<i>`, `<b>`, `<s>`, `<mark>`.
+  </Step>
+  <Mistake>
+    Если попробовали `<i>` или `<b>` и ничего не произошло, проверьте, что правильно их набрали. Например, иногда люди случайно пишут `d` вместо `b`.
+  </Mistake>
+</Exercise>

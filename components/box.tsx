@@ -22,11 +22,10 @@ export function Boxes(props: {
           }
         }
         .boxes > :global(*) {
-          padding: 0.5rem;
           ${type === 'green'
             ? 'border-radius: 20px; background-color: #33998833; padding: 1rem;'
             : ''}
-          margin: 0 0.5rem;
+          margin: 0 1rem;
         }
         .boxes > :global(*:first-child) {
           margin-left: 0;

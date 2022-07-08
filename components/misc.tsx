@@ -9,8 +9,20 @@ export function FileName(props: { children: React.ReactNode }) {
       </span>
       <style jsx>{`
         span {
-          text-decoration: underline;
           white-space: nowrap;
+        }
+      `}</style>
+    </>
+  )
+}
+
+export function NoPageBreak(props: { children: React.ReactNode }) {
+  return (
+    <>
+      <div className="no-page-break">{props.children}</div>
+      <style jsx>{`
+        .no-page-break {
+          page-break-inside: avoid;
         }
       `}</style>
     </>
