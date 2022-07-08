@@ -25,6 +25,7 @@ export function Mac(props: { size: 'small'; children: React.ReactNode }) {
           padding: 10px 20px;
           transform: scale(3);
           transform-origin: top left;
+          max-width: 320px;
         }
       `}</style>
     </>

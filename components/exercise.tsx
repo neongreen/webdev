@@ -7,7 +7,7 @@ export function Exercise(props: { children: React.ReactElement | React.ReactElem
     <>
       <div className="exercise">
         <p>
-          <b>Упражнение:</b>
+          <b>Задание:</b>
         </p>
         <ol className="steps">{steps}</ol>
         {mistakes.length > 0 && (

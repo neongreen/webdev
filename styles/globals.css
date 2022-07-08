@@ -80,25 +80,6 @@ main {
   max-width: 800px !important;
 }
 
-.aside {
-  float: right;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 0.6rem;
-  white-space: normal;
-  line-height: 0.75rem;
-  background-color: lightblue;
-  position: absolute;
-  right: 5px;
-  max-width: 100px;
-  padding: 3px 5px;
-  border-radius: 3px;
-}
-@media screen and (max-width: 1000px) {
-  .aside {
-    position: inherit;
-  }
-}
-
 @media print {
   #nav {
     display: none;
@@ -148,4 +129,9 @@ code {
 
 .ch-code-scroll-parent {
   font-size: 15px !important;
+}
+
+main ul,
+main ol {
+  margin-bottom: 1rem;
 }

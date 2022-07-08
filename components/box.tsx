@@ -16,8 +16,10 @@ export function Boxes(props: {
           ${props.center ? 'align-items: center;' : ''}
         }
         .boxes > :global(*) {
-          ${props.type === 'green' ? 'border-radius: 20px; background-color: #33998833;' : ''}
-          padding: 1rem;
+          padding: 0.5rem;
+          ${props.type === 'green'
+            ? 'border-radius: 20px; background-color: #33998833; padding: 1rem;'
+            : ''}
           margin: 0 0.5rem;
         }
         .boxes > :global(*:first-child) {
@@ -28,6 +30,9 @@ export function Boxes(props: {
         }
         .boxes ~ .boxes {
           margin-top: 0;
+        }
+        :global(.exercise) .boxes {
+          margin: 0;
         }
       `}</style>
     </>
