@@ -1,0 +1,67 @@
+import { Figure } from '@components/figure'
+import { Ann } from '@components/ann'
+import { Box, Boxes } from '@components/box'
+import { FileName } from '@components/misc'
+import { Exercise, Step, Mistake } from '@components/exercise'
+
+# Как пользоваться Glitch
+
+[Glitch.com](https://glitch.com) — это бесплатная платформа, где можно делать сайты.
+
+## Как зарегистрироваться на Glitch
+
+1. Зайти на [glitch.com](https://glitch.com).
+
+2. Нажать на "Sign up" в правом верхнем углу.
+
+3. Если есть почта на gmail.com — можно выбрать логин через Гугл.
+
+4. Если нету — "Email Magic Link", ввести свой имейл, нажать "Send a Code", на почту придет письмо с кодом и надо его ввести.
+
+## Как сделать новый сайт
+
+<Exercise>
+  <Step>
+    Нажмите на <Ann text="Новый проект">"New project"</Ann> и там выберите "glitch-hello-website".
+    <Figure image="/glitch-new.png" maxWidth="600px" />
+  </Step>
+  <Step>
+    Удалите все файлы в левой панели.
+    <Figure image="/glitch-delete-all.png" maxWidth="350px" />
+  </Step>
+  <Step>
+    Создайте новый файл с названием <FileName>index.html</FileName> — для этого нажмите на плюсик справа от "Files", введите `index.html` и нажмите <kbd>Enter</kbd>. Слово `index` значит "указатель" — главная страница сайта.
+    <Figure image="/glitch-new-file.png" maxWidth="250px" />
+  </Step>
+  <Step>
+    Нажмите <Ann text="Просмотр">"Preview"</Ann> и там <Ann text="Открыть окно просмотра">"Open preview pane"</Ann>, чтобы можно было сразу видеть результат во время работы над сайтом. Если там вместо этого написано "Close preview pane" — значит, все уже ок.
+    <Figure image="/glitch-preview-pane.png" />
+  </Step>
+  <Step>
+    Введите в панель посередине любой текст. Он должен появиться в панели справа. Если появился — все работает.
+    <Figure maxWidth="600px" image="/glitch-first-text.png" />
+  </Step>
+  <Step>
+    Теперь нажмите <Ann text="Открыть в новом окне">"Open in new window"</Ann> и сайт откроется в новой вкладке. Можно скопировать адрес и посылать кому угодно.
+    <Figure image="/glitch-open-tab.png" />
+  </Step>
+
+  <Mistake>
+    Если Glitch завис на "loading project", попробуйте перезагрузить страницу.
+  </Mistake>
+  <Mistake>
+    Если ввели в <FileName>index.html</FileName> текст, а он не появляется справа — проверьте, что правильно назвали файл. Я видел `indeks.html` и `index.htlm`.
+  </Mistake>
+</Exercise>
+
+## Как поменять адрес сайта
+
+Нажать на <Ann text="Настройки">"Settings"</Ann> в левой панели и там на <Ann text="Редактировать настройки проекта">"Edit project details"</Ann>. Адрес сайта — это название проекта, к которому в конце Glitch добавит `.glitch.me`.
+
+В названии могут быть только латинские буквы (русские нельзя), цифры и дефисы.
+
+## Когда заходишь на glitch.com, как найти свой сайт?
+
+Надо нажать на "Dashboard" сверху и там будет список сайтов.
+
+<Figure maxWidth="800px" image="/glitch-dashboard.png" />

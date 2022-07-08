@@ -64,15 +64,6 @@ div.border {
   margin-bottom: 1px;
 }
 
-figure {
-  margin-bottom: 1.5rem;
-}
-figure > img {
-  width: 100%;
-  max-width: 500px;
-  border: 1px solid gray;
-}
-
 main {
   /* иначе navbar перекрывает */
   padding-top: 80px;

@@ -12,6 +12,7 @@ export function Ann(props: { text: string; children: React.ReactNode }) {
           font-family: 'Nunito';
           font-weight: 300;
           font-style: italic;
+          text-align: center;
         }
       `}</style>
     </>

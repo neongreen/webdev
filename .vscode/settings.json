@@ -33,5 +33,10 @@
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "pasteImage.basePath": "/",
+  "pasteImage.path": "${projectRoot}/public/",
+  "pasteImage.showFilePathConfirmInputBox": true,
+  "pasteImage.filePathConfirmInputBoxMode": "onlyName",
+  "pasteImage.insertPattern": "<Figure image=\"/${imageFileName}\" />"
 }

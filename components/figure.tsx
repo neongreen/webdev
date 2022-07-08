@@ -5,7 +5,7 @@ export function Figure(props: {
   image?: string
   children?: React.ReactNode
   caption?: string
-  right?: boolean
+  maxWidth?: string
 }) {
   const children = props.children ? props.children : null
   return (
@@ -17,7 +17,12 @@ export function Figure(props: {
       </figure>
       <style jsx>{`
         figure {
-          ${props.right ? 'float: right; margin-left: 2rem; max-width: 50%;' : ''}
+          margin-bottom: 1.5rem;
+          max-width: ${props.maxWidth || '500px'};
+        }
+        figure > :global(img) {
+          width: 100%;
+          border: 1px solid gray;
         }
       `}</style>
     </>
