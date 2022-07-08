@@ -10,6 +10,7 @@ export function FileName(props: { children: React.ReactNode }) {
       <style jsx>{`
         span {
           text-decoration: underline;
+          white-space: nowrap;
         }
       `}</style>
     </>

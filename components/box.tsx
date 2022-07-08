@@ -1,8 +1,9 @@
 export function Boxes(props: {
   children: React.ReactNode
-  type: 'green' | 'plain'
+  type?: 'green' | 'plain'
   center?: boolean
 }) {
+  const type = props.type ? props.type : 'plain'
   return (
     <>
       <div className="boxes">{props.children}</div>
@@ -15,9 +16,14 @@ export function Boxes(props: {
           margin: 2rem auto;
           ${props.center ? 'align-items: center;' : ''}
         }
+        @media print {
+          .boxes {
+            page-break-inside: avoid;
+          }
+        }
         .boxes > :global(*) {
           padding: 0.5rem;
-          ${props.type === 'green'
+          ${type === 'green'
             ? 'border-radius: 20px; background-color: #33998833; padding: 1rem;'
             : ''}
           margin: 0 0.5rem;

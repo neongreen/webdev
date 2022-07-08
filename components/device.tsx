@@ -14,12 +14,12 @@ export function Mac(props: { size: 'small'; children: React.ReactNode }) {
       </div>
       <style jsx>{`
         .wrapper {
-          width: 262px;
+          width: 200px;
           height: 180px;
         }
         .mac {
           transform: scale(0.275);
-          transform-origin: top left;
+          transform-origin: top center;
         }
         .inside {
           padding: 10px 20px;
