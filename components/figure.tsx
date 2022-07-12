@@ -6,6 +6,7 @@ export function Figure(props: {
   children?: React.ReactNode
   caption?: string
   maxWidth?: string
+  noBorder?: boolean
 }) {
   const children = props.children ? props.children : null
   return (
@@ -22,7 +23,7 @@ export function Figure(props: {
         }
         figure > :global(img) {
           width: 100%;
-          border: 1px solid gray;
+          ${props.noBorder ? '' : 'border: 1px solid gray;'}
         }
       `}</style>
     </>
