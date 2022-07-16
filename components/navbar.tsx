@@ -27,6 +27,11 @@ export function Navbar() {
               <B.NavDropdown title="Next.js">
                 <B.NavDropdown.Item href="/next/init">Как создать проект</B.NavDropdown.Item>
               </B.NavDropdown>
+              <B.NavDropdown title="Интервью">
+                <B.NavDropdown.Item href="/interview/omitted-js">
+                  Что я не рассказал про JavaScript
+                </B.NavDropdown.Item>
+              </B.NavDropdown>
             </B.Nav>
           </B.Navbar.Collapse>
         </B.Container>
