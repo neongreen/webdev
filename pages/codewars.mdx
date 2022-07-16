@@ -1,10 +1,6 @@
 import * as B from 'react-bootstrap'
 import { Ann } from '@components/ann'
-
-<style jsx>{`
-  ruby rt {text-align: left !important;}
-  td:first-child {width: 250px;}
-`}</style>
+import styles from './codewars.module.scss'
 
 # Codewars
 
@@ -12,7 +8,7 @@ import { Ann } from '@components/ann'
 
 ## Простые задания — надо только знать темы
 
-<B.Table striped bordered hover>
+<B.Table striped bordered hover className={styles.table}>
   <thead>
     <tr>
       <th>Задание</th>
@@ -66,7 +62,7 @@ import { Ann } from '@components/ann'
 
 ## Задания чуток посложнее — надо написать чуток кода
 
-<B.Table striped bordered hover>
+<B.Table striped bordered hover className={styles.table}>
   <thead>
     <tr>
       <th>Задание</th>
