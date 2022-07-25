@@ -36,6 +36,9 @@ export function Navbar() {
                 <B.NavDropdown.Item href="/interview/omitted-js">
                   Что я не рассказал про JavaScript
                 </B.NavDropdown.Item>
+                <B.NavDropdown.Item href="/interview/omitted-react">
+                  Что я не рассказал про React
+                </B.NavDropdown.Item>
               </B.NavDropdown>
             </B.Nav>
           </B.Navbar.Collapse>
