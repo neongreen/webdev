@@ -22,6 +22,12 @@
     "paths": {
       "@components/*": [
         "components/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@lib/*": [
+        "lib/*"
       ]
     },
   },
