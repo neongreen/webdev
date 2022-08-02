@@ -21,19 +21,19 @@ import { FileName, NoPageBreak } from '@components/misc'
 
     <Boxes>
       <Box>
-        ```html index.html
+        ```html .html
         <button onclick="f()">
           Нажми меня
         </button>
         ```
       </Box>
       <Box>
-        ```js script.js mark=5:7
-        let count = 0;
+        ```js .js mark=5:7
+        let n = 0;
 
         function f() {
-          count++;
-          if (count > 3) {
+          n = n + 1;
+          if (n > 3) {
             alert("Хватит");
           }
         }
@@ -42,7 +42,7 @@ import { FileName, NoPageBreak } from '@components/misc'
     </Boxes>
   </Step>
   <Mistake>
-    **Скобки вокруг условия обязательны.** Нельзя писать `if count > 3`. В других языках бывает можно, а в JavaScript нельзя.
+    **Скобки вокруг условия обязательны.** Нельзя писать `if n > 3`. В других языках бывает можно, а в JavaScript нельзя.
   </Mistake>
   <Mistake>
     **Проверьте, что `onclick` набрано правильно.** `onclik` — неправильно. Еще как-то — тоже неправильно.
@@ -79,8 +79,8 @@ if (условие) {
 
 Иногда хочется сделать много условий. Например:
 
-* Если `count > 3`, выдай вот такое сообщение,
-* а если `count === 3`, то вот такое,
+* Если `n > 3`, выдай вот такое сообщение,
+* а если `n === 3`, то вот такое,
 * иначе вот такое.
 
 Тогда надо писать так:

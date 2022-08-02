@@ -1,0 +1,65 @@
+import { Figure } from '@components/figure'
+import { Ann } from '@components/ann'
+import { Box, Boxes } from '@components/box'
+import { Exercise, Step, Mistake } from '@components/exercise'
+import { Mac } from '@components/device'
+import { FileName, NoPageBreak } from '@components/misc'
+
+# JavaScript: `let`
+
+<Ann text="пусть">`let`</Ann> создает _переменную_.
+
+Переменная — это коробочка, в которой может лежать какое-то значение.
+
+```js .js
+let название = значение;
+```
+
+Значения переменных можно менять с помощью `=` (читается "присваивание").
+
+```js .js
+переменная = новое значение;
+```
+
+<Exercise>
+  <Step>
+    Попробуем простой пример с `let`.
+    
+    Например, у нас есть кнопка и мы хотим считать, сколько раз на нее нажали. Мы будем использовать для этого переменную.
+    
+    Перепечатайте пример и проверьте, что когда нажимаешь на кнопку, число на странице меняется.
+
+    <Boxes>
+      <Box>
+        ```html .html
+        <button onclick="f()">
+          Нажми меня
+        </button>
+
+        <div id="text">
+          0
+        </div>
+        ```
+      </Box>
+      <Box>
+        ```js .js
+        let n = 0;
+
+        function f() {
+          n = n + 1;
+          document.getElementById("text").innerText = n;
+        }
+        ```
+      </Box>
+    </Boxes>
+  </Step>
+  <Mistake>
+    **Проверьте, что `onclick` набрано правильно.** `onclik` — неправильно. Еще как-то — тоже неправильно.
+  </Mistake>
+  <Mistake>
+    **В `onclick` после названия функции тоже нужны скобки.** Если написать `onclick="f"`, функция просто не будет вызываться.
+  </Mistake>
+  <Mistake>
+    **`let` пишется обязательно с маленькой буквы.** В JavaScript есть разница между большими и маленькими буквами.
+  </Mistake>
+</Exercise>

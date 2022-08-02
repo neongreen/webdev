@@ -19,6 +19,9 @@ export function Navbar() {
               <B.NavDropdown title="JavaScript">
                 <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
                 <B.NavDropdown.Divider />
+                <B.NavDropdown.Item href="/js/let">
+                  <code>let</code>
+                </B.NavDropdown.Item>
                 <B.NavDropdown.Item href="/js/if">
                   <code>if</code>
                 </B.NavDropdown.Item>
