@@ -25,6 +25,9 @@ export function Navbar() {
                 <B.NavDropdown.Item href="/js/if">
                   <code>if</code>
                 </B.NavDropdown.Item>
+                <B.NavDropdown.Item href="/js/for">
+                  <code>for</code>
+                </B.NavDropdown.Item>
               </B.NavDropdown>
               <B.NavDropdown title="Wordle">
                 <B.NavDropdown.Item href="/wordle/1">1. Первый урок</B.NavDropdown.Item>
