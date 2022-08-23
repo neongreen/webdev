@@ -1,0 +1,220 @@
+import * as B from 'react-bootstrap';
+
+# p5 — шпаргалка
+
+Полный официальный справочник на английском: [p5js.org/reference/](https://p5js.org/reference/)
+
+## Фигуры
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Фигура</th>
+      <th>Функция</th>
+      <th>Параметры</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Линия</td>
+      <td><code>**line**(x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>)</code></td>
+      <td>Начало в точке <code>(x<sub>1</sub>, y<sub>1</sub>)</code>, конец в точке <code>(x<sub>2</sub>, y<sub>2</sub>)</code></td>
+    </tr>
+    <tr>
+      <td>Точка</td>
+      <td><code>**point**(x, y)</code></td>
+      <td>Координаты</td>
+    </tr>
+    <tr>
+      <td>Круг</td>
+      <td><code>**circle**(x, y, d)</code></td>
+      <td>Центр в точке `(x,y)`, диаметр `d`</td>
+    </tr>
+    <tr>
+      <td>Эллипс (овал)</td>
+      <td><code>**ellipse**(x, y, w, h)</code></td>
+      <td>Центр в точке `(x,y)`, ширина `w`, высота `h`</td>
+    </tr>
+    <tr>
+      <td>Прямоугольник</td>
+      <td><code>**rect**(x, y, w, h)</code></td>
+      <td>Левый верхний угол в точке `(x, y)`, ширина `w`, высота `h`</td>
+    </tr>
+    <tr>
+      <td>Квадрат</td>
+      <td><code>**square**(x, y, d)</code></td>
+      <td>Левый верхний угол в точке `(x, y)`, сторона `d`</td>
+    </tr>
+    <tr>
+      <td>Треугольник</td>
+      <td><code>**triangle**(x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>, x<sub>3</sub>, y<sub>3</sub>)</code></td>
+      <td>Координаты трех вершин</td>
+    </tr>
+    <tr>
+      <td>Четырехугольник</td>
+      <td><code>**quad**(x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>, x<sub>3</sub>, y<sub>3</sub>, x<sub>4</sub>, y<sub>4</sub>)</code></td>
+      <td>Координаты четырех вершин</td>
+    </tr>
+  </tbody>
+</B.Table>
+
+## Заливка
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Параметры</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>**fill**('цвет')</code></td>
+      <td>Цвет заливки на английском — например, `'red'` или `'blue'`</td>
+    </tr>
+    <tr>
+      <td><code>**fill**('#aabbcc')</code></td>
+      <td>Любой цвет заливки — можно получить, нажав <kbd>Ctrl+K</kbd> (Windows) или <kbd>Cmd+K</kbd> (macOS)</td>
+    </tr>
+    <tr>
+      <td><code>**fill**(r, g, b)</code></td>
+      <td>Цвет заливки в формате RGB (красный, зеленый, синий, от 0 до 255)</td>
+    </tr>
+    <tr>
+      <td><code>**fill**(r, g, b, a)</code></td>
+      <td>Цвет заливки в формате RGBA (RGB + прозрачность от 0 до 255)</td>
+    </tr>
+    <tr>
+      <td><code>**noFill**()</code></td>
+      <td>Отключает заливку</td>
+    </tr>
+  </tbody>
+</B.Table>
+
+## Границы фигур
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Параметры</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>**stroke**('цвет')</code></td>
+      <td>Цвет границы на английском — например, `'red'` или `'blue'`</td>
+    </tr>
+    <tr>
+      <td><code>**stroke**('#aabbcc')</code></td>
+      <td>Любой цвет границы — можно получить, нажав <kbd>Ctrl+K</kbd> (Windows) или <kbd>Cmd+K</kbd> (macOS)</td>
+    </tr>
+    <tr>
+      <td><code>**stroke**(r, g, b)</code></td>
+      <td>Цвет границы в формате RGB (красный, зеленый, синий, от 0 до 255)</td>
+    </tr>
+    <tr>
+      <td><code>**stroke**(r, g, b, a)</code></td>
+      <td>Цвет границы в формате RGBA (RGB + прозрачность от 0 до 255)</td>
+    </tr>
+    <tr>
+      <td><code>**strokeWeight**(n)</code></td>
+      <td>Толщина границы</td>
+    </tr>
+    <tr>
+      <td><code>**noStroke**()</code></td>
+      <td>Отключает границы</td>
+    </tr>
+  </tbody>
+</B.Table>
+
+## Текст
+
+<B.Table bordered striped>
+  <style jsx>{`
+    td:nth-child(1) {
+      white-space: nowrap;
+    }
+  `}</style>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>**text**(str, x, y)</code></td>
+      <td>Выводит строку `str` с левым _нижним_ углом в точке `(x, y)`</td>
+    </tr>
+    <tr>
+      <td><code>**textSize**(n)</code></td>
+      <td>Меняет размер текста</td>
+    </tr>
+    <tr>
+      <td><code>**textAlign**(horiz, vert)</code></td>
+      <td>
+        Меняет выравнивание текста (текст будет выводиться не относительно левого нижнего угла, а какого-то другого)
+        
+        * Варианты для параметра `horiz`: `LEFT`, `CENTER`, `RIGHT`.
+        * Варианты для параметра `vert`: `BOTTOM`, `CENTER`, `TOP`, `BASELINE`.
+      </td>
+    </tr>
+    <tr>
+      <td><code>**textStyle**(style)</code></td>
+      <td>
+        Меняет стиль. Варианты: `NORMAL`, `BOLD`, `ITALIC`, `BOLDITALIC`.
+      </td>
+    </tr>
+    <tr>
+      <td><code>**textFont**(font)</code></td>
+      <td>
+        Меняет шрифт. Варианты: `"Georgia"`, `"Arial"`, `"Impact"` и еще много.
+
+        Полный список шрифтов есть в приложении "Font Book" (macOS) или в папке "Шрифты" в панели управления (Windows).
+      </td>
+    </tr>
+  </tbody>
+</B.Table>
+
+## Прочее
+
+<B.Table bordered striped>
+  <style jsx>{`
+    td:nth-child(1) {
+      white-space: nowrap;
+    }
+  `}</style>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>**noCursor**()</code></td>
+      <td>
+        Прячет курсор мышки (удобно для игр)
+      </td>
+    </tr>
+    <tr>
+      <td><code>**fullscreen**(true)</code></td>
+      <td>
+        Переходит в полноэкранный режим.
+
+        Работает только в функциях вроде `mousePressed()`. Например:
+
+        ```js
+        function setup() {...}
+
+        function draw() {...}
+
+        function mousePressed() {
+          fullscreen(true);
+        }
+        ```
+      </td>
+    </tr>
+  </tbody>
+</B.Table>
