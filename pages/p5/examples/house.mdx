@@ -1,0 +1,107 @@
+import { P5 } from '@components/p5'
+import { Boxes, Box } from '@components/box'
+import * as B from 'react-bootstrap'
+
+# p5 — домик
+
+## Просто домик
+
+<Boxes>
+  <Box>
+    ```js
+    function setup() {
+      createCanvas(200, 200);
+    }
+
+    function draw() {
+      background(220);
+      line(60, 100, 140, 100);
+      line(60, 100, 60, 180);
+      line(60, 180, 140, 180);
+      line(140, 100, 140, 180);
+      line(100, 60, 60, 100);
+      line(100, 60, 140, 100);
+    }
+    ```
+  </Box>
+  <Box>
+    <P5 sketch={(p5) => {
+      p5.setup = () => {
+        p5.createCanvas(200, 200, p5.P2D)
+      }
+      p5.draw = () => {
+        p5.background(220)
+        p5.line(60, 100, 140, 100)
+        p5.line(60, 100, 60, 180)
+        p5.line(60, 180, 140, 180)
+        p5.line(140, 100, 140, 180)
+        p5.line(100, 60, 60, 100)
+        p5.line(100, 60, 140, 100)
+      }
+    }} />
+  </Box>
+</Boxes>
+
+## Домик с координатной сеткой
+
+<Boxes>
+  <Box>
+    ```js mark=8:17
+    function setup() {
+      createCanvas(200, 200);
+    }
+
+    function draw() {
+      background(220);
+
+      stroke(180);
+      textSize(7);
+      for (let x = 20; x < 200; x += 20) {
+        line(x, 15, x, 200);
+        text(x, x, 8);
+      }
+      for (let y = 20; y < 200; y += 20) {
+        line(15, y, 200, y);
+        text(y, 0, y);
+      }
+
+      stroke('black');
+      line(60, 100, 140, 100);
+      line(60, 100, 60, 180);
+      line(60, 180, 140, 180);
+      line(140, 100, 140, 180);
+      line(100, 60, 60, 100);
+      line(100, 60, 140, 100);
+    }
+    ```
+  </Box>
+  <Box>
+    <P5 sketch={(p5) => {
+      p5.setup = () => {
+        p5.createCanvas(200, 200, p5.P2D)
+      }
+      p5.draw = () => {
+        p5.background(220)
+
+        p5.stroke(180)
+        p5.textSize(7)
+        for (let x = 20; x < 200; x += 20) {
+          p5.line(x, 15, x, 200)
+          p5.text(x, x, 8)
+        }
+        for (let y = 20; y < 200; y += 20) {
+          p5.line(15, y, 200, y)
+          p5.text(y, 0, y)
+        }
+
+        p5.stroke('black')
+        p5.line(60, 100, 140, 100)
+        p5.line(60, 100, 60, 180)
+        p5.line(60, 180, 140, 180)
+        p5.line(140, 100, 140, 180)
+        p5.line(100, 60, 60, 100)
+        p5.line(100, 60, 140, 100)
+      }
+    }} />
+  </Box>
+</Boxes>

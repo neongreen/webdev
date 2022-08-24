@@ -4,7 +4,8 @@ import shiki from 'shiki'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // https://github.com/P5-wrapper/react/issues/162#issuecomment-1186425566
+  reactStrictMode: false,
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 }

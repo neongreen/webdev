@@ -463,6 +463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/p5@npm:^1.4.0":
+  version: 1.4.2
+  resolution: "@types/p5@npm:1.4.2"
+  checksum: 9bdb365d3141f1d29bee4060cf24f9ca3bea0f6410b5dd3d2f9d04c0c8863d778b69de191925d04a73d8a6758db5c599580c940fc47f22c71236b97367448410
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*, @types/prop-types@npm:^15.0.0":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
@@ -2453,6 +2460,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.debounce@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "lodash.debounce@npm:4.0.8"
+  checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
+  languageName: node
+  linkType: hard
+
 "lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
@@ -2688,6 +2702,13 @@ __metadata:
   version: 1.4.1
   resolution: "merge2@npm:1.4.1"
   checksum: 7268db63ed5169466540b6fb947aec313200bcf6d40c5ab722c22e242f651994619bcd85601602972d3c85bd2cc45a358a4c61937e9f11a061919a1da569b0c2
+  languageName: node
+  linkType: hard
+
+"microdiff@npm:^1.3.0":
+  version: 1.3.1
+  resolution: "microdiff@npm:1.3.1"
+  checksum: 59ef458c5a74a0499d0446a2e61f12acf3626d358e0781556fbe5a0320f9002c46f270f7e8d51f1a8b8236a586f2b31aaa25e132ae0705b9099f59f96662eab6
   languageName: node
   linkType: hard
 
@@ -3463,6 +3484,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p5@npm:^1.4.1":
+  version: 1.4.2
+  resolution: "p5@npm:1.4.2"
+  checksum: a18177ce20e6e6ef863630d410b585bdfda4d29d28f9ac8b757309135a447309d9bb814beba1663b4287b19d9708b2750551209724ca4616c8dc62609602e514
+  languageName: node
+  linkType: hard
+
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -3520,6 +3548,13 @@ __metadata:
   version: 4.0.0
   resolution: "path-type@npm:4.0.0"
   checksum: 5b1e2daa247062061325b8fdbfd1fb56dde0a448fb1455453276ea18c60685bdad23a445dc148cf87bc216be1573357509b7d4060494a6fd768c7efad833ee45
+  languageName: node
+  linkType: hard
+
+"performance-now@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "performance-now@npm:2.1.0"
+  checksum: 534e641aa8f7cba160f0afec0599b6cecefbb516a2e837b512be0adbe6c1da5550e89c78059c7fabc5c9ffdf6627edabe23eb7c518c4500067a898fa65c2b550
   languageName: node
   linkType: hard
 
@@ -3635,6 +3670,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"raf@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "raf@npm:3.4.1"
+  dependencies:
+    performance-now: ^2.1.0
+  checksum: 50ba284e481c8185dbcf45fc4618ba3aec580bb50c9121385d5698cb6012fe516d2015b1df6dd407a7b7c58d44be8086108236affbce1861edd6b44637c8cd52
+  languageName: node
+  linkType: hard
+
 "react-bootstrap@npm:^2.4.0":
   version: 2.4.0
   resolution: "react-bootstrap@npm:2.4.0"
@@ -3736,6 +3780,21 @@ __metadata:
     "@types/react": ">=16"
     react: ">=16"
   checksum: 66c0b45889d0262168547d9356145ced276993dac1d441c5c1cf2371fe71f347419696f9040c084c7d77c1caced21d358677c38f66edae736f942ac5964c032f
+  languageName: node
+  linkType: hard
+
+"react-p5-wrapper@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "react-p5-wrapper@npm:3.3.0"
+  dependencies:
+    "@types/p5": ^1.4.0
+    microdiff: ^1.3.0
+    p5: ^1.4.1
+    rooks: ^5.10.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 219d6da3b228587d42b783142561ef126be1c6cce7fbcca058c7a9dffb0d544ff7b27ba71a573d9a00b61693e58cfdbd06cd05dfb679b79f7f57637fc01c6c79
   languageName: node
   linkType: hard
 
@@ -3931,6 +3990,19 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
+  languageName: node
+  linkType: hard
+
+"rooks@npm:^5.10.0":
+  version: 5.14.1
+  resolution: "rooks@npm:5.14.1"
+  dependencies:
+    lodash.debounce: ^4.0.8
+    raf: ^3.4.1
+  peerDependencies:
+    react: ^16.8.0  || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
+  checksum: 2a06382d9f674d5701e0400e04702e98ad8425ecb8f5236906b1cf87de6d77efcb446328128c92208e6357e237b3ca3e55cb717a60f097ee115cc73b1b446450
   languageName: node
   linkType: hard
 
@@ -4747,6 +4819,7 @@ __metadata:
     react-dom: 18.2.0
     react-icons: ^4.4.0
     react-markdown: ^8.0.3
+    react-p5-wrapper: ^3.3.0
     sass: ^1.53.0
     shiki: ^0.10.1
     styled-jsx: ^5.0.2
