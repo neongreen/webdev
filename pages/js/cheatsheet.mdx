@@ -1,0 +1,149 @@
+import * as B from 'react-bootstrap';
+
+# JavaScript — шпаргалка
+
+Содержание:
+  * [Математика](#math)
+  * [Сравнения](#compare)
+  * [`if` и условия](#if)
+
+## Математика <a name="math" />
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Операция</th>
+      <th>Функция</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Сложение</td>
+      <td><code>a **+** b</code></td>
+    </tr>
+    <tr>
+      <td>Вычитание</td>
+      <td><code>a **-** b</code></td>
+    </tr>
+    <tr>
+      <td>Умножение</td>
+      <td><code>a **\*** b</code></td>
+    </tr>
+    <tr>
+      <td>Деление</td>
+      <td><code>a **/** b</code></td>
+    </tr>
+    <tr>
+      <td>Остаток от деления</td>
+      <td><code>a **%** b</code></td>
+    </tr>
+    <tr>
+      <td>Делится ли `a` на `b`?</td>
+      <td><code>if (a % b === 0) ...</code></td>
+    </tr>
+    <tr>
+      <td>Округление вниз</td>
+      <td><code>**Math.floor**(n)</code></td>
+    </tr>
+    <tr>
+      <td>Округление вверх</td>
+      <td><code>**Math.ceil**(n)</code></td>
+    </tr>
+    <tr>
+      <td>Квадратный корень</td>
+      <td><code>**Math.sqrt**(n)</code></td>
+    </tr>
+  </tbody>
+</B.Table>
+
+## Сравнения <a name="compare" />
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Операция</th>
+      <th>Функция</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Больше</td>
+      <td><code>a **\>** b</code></td>
+    </tr>
+    <tr>
+      <td>Меньше</td>
+      <td><code>a **\<** b</code></td>
+    </tr>
+    <tr>
+      <td>Больше или равно</td>
+      <td><code>a **\>=** b</code></td>
+    </tr>
+    <tr>
+      <td>Меньше или равно</td>
+      <td><code>a **\<=** b</code></td>
+    </tr>
+    <tr>
+      <td>Равно</td>
+      <td><code>a **===** b</code></td>
+    </tr>
+    <tr>
+      <td>Не равно</td>
+      <td><code>a **!==** b</code></td>
+    </tr>
+  </tbody>
+</B.Table>
+
+## `if` и условия <a name="if" />
+
+Сделать что-то, только **если** выполняется условие:
+
+```js
+if (условие) { 
+  действие
+}
+```
+
+Если выполняется условие, сделать одно, а **иначе** что-то другое:
+
+```js
+if (условие) { 
+  действие
+} else {
+  другое действие
+}
+```
+
+Цепочка условий:
+
+```js
+if (...) { 
+  действие
+} else if (...) {
+  другое действие
+} else {
+  третье действие
+}
+```
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Операция</th>
+      <th>Функция</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Должны выполняться **оба** условия</td>
+      <td><code>if (условие<sub>1</sub> **&&** условие<sub>2</sub>) ...</code></td>
+    </tr>
+    <tr>
+      <td>Должно выполняться **хотя бы одно** условие</td>
+      <td><code>if (условие<sub>1</sub> **||** условие<sub>2</sub>) ...</code></td>
+    </tr>
+    <tr>
+      <td>Условие должно **не** выполняться</td>
+      <td><code>if (**!** условие) ...</code></td>
+    </tr>
+  </tbody>
+</B.Table>

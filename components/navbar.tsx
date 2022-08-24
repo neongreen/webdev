@@ -17,6 +17,7 @@ export function Navbar() {
                 <B.NavDropdown.Item href="/basics/2">2. Введение в CSS</B.NavDropdown.Item>
               </B.NavDropdown>
               <B.NavDropdown title="JavaScript">
+                <B.NavDropdown.Item href="/js/cheatsheet">Шпаргалка</B.NavDropdown.Item>
                 <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
                 <B.NavDropdown.Divider />
                 <B.NavDropdown.Item href="/js/let">
