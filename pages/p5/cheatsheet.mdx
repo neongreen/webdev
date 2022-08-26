@@ -4,6 +4,62 @@ import * as B from 'react-bootstrap';
 
 Полный официальный справочник на английском: [p5js.org/reference/](https://p5js.org/reference/)
 
+## Структура программы
+
+Обязательные функции:
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>function **setup**() {"{...}"}</code></td>
+      <td>Эта функция вызовется один раз при запуске программы.</td>
+    </tr>
+    <tr>
+      <td><code>function **draw**() {"{...}"}</code></td>
+      <td>Эта функция вызывается в бесконечном цикле. Она должна рисовать **один** кадр.</td>
+    </tr>
+  </tbody>
+</B.Table>
+
+Дополнительные функции (см. полный список в [Events](https://p5js.org/reference/#group-Events) в официальной справке):
+
+<B.Table bordered striped>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>function **mousePressed**() {"{...}"}</code></td>
+      <td>Вызывается, когда пользователь нажимает на мышку.</td>
+    </tr>
+    <tr>
+      <td><code>function **mouseReleased**() {"{...}"}</code></td>
+      <td>Вызывается, когда пользователь отпускает мышку.</td>
+    </tr>
+    <tr>
+      <td><code>function **mouseClicked**() {"{...}"}</code></td>
+      <td>Вызывается, когда пользователь кликает мышкой (нажимает и отпускает).</td>
+    </tr>
+    <tr>
+      <td><code>function **keyPressed**() {"{...}"}</code></td>
+      <td>Вызывается, когда пользователь нажимает на клавишу клавиатуры.</td>
+    </tr>
+    <tr>
+      <td><code>function **keyReleased**() {"{...}"}</code></td>
+      <td>Вызывается, когда пользователь отпускает клавишу.</td>
+    </tr>
+  </tbody>
+</B.Table>
+
 ## Фигуры
 
 <B.Table bordered striped>
@@ -91,7 +147,7 @@ import * as B from 'react-bootstrap';
   </tbody>
 </B.Table>
 
-## Границы фигур
+## Обводка
 
 <B.Table bordered striped>
   <thead>
@@ -103,11 +159,11 @@ import * as B from 'react-bootstrap';
   <tbody>
     <tr>
       <td><code>**stroke**('цвет')</code></td>
-      <td>Цвет границы на английском — например, `'red'` или `'blue'`</td>
+      <td>Цвет обводки на английском — например, `'red'` или `'blue'`</td>
     </tr>
     <tr>
       <td><code>**stroke**('#aabbcc')</code></td>
-      <td>Любой цвет границы — можно получить, нажав <kbd>Ctrl+K</kbd> (Windows) или <kbd>Cmd+K</kbd> (macOS)</td>
+      <td>Любой цвет обводки — можно получить, нажав <kbd>Ctrl+K</kbd> (Windows) или <kbd>Cmd+K</kbd> (macOS)</td>
     </tr>
     <tr>
       <td><code>**stroke**(r, g, b)</code></td>
@@ -115,15 +171,15 @@ import * as B from 'react-bootstrap';
     </tr>
     <tr>
       <td><code>**stroke**(r, g, b, a)</code></td>
-      <td>Цвет границы в формате RGBA (RGB + прозрачность от 0 до 255)</td>
+      <td>Цвет обводки в формате RGBA (RGB + прозрачность от 0 до 255)</td>
     </tr>
     <tr>
       <td><code>**strokeWeight**(n)</code></td>
-      <td>Толщина границы</td>
+      <td>Толщина обводки</td>
     </tr>
     <tr>
       <td><code>**noStroke**()</code></td>
-      <td>Отключает границы</td>
+      <td>Отключает обводку</td>
     </tr>
   </tbody>
 </B.Table>
@@ -177,6 +233,86 @@ import * as B from 'react-bootstrap';
   </tbody>
 </B.Table>
 
+## Мышка
+
+<B.Table bordered striped>
+  <style jsx>{`
+    td:nth-child(1) {
+      white-space: nowrap;
+    }
+  `}</style>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>**mouseX**</code></td>
+      <td>
+        X-координата курсора
+      </td>
+    </tr>
+    <tr>
+      <td><code>**mouseY**</code></td>
+      <td>
+        Y-координата курсора
+      </td>
+    </tr>
+    <tr>
+      <td><code>**mouseIsPressed**</code></td>
+      <td>
+        Нажата ли мышка?
+      </td>
+    </tr>
+    <tr>
+      <td><code>**mouseButton**</code></td>
+      <td>
+        Какая кнопка мышки нажата. Варианты — `LEFT`, `RIGHT`, `CENTER`
+      </td>
+    </tr>
+    <tr>
+      <td><code>**noCursor**()</code></td>
+      <td>
+        Прячет курсор мышки (удобно для игр)
+      </td>
+    </tr>
+  </tbody>
+</B.Table>
+
+## Клавиатура
+
+<B.Table bordered striped>
+  <style jsx>{`
+    td:nth-child(1) {
+      white-space: nowrap;
+    }
+  `}</style>
+  <thead>
+    <tr>
+      <th>Функция</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>**key**</code></td>
+      <td>
+        Какая сейчас нажата клавиша (например, `"0"`, `"k"`, `"Enter"`, `"Shift"`, `"ArrowUp"`, `"ArrowDown"`, `"ArrowLeft"`, `"ArrowRight"`).
+        
+        Не работает для пробела.
+      </td>
+    </tr>
+    <tr>
+      <td><code>**keyCode**</code></td>
+      <td>
+        Номер нажатой клавиши на клавиатуре. В отличие от `key`, работает для пробела (код 32) и игнорирует раскладку клавиатуры.
+      </td>
+    </tr>
+  </tbody>
+</B.Table>
+
 ## Прочее
 
 <B.Table bordered striped>
@@ -193,9 +329,19 @@ import * as B from 'react-bootstrap';
   </thead>
   <tbody>
     <tr>
-      <td><code>**noCursor**()</code></td>
+      <td><code>**dist**(x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>)</code></td>
+      <td>Считает расстояние между двумя точками</td>
+    </tr>
+    <tr>
+      <td><code>**frameRate**(n)</code></td>
       <td>
-        Прячет курсор мышки (удобно для игр)
+        Выставляет количество кадров в секунду. Больше — ускорение, меньше — замедление.
+      </td>
+    </tr>
+    <tr>
+      <td><code>**frameCount**</code></td>
+      <td>
+        Переменная, в которой пишется, сколько кадров уже прошло
       </td>
     </tr>
     <tr>
