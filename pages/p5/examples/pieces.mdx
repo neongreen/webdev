@@ -1,0 +1,427 @@
+
+import { P5 } from '@components/p5'
+import { Boxes, Box } from '@components/box'
+import * as B from 'react-bootstrap'
+
+# p5 — перетаскивающиеся шашки
+
+## Доска в клеточку
+
+Пока без шашек.
+
+<Boxes>
+  <Box>
+    ```js
+    // Размер клеточки
+    const CELL = 50;
+
+    function setup() {
+      // Создаем поле — 8x8 клеточек
+      createCanvas(CELL * 8, CELL * 8);
+    }
+
+    // Функция drawBoard рисует доску в клеточку
+    function drawBoard() {
+      noStroke();
+      for (let x = 0; x < 8; x++) {
+        for (let y = 0; y < 8; y++) {
+          if ((x + y) % 2 === 0) fill(80); else fill(180);
+          square(x * CELL, y * CELL, CELL);
+        }
+      }
+    }
+
+    function draw() {
+      // Рисуем клеточки
+      drawBoard();
+    }
+    ```
+  </Box>
+  <Box>
+    <P5 sketch={(p5) => {
+      const CELL = 50;
+      const drawBoard = () => {
+        p5.noStroke();
+        for (let x = 0; x < 8; x++) {
+          for (let y = 0; y < 8; y++) {
+            if ((x + y) % 2 === 0) p5.fill(80); else p5.fill(180);
+            p5.square(x * CELL, y * CELL, CELL);
+          }
+        }
+      }
+      p5.setup = () => {
+        p5.createCanvas(CELL * 8, CELL * 8);
+      }
+      p5.draw = () => {
+        p5.background(220);
+        drawBoard();
+      }
+    }} />
+  </Box>
+</Boxes>
+
+## Добавляем шашки
+
+Пока без перетаскивания. Пример с перетаскиванием будет ниже.
+
+<Boxes>
+  <Box>
+    ```js
+    // Размер клеточки
+    const CELL = 50;
+
+    // mark
+    // Размер шашек (чуть меньше, чем размер клеточки)
+    // mark
+    const PIECE = CELL * 0.8;
+
+    // mark
+    // Массив, хранящий положение всех шашек в формате {x,y}
+    // mark
+    let pieces = [];
+
+    function setup() {
+      // Создаем поле — 8x8 клеточек
+      createCanvas(CELL * 8, CELL * 8);
+      
+      // mark
+      // Добавляем в массив шашки — только на нижней половине доски
+      // mark
+      for (let x = 0; x < 8; x++)
+      // mark
+        for (let y = 4; y < 8; y++)
+      // mark
+          pieces.push({ x, y });
+    }
+
+    // Функция drawBoard рисует доску в клеточку
+    function drawBoard() {
+      noStroke();
+      for (let x = 0; x < 8; x++) {
+        for (let y = 0; y < 8; y++) {
+          if ((x + y) % 2 === 0) fill(80); else fill(180);
+          square(x * CELL, y * CELL, CELL);
+        }
+      }
+    }
+
+    // mark
+    // Функция drawPiece(x, y) рисует шашку
+    // mark
+    // на клеточке с координатами (x, y)
+    // mark
+    function drawPiece(x, y) {
+    // mark
+      stroke("#5B46F8");
+    // mark
+      fill("#8192E7");
+    // mark
+      circle(x*CELL + CELL/2, y*CELL + CELL/2, PIECE);
+    // mark
+    }
+
+    function draw() {
+      // Рисуем клеточки
+      drawBoard();
+
+      // mark
+      // Рисуем все шашки
+      // mark
+      for (let i = 0; i < pieces.length; i++)
+      // mark
+        drawPiece(pieces[i].x, pieces[i].y);
+    }
+    ```
+  </Box>
+  <Box>
+    <P5 sketch={(p5) => {
+      const CELL = 50;
+      const PIECE = CELL * 0.8;
+      let pieces = [];
+      const drawBoard = () => {
+        p5.noStroke();
+        for (let x = 0; x < 8; x++) {
+          for (let y = 0; y < 8; y++) {
+            if ((x + y) % 2 === 0) p5.fill(80); else p5.fill(180);
+            p5.square(x * CELL, y * CELL, CELL);
+          }
+        }
+      }
+      const drawPiece = (piece) => {
+        const squareX = piece.x * CELL;
+        const squareY = piece.y * CELL;
+        p5.stroke("#5B46F8");
+        p5.fill("#8192E7");
+        p5.circle(squareX + CELL / 2, squareY + CELL / 2, PIECE);
+      }
+      const drawPieces = () => {
+        for (let i = 0; i < pieces.length; i++) {
+          drawPiece(pieces[i]);
+        }
+      }
+      p5.setup = () => {
+        p5.createCanvas(CELL * 8, CELL * 8);
+        for (let x = 0; x < 8; x++) {
+          for (let y = 4; y < 8; y++) {
+            pieces.push({ x, y });
+          }
+        }
+      }
+      p5.draw = () => {
+        p5.background(220);
+        drawBoard();
+        drawPieces();
+      }
+    }} />
+  </Box>
+</Boxes>
+
+## Добавляем перетаскивание
+
+<Boxes>
+  <Box>
+    ```js
+    // Размер клеточки
+    const CELL = 50;
+
+    // Размер шашек (чуть меньше, чем размер клеточки)
+    const PIECE = CELL * 0.8;
+
+    // Массив, хранящий положение всех шашек в формате {x,y}
+    let pieces = [];
+
+    // mark
+    // Какую по номеру шашку мы сейчас перетаскиваем
+    // mark
+    // (если никакую — здесь будет null)
+    // mark
+    let draggedIndex = null;
+
+    function setup() {
+      // Создаем поле — 8x8 клеточек
+      createCanvas(CELL * 8, CELL * 8);
+
+      // Добавляем в массив шашки — только на нижней половине доски
+      for (let x = 0; x < 8; x++)
+        for (let y = 4; y < 8; y++)
+          pieces.push({ x, y });
+    }
+
+    // Функция drawBoard рисует доску в клеточку
+    function drawBoard() {
+      noStroke();
+      for (let x = 0; x < 8; x++) {
+        for (let y = 0; y < 8; y++) {
+          if ((x + y) % 2 === 0) fill(80); else fill(180);
+          square(x * CELL, y * CELL, CELL);
+        }
+      }
+    }
+
+    // mark
+    // Функция isTouching(x, y) определяет, касается ли мышка 
+    // mark
+    // клеточки (x, y) на доске
+    // mark
+    function isTouching(x, y) {
+      // mark
+      return (
+        // mark
+        x*CELL < mouseX && mouseX < (x+1)*CELL &&
+        // mark
+        y*CELL < mouseY && mouseY < (y+1)*CELL
+        // mark
+      );
+      // mark
+    }
+
+    // mark
+    // Функция isEmpty(x, y) определяет, свободна ли клеточка
+    // mark
+    // (x, y) на доске
+    // mark
+    function isEmpty(x, y) {
+      // mark
+      return !pieces.some(
+        // mark
+        (piece) => piece.x === x && piece.y === y
+        // mark
+      );
+      // mark
+    }
+
+    // Функция drawPiece(x, y) рисует шашку с координатами (x, y)
+    function drawPiece(x, y) {
+      stroke("#5B46F8");
+      // mark
+      // Если мы касаемся шашки, мы хотим ее подсветить — поэтому мы
+      // mark
+      // используем два разных цвета. Исключение — если мы уже тащим
+      // mark
+      // какую-то шашку. Тогда мы не будем ничего подсвечивать.
+      // mark
+      if (isTouching(x, y) && draggedIndex === null) fill("#ADB7E9");
+      // mark
+      else fill("#8192E7");
+      circle(x*CELL + CELL/2, y*CELL + CELL/2, PIECE);
+    }
+
+    // mark
+    // Функция drawDraggedPiece рисует шашку, которую мы тащим, прямо
+    // mark
+    // под мышкой. Эта шашка будет чуть больше остальных.
+    // mark
+    function drawDraggedPiece() {
+      // mark
+      stroke("#5B46F8");
+      // mark
+      fill("#8192E7");
+      // mark
+      circle(mouseX, mouseY, PIECE * 1.3);
+      // mark
+    }
+
+    function draw() {
+      // Рисуем клеточки
+      drawBoard();
+
+      // Рисуем все шашки (кроме той, которую тащим)
+      for (let i = 0; i < pieces.length; i++)
+      // mark
+        if (draggedIndex !== i)
+          drawPiece(pieces[i].x, pieces[i].y);
+
+      // mark
+      // Рисуем шашку, которую тащим (если она есть)
+      // mark
+      if (draggedIndex !== null) drawDraggedPiece();
+    }
+
+    // mark
+    // По нажатию мышки — определяем, касаемся ли мы какой-то шашки,
+    // mark
+    // и если да, запоминаем ее индекс в draggedIndex
+    // mark
+    function mousePressed() {
+    // mark
+      draggedIndex = null;
+    // mark
+      for (let i = 0; i < pieces.length; i++) {
+    // mark
+        if (isTouching(pieces[i].x, pieces[i].y)) {
+    // mark
+          draggedIndex = i;
+    // mark
+          break;
+    // mark
+        }
+    // mark
+      }
+    // mark
+    }
+
+    // mark
+    // Когда мышка отпущена — если мы тащили какую-то шашку,
+    // mark
+    // пытаемся поместить ее на новую клеточку
+    // mark
+    function mouseReleased() {
+    // mark
+      if (draggedIndex !== null) {
+    // mark
+        for (let x = 0; x < 8; x++)
+    // mark
+          for (let y = 0; y < 8; y++)
+    // mark
+            if (isTouching(x, y) && isEmpty(x, y))
+    // mark
+              pieces[draggedIndex] = { x, y };
+    // mark
+        draggedIndex = null;
+    // mark
+      }
+    // mark
+    }
+    ```
+  </Box>
+  <Box>
+    <P5 sketch={(p5) => {
+      const CELL = 50;
+      const PIECE = CELL * 0.8;
+      let pieces = [];
+      let draggedIndex = null;
+      const drawBoard = () => {
+        p5.noStroke();
+        for (let x = 0; x < 8; x++) {
+          for (let y = 0; y < 8; y++) {
+            if ((x + y) % 2 === 0) p5.fill(80); else p5.fill(180);
+            p5.square(x * CELL, y * CELL, CELL);
+          }
+        }
+      }
+      const isTouching = (square) => {
+        const squareX = square.x * CELL;
+        const squareY = square.y * CELL;
+        return (
+          squareX < p5.mouseX && p5.mouseX < squareX + CELL &&
+          squareY < p5.mouseY && p5.mouseY < squareY + CELL
+        );
+      }
+      const isEmpty = (square) => {
+        return !pieces.some((piece) => piece.x === square.x && piece.y === square.y);
+      }
+      const drawPiece = (piece) => {
+        const squareX = piece.x * CELL;
+        const squareY = piece.y * CELL;
+        p5.stroke("#5B46F8");
+        if (isTouching(piece) && draggedIndex === null) p5.fill("#ADB7E9");
+        else p5.fill("#8192E7");
+        p5.circle(squareX + CELL / 2, squareY + CELL / 2, PIECE);
+      }
+      const drawDraggedPiece = () => {
+        p5.stroke("#5B46F8");
+        p5.fill("#8192E7");
+        p5.circle(p5.mouseX, p5.mouseY, PIECE * 1.3);
+      }
+      const drawPieces = () => {
+        for (let i = 0; i < pieces.length; i++) {
+          if (draggedIndex !== i) {
+            drawPiece(pieces[i]);
+          }
+        }
+      }
+      p5.setup = () => {
+        p5.createCanvas(CELL * 8, CELL * 8);
+        for (let x = 0; x < 8; x++) {
+          for (let y = 4; y < 8; y++) {
+            pieces.push({ x, y });
+          }
+        }
+      }
+      p5.draw = () => {
+        p5.background(220);
+        drawBoard();
+        drawPieces();
+        if (draggedIndex !== null) drawDraggedPiece();
+      }
+      p5.mousePressed = () => {
+        draggedIndex = null;
+        for (let i = 0; i < pieces.length; i++) {
+          if (isTouching(pieces[i])) {
+            draggedIndex = i;
+            break;
+          }
+        }
+      }
+      p5.mouseReleased = () => {
+        if (draggedIndex !== null) {
+          for (let x = 0; x < 8; x++)
+            for (let y = 0; y < 8; y++)
+              if (isTouching({ x, y }) && isEmpty({ x, y })) 
+                pieces[draggedIndex] = { x, y };
+          draggedIndex = null;
+        }
+      }
+    }} />
+  </Box>
+</Boxes>
