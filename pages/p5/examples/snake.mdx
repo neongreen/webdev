@@ -1,0 +1,308 @@
+import { P5 } from '@components/p5'
+import { Boxes, Box } from '@components/box'
+import * as B from 'react-bootstrap'
+
+# p5 — змейка
+
+## Змейка + управление стрелочками
+
+Пример с яблочками — ниже на этой странице.
+
+<Boxes>
+  <Box>
+    ```js
+    // Размер клеточки
+    const CELL = 10;
+
+    // Размер поля
+    const SIZE = 30;
+
+    // В массиве snake хранятся координаты змейки от хвоста
+    // до головы (голова будет последним элементом)
+    let snake = [
+      { x: 0, y: 2 },
+      { x: 1, y: 2 },
+    ];
+
+    // В переменной direction пишется, в какую сторону сейчас
+    // едет змейка. Варианты: "right", "left", "up", "down"
+    let direction = "right";
+
+    function setup() {
+      // Создаем поле
+      createCanvas(CELL*SIZE, CELL*SIZE);
+
+      // Устанавливаем скорость игры — 10 кадров в секунду.
+      // Если поставить больше, змейка будет ехать быстрее.
+      frameRate(10);
+    }
+
+    function draw() {
+      // Рисуем серое поле
+      background(220);
+
+      // Чтобы сдвинуть змейку на одну клеточку, надо вырастить
+      // у нее новую голову и отрубить одну клеточку от хвоста.
+
+      // Сначала создадим новую голову в переменной newHead
+      let head = snake[snake.length - 1];
+      let newHead = {x: head.x, y: head.y};
+
+      // В зависимости от направления, у новой головы должна
+      // поменяться одна из координат — либо x, либо y
+      if (direction === "right") newHead.x++;
+      if (direction === "left") newHead.x--;
+      if (direction === "down") newHead.y++;
+      if (direction === "up") newHead.y--;
+
+      // Если голова вышла за границы поля, возвращаем ее на поле.
+      // Например, если змейка уедет вправо, она выедет из левой
+      // части поля, и наоборот.
+      if (newHead.x < 0) newHead.x = SIZE-1;
+      if (newHead.x > SIZE-1) newHead.x = 0;
+      if (newHead.y < 0) newHead.y = SIZE-1;
+      if (newHead.y > SIZE-1) newHead.y = 0;
+
+      // Добавляем новую голову в конец змейки
+      snake.push(newHead);
+
+      // Убираем самую первую клеточку змейки (хвост)
+      snake.shift();
+
+      // Рисуем змейку
+      for (let c of snake) {
+        fill("purple");
+        square(c.x * CELL, c.y * CELL, CELL);
+      }
+    }
+
+    // В зависимости от нажатой клавиши, меняем направление
+    function keyPressed() {
+      if (key === "ArrowRight") direction = "right";
+      if (key === "ArrowLeft") direction = "left";
+      if (key === "ArrowDown") direction = "down";
+      if (key === "ArrowUp") direction = "up";
+    }
+    ```
+  </Box>
+  <Box>
+    <P5 sketch={(p5) => {
+      const CELL = 10;
+      const SIZE = 25;
+      let snake = [{ x: 0, y: 2 }, { x: 1, y: 2 },];
+      let direction = "right";
+
+      p5.setup = () => {
+        p5.createCanvas(CELL*SIZE, CELL*SIZE);
+        p5.frameRate(10);
+      }
+
+      p5.draw = () => {
+        p5.background(220);
+
+        let head = snake[snake.length - 1];
+        let newHead = {x: head.x, y: head.y};
+        if (direction === "right") newHead.x++;
+        if (direction === "left") newHead.x--;
+        if (direction === "down") newHead.y++;
+        if (direction === "up") newHead.y--;
+        if (newHead.x < 0) newHead.x = SIZE-1;
+        if (newHead.x > SIZE-1) newHead.x = 0;
+        if (newHead.y < 0) newHead.y = SIZE-1;
+        if (newHead.y > SIZE-1) newHead.y = 0;
+        snake.push(newHead);
+        snake.shift();
+        for (let c of snake) {
+          p5.fill("purple");
+          p5.square(c.x * CELL, c.y * CELL, CELL);
+        }
+      }
+
+      p5.keyPressed = () => {
+        if (p5.key === "ArrowRight") direction = "right";
+        if (p5.key === "ArrowLeft") direction = "left";
+        if (p5.key === "ArrowDown") direction = "down";
+        if (p5.key === "ArrowUp") direction = "up";
+        return false;
+      }
+    }} />
+  </Box>
+</Boxes>
+
+## Добавляем яблочки
+
+<Boxes>
+  <Box>
+    ```js
+    // Размер клеточки
+    const CELL = 10;
+
+    // Размер поля
+    const SIZE = 30;
+
+    // В массиве snake хранятся координаты змейки от хвоста
+    // до головы (голова будет последним элементом)
+    let snake = [
+      { x: 0, y: 2 },
+      { x: 1, y: 2 },
+    ];
+
+    // mark
+    // В переменных ax, ay хранятся координаты яблочка
+    // mark
+    let ax, ay;
+
+    // В переменной direction пишется, в какую сторону сейчас
+    // едет змейка. Варианты: "right", "left", "up", "down"
+    let direction = "right";
+
+    // mark
+    // Функция newApple создает на поле яблочко в случайном месте
+    // mark
+    function newApple() {
+    // mark
+      ax = floor(random(SIZE));
+    // mark
+      ay = floor(random(SIZE));
+    // mark
+    }
+
+    function setup() {
+      // Создаем поле
+      createCanvas(CELL*SIZE, CELL*SIZE);
+
+      // Устанавливаем скорость игры — 10 кадров в секунду.
+      // Если поставить больше, змейка будет ехать быстрее.
+      frameRate(10);
+
+      // mark
+      // Создаем яблочко
+      // mark
+      newApple();
+    }
+
+    function draw() {
+      // Рисуем серое поле
+      background(220);
+
+      // Чтобы сдвинуть змейку на одну клеточку, надо вырастить
+      // у нее новую голову и отрубить одну клеточку от хвоста.
+
+      // Сначала создадим новую голову в переменной newHead
+      let head = snake[snake.length - 1];
+      let newHead = {x: head.x, y: head.y};
+
+      // В зависимости от направления, у новой головы должна
+      // поменяться одна из координат — либо x, либо y
+      if (direction === "right") newHead.x++;
+      if (direction === "left") newHead.x--;
+      if (direction === "down") newHead.y++;
+      if (direction === "up") newHead.y--;
+
+      // Если голова вышла за границы поля, возвращаем ее на поле.
+      // Например, если змейка уедет вправо, она выедет из левой
+      // части поля, и наоборот.
+      if (newHead.x < 0) newHead.x = SIZE-1;
+      if (newHead.x > SIZE-1) newHead.x = 0;
+      if (newHead.y < 0) newHead.y = SIZE-1;
+      if (newHead.y > SIZE-1) newHead.y = 0;
+
+      // Добавляем новую голову в конец змейки
+      snake.push(newHead);
+
+      // mark
+      // Если голова натолкнулась на яблочко, создаем новое
+      // mark
+      // и *не* отрубаем клеточку от хвоста. Если не натолкнулась —
+      // mark
+      // тогда отрубаем.
+      // mark
+      if (newHead.x === ax && newHead.y === ay) {
+      // mark
+        newApple();
+      // mark
+      } else {
+      // mark
+        snake.shift();
+      // mark
+      }
+
+      // Рисуем змейку
+      for (let c of snake) {
+        fill("purple");
+        square(c.x * CELL, c.y * CELL, CELL);
+      }
+
+      // mark
+      // Рисуем яблочко
+      // mark
+      fill("red");
+      // mark
+      circle(ax * CELL + CELL/2, ay * CELL + CELL/2, CELL);
+    }
+
+    // В зависимости от нажатой клавиши, меняем направление
+    function keyPressed() {
+      if (key === "ArrowRight") direction = "right";
+      if (key === "ArrowLeft") direction = "left";
+      if (key === "ArrowDown") direction = "down";
+      if (key === "ArrowUp") direction = "up";
+    }
+    ```
+  </Box>
+  <Box>
+    <P5 sketch={(p5) => {
+      const CELL = 10;
+      const SIZE = 25;
+      let snake = [{ x: 0, y: 2 }, { x: 1, y: 2 }];
+      let direction = "right";
+      let ax, ay;
+
+      const newApple = () => {
+        ax = p5.floor(p5.random(SIZE));
+        ay = p5.floor(p5.random(SIZE));
+      }
+
+      p5.setup = () => {
+        p5.createCanvas(CELL*SIZE, CELL*SIZE);
+        p5.frameRate(10);
+        newApple();
+      }
+
+      p5.draw = () => {
+        p5.background(220);
+
+        let head = snake[snake.length - 1];
+        let newHead = {x: head.x, y: head.y};
+        if (direction === "right") newHead.x++;
+        if (direction === "left") newHead.x--;
+        if (direction === "down") newHead.y++;
+        if (direction === "up") newHead.y--;
+        if (newHead.x < 0) newHead.x = SIZE-1;
+        if (newHead.x > SIZE-1) newHead.x = 0;
+        if (newHead.y < 0) newHead.y = SIZE-1;
+        if (newHead.y > SIZE-1) newHead.y = 0;
+        snake.push(newHead);
+        if (newHead.x === ax && newHead.y === ay) {
+          newApple();
+        } else {
+          snake.shift();
+        }
+        for (let c of snake) {
+          p5.fill("purple");
+          p5.square(c.x * CELL, c.y * CELL, CELL);
+        }
+        p5.fill("red");
+        p5.circle(ax * CELL + CELL/2, ay * CELL + CELL/2, CELL);
+      }
+
+      p5.keyPressed = () => {
+        if (p5.key === "ArrowRight") direction = "right";
+        if (p5.key === "ArrowLeft") direction = "left";
+        if (p5.key === "ArrowDown") direction = "down";
+        if (p5.key === "ArrowUp") direction = "up";
+        return false;
+      }
+    }} />
+  </Box>
+</Boxes>

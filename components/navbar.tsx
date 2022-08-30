@@ -36,6 +36,7 @@ export function Navbar() {
                 <B.NavDropdown.Divider />
                 <B.NavDropdown.Header>Примеры</B.NavDropdown.Header>
                 <B.NavDropdown.Item href="/p5/examples/house">Домик</B.NavDropdown.Item>
+                <B.NavDropdown.Item href="/p5/examples/snake">Змейка</B.NavDropdown.Item>
                 <B.NavDropdown.Item href="/p5/examples/pieces">
                   Перетаскивающиеся шашки
                 </B.NavDropdown.Item>
