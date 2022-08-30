@@ -13,7 +13,15 @@ const nextConfig = {
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [[remarkCodeHike, { theme: await shiki.loadTheme('themes/min-light.json') }]],
+    remarkPlugins: [
+      [
+        remarkCodeHike,
+        {
+          theme: await shiki.loadTheme('themes/min-light.json'),
+          showCopyButton: true,
+        },
+      ],
+    ],
     rehypePlugins: [],
   },
 })
