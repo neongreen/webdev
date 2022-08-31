@@ -1,7 +1,7 @@
 {
   "name": "webdev",
   "private": true,
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@3.2.3",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/node": "^18.7.14",
     "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "typescript": "4.8.2"

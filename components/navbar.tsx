@@ -49,7 +49,10 @@ export function Navbar() {
                 <B.NavDropdown.Item href="/wordle/1">1. Первый урок</B.NavDropdown.Item>
               </B.NavDropdown>
               <B.NavDropdown title="React">
-                <B.NavDropdown.Item href="/react/intro">Введение в React</B.NavDropdown.Item>
+                <B.NavDropdown.Item href="/react/cheatsheet">Шпаргалка</B.NavDropdown.Item>
+                <B.NavDropdown.Item href="/react/intro">
+                  <s>Введение в React</s>
+                </B.NavDropdown.Item>
               </B.NavDropdown>
               <B.NavDropdown title="Next.js">
                 <B.NavDropdown.Item href="/next/init">Как создать проект</B.NavDropdown.Item>
