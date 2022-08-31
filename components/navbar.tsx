@@ -40,6 +40,10 @@ export function Navbar() {
                 <B.NavDropdown.Item href="/p5/examples/pieces">
                   Перетаскивающиеся шашки
                 </B.NavDropdown.Item>
+                <B.NavDropdown.Divider />
+                <B.NavDropdown.Item href="/p5/examples/art">
+                  Генеративное искусство
+                </B.NavDropdown.Item>
               </B.NavDropdown>
               <B.NavDropdown title="Wordle">
                 <B.NavDropdown.Item href="/wordle/1">1. Первый урок</B.NavDropdown.Item>
