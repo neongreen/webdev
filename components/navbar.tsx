@@ -60,6 +60,10 @@ export function Navbar() {
               </B.NavDropdown>
 
               <B.NavDropdown title="Ant Design">
+                <B.NavDropdown.Item href="/antd/intro">
+                  Как подключить Ant Design
+                </B.NavDropdown.Item>
+                <B.NavDropdown.Divider />
                 <B.NavDropdown.Header>Примеры</B.NavDropdown.Header>
                 <B.NavDropdown.Item href="/antd/form-use-watch">
                   <code>Form.useWatch</code>

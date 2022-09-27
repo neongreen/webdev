@@ -1,0 +1,21 @@
+import { FileName } from '@components/misc'
+
+# Как подключить Ant Design
+
+Ant Design ([https://ant.design](https://ant.design)) — это популярная библиотека компонентов для React.
+
+## Если проект на Next.js
+
+Открыть терминал с помощью <kbd>Ctrl+`</kbd> (VSCode).
+
+В терминале выполнить:
+
+```bash Terminal
+npm i -S antd
+```
+
+Дальше добавить в <FileName>pages/_app.js</FileName> в начало (в раздел с импортами):
+
+```jsx pages/_app.js
+import 'antd/dist/antd.css';
+```
