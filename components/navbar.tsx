@@ -16,6 +16,7 @@ export function Navbar() {
                 <B.NavDropdown.Item href="/basics/1">1. Введение в HTML</B.NavDropdown.Item>
                 <B.NavDropdown.Item href="/basics/2">2. Введение в CSS</B.NavDropdown.Item>
               </B.NavDropdown>
+
               <B.NavDropdown title="JavaScript">
                 <B.NavDropdown.Item href="/js/cheatsheet">Шпаргалка</B.NavDropdown.Item>
                 <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
@@ -31,6 +32,7 @@ export function Navbar() {
                 </B.NavDropdown.Item>
                 <B.NavDropdown.Item href="/js/arrays">Массивы</B.NavDropdown.Item>
               </B.NavDropdown>
+
               <B.NavDropdown title="p5">
                 <B.NavDropdown.Item href="/p5/cheatsheet">Шпаргалка</B.NavDropdown.Item>
                 <B.NavDropdown.Divider />
@@ -45,18 +47,29 @@ export function Navbar() {
                   Генеративное искусство
                 </B.NavDropdown.Item>
               </B.NavDropdown>
+
               <B.NavDropdown title="Wordle">
                 <B.NavDropdown.Item href="/wordle/1">1. Первый урок</B.NavDropdown.Item>
               </B.NavDropdown>
+
               <B.NavDropdown title="React">
                 <B.NavDropdown.Item href="/react/cheatsheet">Шпаргалка</B.NavDropdown.Item>
                 <B.NavDropdown.Item href="/react/intro">
                   <s>Введение в React</s>
                 </B.NavDropdown.Item>
               </B.NavDropdown>
+
+              <B.NavDropdown title="Ant Design">
+                <B.NavDropdown.Header>Примеры</B.NavDropdown.Header>
+                <B.NavDropdown.Item href="/antd/form-use-watch">
+                  <code>Form.useWatch</code>
+                </B.NavDropdown.Item>
+              </B.NavDropdown>
+
               <B.NavDropdown title="Next.js">
                 <B.NavDropdown.Item href="/next/init">Как создать проект</B.NavDropdown.Item>
               </B.NavDropdown>
+
               <B.NavDropdown title="Интервью">
                 <B.NavDropdown.Item href="/interview/omitted-html-css">
                   Что я не рассказал про HTML и CSS
@@ -72,6 +85,7 @@ export function Navbar() {
           </B.Navbar.Collapse>
         </B.Container>
       </B.Navbar>
+
       <style jsx>{`
         .navbar-wrapper {
           font-variant-numeric: tabular-nums;
