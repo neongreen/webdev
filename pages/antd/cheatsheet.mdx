@@ -1,0 +1,147 @@
+import * as Antd from 'antd'
+import * as B from 'react-bootstrap'
+import 'antd/dist/antd.css'
+
+# Ant Design — шпаргалка
+
+<style>{`
+  .example td:nth-child(2) {
+    vertical-align: middle;
+  }
+`}</style>
+
+Содержание:
+
+* [Кнопки (`Button`)](#buttons)
+* [Поля для ввода (`Input`)](#inputs)
+
+## Кнопки ([официальная справка](https://ant.design/components/button/)) <a id="buttons"></a>
+
+Импорты для всех примеров ниже:
+
+```jsx
+import { Button } from 'antd'
+```
+
+Ключевые атрибуты:
+
+* `type` — тип кнопки: `"primary"`, `"dashed"`, `"text"`, `"link"`
+* `size` — размер кнопки: `"small"`, `"large"`
+* `shape` — форма кнопки: `"circle"`, `"round"`
+* `danger` — красная кнопка
+* `disabled` — отключенная кнопка
+* `loading` — кнопка с индикатором загрузки
+* `icon` — иконка слева от текста
+* `block` — кнопка занимает всю ширину родителя
+
+События:
+
+* `onClick` — вызывается по нажатию на кнопку
+
+Примеры:
+
+<B.Table bordered striped className="example">
+  <thead>
+    <tr>
+      <th>Пример</th>
+      <th>Результат</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        ```jsx
+        <Button>Обычная кнопка</Button>
+        ```
+      </td>
+      <td>
+        <Antd.Button>Обычная кнопка</Antd.Button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ```jsx mark=1[9:22]
+        <Button type="primary">Важная кнопка</Button>
+        ```
+      </td>
+      <td>
+        <Antd.Button type="primary">Важная кнопка</Antd.Button>
+      </td>
+    </tr> 
+
+    <tr>
+      <td>
+        ```jsx mark=1[24:35]
+        <Button type="primary" size="large">Большая кнопка</Button>
+        ```
+      </td>
+      <td>
+        <Antd.Button type="primary" size="large">Большая кнопка</Antd.Button>
+      </td>
+    </tr> 
+
+    <tr>
+      <td>
+        ```jsx mark=1[9:39]
+        <Button onClick={() => alert("Привет")}>Кнопка с onClick</Button>
+        ```
+      </td>
+      <td>
+        <Antd.Button onClick={() => alert("Привет")}>Кнопка с onClick</Antd.Button>
+      </td>
+    </tr> 
+  </tbody>
+</B.Table>
+
+## Поля для ввода ([официальная справка](https://ant.design/components/input/)) <a id="inputs"></a>
+
+Импорты для всех примеров ниже:
+
+```jsx
+import { Input } from 'antd'
+```
+
+Ключевые атрибуты:
+
+TODO
+
+События:
+
+TODO
+
+Примеры:
+
+<B.Table bordered striped className="example">
+  <thead>
+    <tr>
+      <th>Пример</th>
+      <th>Результат</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        ```jsx
+        <Input />
+        ```
+      </td>
+      <td>
+        <Antd.Input />
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ```jsx mark=1[8:38]
+        <Input placeholder="Поле с подсказкой" />
+        ```
+      </td>
+      <td>
+        <Antd.Input placeholder="Поле с подсказкой" />
+      </td>
+    </tr>
+  </tbody>
+</B.Table>

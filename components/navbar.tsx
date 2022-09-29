@@ -48,7 +48,7 @@ export function Navbar() {
                 </B.NavDropdown.Item>
               </B.NavDropdown>
 
-              <B.NavDropdown title="Wordle">
+              <B.NavDropdown title={<s>Wordle</s>}>
                 <B.NavDropdown.Item href="/wordle/1">1. Первый урок</B.NavDropdown.Item>
               </B.NavDropdown>
 
@@ -63,6 +63,7 @@ export function Navbar() {
                 <B.NavDropdown.Item href="/antd/intro">
                   Как подключить Ant Design
                 </B.NavDropdown.Item>
+                <B.NavDropdown.Item href="/antd/cheatsheet">Шпаргалка</B.NavDropdown.Item>
                 <B.NavDropdown.Divider />
                 <B.NavDropdown.Header>Примеры</B.NavDropdown.Header>
                 <B.NavDropdown.Item href="/antd/form-use-watch">
