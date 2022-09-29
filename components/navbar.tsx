@@ -73,6 +73,9 @@ export function Navbar() {
 
               <B.NavDropdown title="Next.js">
                 <B.NavDropdown.Item href="/next/init">Как создать проект</B.NavDropdown.Item>
+                <B.NavDropdown.Item href="/next/vercel">
+                  Как выложить сайт в интернет (на Vercel)
+                </B.NavDropdown.Item>
               </B.NavDropdown>
 
               <B.NavDropdown title="Интервью">
