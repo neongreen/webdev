@@ -1,0 +1,56 @@
+import { Box, Boxes } from '@components/box'
+import { TelegramPost } from '@components/telegram-post'
+import { FileName } from '@components/misc'
+import { Figure } from '@components/figure'
+
+# Как вставить пост из телеграм-канала на сайт
+
+Будем использовать библиотеку [react-telegram-embed](https://www.npmjs.com/package/react-telegram-embed).
+
+Сначала надо добавить библиотеку в зависимости:
+
+```bash Terminal
+npm i -S react-telegram-embed
+```
+
+Следующий шаг зависит от фреймворка.
+
+## Next.js
+
+Создать файл <FileName>components/TelegramPost.js</FileName>:
+
+```jsx components/TelegramPost.js
+import dynamic from 'next/dynamic'
+
+// @ts-ignore
+export const TelegramPost = dynamic(() => import('react-telegram-embed'), {
+  ssr: false,
+})
+```
+
+<Boxes>
+  <Box>
+    Найти ссылку на пост в канале — можно нажать правой кнопкой мыши на пост и выбрать "Скопировать ссылку".
+  </Box>
+  <Box>
+    <Figure image="/telegram-copy-link.png" />
+  </Box>
+</Boxes>
+
+И все, осталось написать `<TelegramPost src="https://t.me/..." />` в нужном месте.
+
+Пример использования выглядит так:
+
+<Boxes>
+  <Box>
+    ```jsx pages/page.js
+    import { TelegramPost } from '../components/TelegramPost'
+
+    // mark
+    <TelegramPost src="https://t.me/telegram/4" />
+    ```
+  </Box>
+  <Box>
+    <TelegramPost src="https://t.me/telegram/4" />
+  </Box>
+</Boxes>
