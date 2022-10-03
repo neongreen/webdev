@@ -1,4 +1,5 @@
 import { Figure } from '@components/figure'
+import { Box, Boxes } from '@components/box'
 
 # Деплой на Vercel
 
@@ -6,19 +7,27 @@ import { Figure } from '@components/figure'
 
 Деплоить мы будем с помощью Vercel ([vercel.com](https://vercel.com)), потому что он бесплатный и хорошо работает. Но вообще есть тысяча разных других штук, которые можно использовать.
 
-Сначала надо зарегистрироваться на [vercel.com](https://vercel.com). Затем добавить в проект команду `vercel`:
+## Регистрация
+
+Пойти на [vercel.com](https://vercel.com) и там зарегистрироваться.
+
+## Установка команды `vercel`
+
+Теперь надо добавить в проект команду `vercel`, с помощью которой мы будем деплоить:
 
 ```bash Terminal
 npm install -D vercel
 ```
 
-Залогиниться в `vercel` из проекта (нужно только один раз):
+И еще нужно залогиниться — только один раз, в дальнейшем не придется:
 
 ```bash Terminal
 npx vercel login
 ```
 
-И задеплоить:
+## Ручной деплой
+
+Чтобы задеплоить сайт, нужна вот такая команда:
 
 ```bash Terminal
 npx vercel -c --prod
@@ -26,6 +35,35 @@ npx vercel -c --prod
 
 В отличие от глитча, здесь надо деплоить каждый раз, когда делаете какие-то изменения локально.
 
-Ссылка на получившийся сайт — вот здесь после слова `Production`. Название сайта можно поменять на [vercel.com](https://vercel.com/) в настройках проекта.
+<Boxes>
+  <Box>
+    Ссылка на получившийся сайт будет в консоли после слова `Production`.
+  </Box>
+  <Box>
+    <Figure image="/vercel-deploy.png" noBorder />
+  </Box>
+</Boxes>
 
-<Figure image="/vercel-deploy.png" />
+## Как поменять адрес сайта
+
+Адрес сайта можно поменять на [vercel.com](https://vercel.com/) в настройках проекта.
+
+<Boxes>
+  <Box>
+    Сначала надо зайти на [vercel.com](https://vercel.com/) и там будет список проектов. Надо нажать на только что созданный проект.
+  </Box>
+  <Box>
+    <Figure image="/vercel-dashboard.png" />
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Теперь надо нажать на "Settings". Там зайти в раздел "Domains" и выбрать домен, помеченный плашкой "Production". Нажать на кнопку "Edit".
+  </Box>
+  <Box>
+    <Figure image="/vercel-project-edit.png" />
+  </Box>
+</Boxes>
+
+И там выбрать любой домен, который заканчивается на `.vercel.app`.
