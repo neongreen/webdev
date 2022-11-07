@@ -38,5 +38,6 @@
   "pasteImage.path": "${projectRoot}/public/",
   "pasteImage.showFilePathConfirmInputBox": true,
   "pasteImage.filePathConfirmInputBoxMode": "onlyName",
-  "pasteImage.insertPattern": "<Figure image=\"/${imageFileName}\" />"
+  "pasteImage.insertPattern": "<Figure image=\"/${imageFileName}\" />",
+  "editor.detectIndentation": false
 }
