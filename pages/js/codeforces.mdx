@@ -1,0 +1,44 @@
+# Codeforces
+
+[Codeforces](https://codeforces.com) — это сайт с олимпиадными задачами (на русском и английском) и соревнованиями по программированию.
+
+Задачи можно сдавать на JavaScript.
+
+Список задач, отсортированный по сложности: [Архив -> Задачи](https://codeforces.com/problemset?order=BY_SOLVED_DESC).
+
+## Шаблон
+
+Вот шаблон для решения задач. Надо выбирать "Node.js" (а не "JavaScript") в выпадающем списке языков.
+
+```js
+process.stdin.resume()
+process.stdin.setEncoding("utf-8")
+let __input = "", __line = 0
+process.stdin.on("data", s => __input += s)
+process.stdin.on("end", _ => {
+  __input = __input.trim().split("\n").map(s => s.trim())
+  main()
+})
+function readline() { return __input[__line++] }
+
+function main() {
+  // Решение писать здесь.
+  // 
+  // * Функция `readline()` возвращает одну строку из ввода.
+  // * Выводить можно с помощью `console.log()`.
+}
+```
+
+## Как читать ввод
+
+Если ввод — это одно число:
+
+```js
+  let n = Number(readline())
+```
+
+Если ввод — это три числа в одной строке:
+
+```js
+  let [n, m, k] = readline().split(" ").map(Number)
+```
