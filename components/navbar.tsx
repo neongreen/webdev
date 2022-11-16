@@ -19,6 +19,8 @@ function DropdownJavaScript() {
       <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/codeforces">Codeforces</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
+      <B.NavDropdown.Item href="/js/tasks/loops">Задания на циклы</B.NavDropdown.Item>
+      <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/js/let">
         <code>let</code>
       </B.NavDropdown.Item>
