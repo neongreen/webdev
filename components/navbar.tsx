@@ -1,9 +1,8 @@
-import { useEffect } from 'react'
 import * as B from 'react-bootstrap'
 
 function DropdownBasics() {
   return (
-    <B.NavDropdown title="Основы">
+    <B.NavDropdown title={<s>Основы</s>}>
       <B.NavDropdown.Item href="/glitch">Glitch</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/basics/1">1. Введение в HTML</B.NavDropdown.Item>
@@ -23,15 +22,23 @@ function DropdownJavaScript() {
       <B.NavDropdown.Item href="/js/tasks/bools">Задания на булевы операции</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/js/let">
-        <code>let</code>
+        <s>
+          <code>let</code>
+        </s>
       </B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/if">
-        <code>if</code>
+        <s>
+          <code>if</code>
+        </s>
       </B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/for">
-        <code>for</code>
+        <s>
+          <code>for</code>
+        </s>
       </B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/js/arrays">Массивы</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/arrays">
+        <s>Массивы</s>
+      </B.NavDropdown.Item>
     </B.NavDropdown>
   )
 }
