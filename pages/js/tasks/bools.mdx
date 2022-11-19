@@ -65,7 +65,7 @@ import { Checker } from '@components/checker'
 
 <Boxes>
   <Box>
-    ### Две зоны
+    **Две зоны**
     <P5 sketch={(p5) => {
       p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
       p5.draw = () => {
@@ -78,7 +78,7 @@ import { Checker } from '@components/checker'
   </Box>
 
   <Box>
-    ### Три зоны
+    **Три зоны**
     <P5 sketch={(p5) => {
       p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
       p5.draw = () => {
@@ -94,7 +94,7 @@ import { Checker } from '@components/checker'
   </Box>
 
   <Box>
-    ### Девять зон (3 на 3)
+    **Девять зон (3 на 3)**
     <P5 sketch={(p5) => {
       p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
       p5.draw = () => {
@@ -121,3 +121,81 @@ import { Checker } from '@components/checker'
     }} />
   </Box>
 </Boxes>
+
+## Сетка
+
+Совмещаем зоны и циклы.
+
+С помощью `square` и вложенных циклов `for` нарисуйте сетку из квадратов.
+
+Затем:
+
+1.  **Сделайте, чтобы квадрат под мышкой подсвечивался:**
+
+    <P5 sketch={(p5) => {
+      p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
+      p5.draw = () => {
+        p5.background(220)
+        const C = 20
+        for (let x = 0; x < p5.width; x += C) {
+          for (let y = 0; y < p5.height; y += C) {
+            let underMouse = p5.mouseX >= x && p5.mouseX < x + C && p5.mouseY >= y && p5.mouseY < y + C
+            if (underMouse) p5.fill('red'); else p5.fill('white')
+            p5.square(x, y, C)
+          }
+        }
+      }
+    }} />
+
+2.  **Сделайте, чтобы квадраты в строке и столбце подсвечиваются другим цветом:**
+
+    <P5 sketch={(p5) => {
+      p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
+      p5.draw = () => {
+        p5.background(220)
+        const C = 20
+        for (let x = 0; x < p5.width; x += C) {
+          for (let y = 0; y < p5.height; y += C) {
+            let underMouse = p5.mouseX >= x && p5.mouseX < x + C && p5.mouseY >= y && p5.mouseY < y + C
+            let inRow = p5.mouseX >= x && p5.mouseX < x + C
+            let inCol = p5.mouseY >= y && p5.mouseY < y + C
+            let inCanvas = p5.mouseX >= 0 && p5.mouseX < p5.width && p5.mouseY >= 0 && p5.mouseY < p5.height
+            if (underMouse) p5.fill('red');
+            else if (inCanvas && (inRow || inCol)) p5.fill('yellow');
+            else p5.fill('white')
+            p5.square(x, y, C)
+          }
+        }
+      }
+    }} />
+
+3.  **(Сложнее) Сделайте, чтобы квадраты на диагоналях тоже подсвечивались.**
+
+    Подсказка: в зависимости от того, как написан цикл, может понадобиться использовать деление и `Math.floor`.
+
+    <P5 sketch={(p5) => {
+      p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
+      p5.draw = () => {
+        p5.background(220)
+        const C = 20
+        for (let x = 0; x < p5.width; x += C) {
+          for (let y = 0; y < p5.height; y += C) {
+            let underMouse = p5.mouseX >= x && p5.mouseX < x + C && p5.mouseY >= y && p5.mouseY < y + C
+            let inRow = p5.mouseX >= x && p5.mouseX < x + C
+            let inCol = p5.mouseY >= y && p5.mouseY < y + C
+            let inDiagonal1 = 
+              Math.floor(p5.mouseX / C) - Math.floor(p5.mouseY / C) === 
+              Math.floor(x / C) - Math.floor(y / C)
+            let inDiagonal2 = 
+              Math.floor(p5.mouseX / C) + Math.floor(p5.mouseY / C) === 
+              Math.floor(x / C) + Math.floor(y / C)
+            let inCanvas = p5.mouseX >= 0 && p5.mouseX < p5.width && p5.mouseY >= 0 && p5.mouseY < p5.height
+            if (underMouse) p5.fill('red');
+            else if (inCanvas && (inRow || inCol)) p5.fill('yellow');
+            else if (inCanvas && (inDiagonal1 || inDiagonal2)) p5.fill('lightblue');
+            else p5.fill('white')
+            p5.square(x, y, C)
+          }
+        }
+      }
+    }} />
