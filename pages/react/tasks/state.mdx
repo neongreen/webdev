@@ -1,0 +1,94 @@
+import * as React from 'react'
+import * as B from 'react-bootstrap'
+import { Box, Boxes } from '@components/box'
+
+# Задания на `useState`
+
+<B.Alert variant="info">
+  Во всех заданиях можно использовать обычные компоненты (`<button>` и т.д.) или компоненты из Ant Design.
+</B.Alert>
+
+## Кнопки и стили
+
+{(() => {
+  const [count, setCount] = React.useState(0)
+  const [border, setBorder] = React.useState(0)
+  const [font, setFont] = React.useState(16)
+  const [padding, setPadding] = React.useState(0)
+  const [width, setWidth] = React.useState(100)
+  const [height, setHeight] = React.useState(30)
+  return (
+    <div className="root">
+      <style jsx>{`
+        .root button {
+          font-size: 0.8rem;
+          width: ${width}px;
+          height: ${height}px;
+          margin: 3px;
+        }
+        .root .task {
+          text-align: center;
+          background-color: #eeeef2;
+          padding: 1rem;
+          max-width: 500px;
+          margin: 2rem auto;
+          border-radius: 5px;
+        }
+      `}</style>
+      <p>1. Создайте <code>&lt;div&gt;</code> с числом и две кнопки, которые будут увеличивать/уменьшать число.</p>
+      <div className="task">
+        <div style={{
+          border: `${border}px solid red`,
+          marginBottom: '10px',
+          fontSize: `${font}px`,
+          padding: `${padding}px`,
+        }}>{count}</div>
+        <button onClick={() => setCount(count + 1)}>+ Число</button>
+        <button onClick={() => setCount(count - 1)}>&minus; Число</button>
+      </div>
+
+      <p>
+        2. Добавьте этому <code>&lt;div&gt;</code> красную рамку: <code>style={"{{"}border: '1px solid red'{"}}"}</code>.
+      </p>
+      <p>
+        После этого надо будет написать еще несколько кнопок. <b>Каждый раз, когда мы добавляем кнопки, предыдущие кнопки должны продолжать работать.</b>
+      </p>
+
+      <Boxes>
+        <Box>
+          <p>3. Добавьте две кнопки, которые будут делать рамку тоньше/толще.</p>
+          <div className="task">
+            <button onClick={() => setBorder(border + 3)}>+ Рамка</button>
+            <button onClick={() => setBorder(border - 3)}>&minus; Рамка</button>
+          </div>
+        </Box>
+
+        <Box>
+          <p>4. Еще две кнопки должны делать шрифт больше/меньше (<code>fontSize</code>).</p>
+          <div className="task">
+            <button onClick={() => setFont(font + 5)}>+ Шрифт</button>
+            <button onClick={() => setFont(font - 5)}>&minus; Шрифт</button>
+          </div>
+        </Box>
+
+        <Box>
+          <p>5. Еще две кнопки для отступов внутри (<code>padding</code>).</p>
+          <div className="task">
+            <button onClick={() => setPadding(padding + 5)}>+ Отступы</button>
+            <button onClick={() => setPadding(padding - 5)}>&minus; Отступы</button>
+          </div>
+        </Box>
+      </Boxes>
+
+      <p>6. Бонус: сделайте кнопки, которые будут менять ширину (<code>width</code>) и высоту (<code>height</code>) всех кнопок, <i>включая самих себя</i>.</p>
+
+      <div className="task">
+        <button onClick={() => setWidth(width + 5)}>+ Ширина</button>
+        <button onClick={() => setWidth(width - 5)}>&minus; Ширина</button>
+        <br/>
+        <button onClick={() => setHeight(height + 5)}>+ Высота</button>
+        <button onClick={() => setHeight(height - 5)}>&minus; Высота</button>
+      </div>
+    </div>
+  );
+})()}

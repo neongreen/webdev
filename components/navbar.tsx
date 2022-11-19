@@ -59,6 +59,10 @@ function DropdownReact() {
         <s>Введение в React</s>
       </B.NavDropdown.Item>
       <B.NavDropdown.Divider />
+      <B.NavDropdown.Item href="/react/tasks/state">
+        Задания на <code>useState</code>
+      </B.NavDropdown.Item>
+      <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/react/telegram-embed">
         Как вставить пост из телеграм-канала на сайт
       </B.NavDropdown.Item>
