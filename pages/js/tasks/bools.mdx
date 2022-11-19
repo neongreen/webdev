@@ -1,0 +1,123 @@
+import { P5 } from '@components/p5'
+import { Box, Boxes } from '@components/box'
+import { Checker } from '@components/checker'
+
+# Задания на булевы операции
+
+## Переписать условия в виде выражений
+
+Запишите условия в виде булевых выражений. (Первое условие уже написано.)
+
+1.  <Checker 
+      label={<b><code>n</code> больше 100</b>}
+      expected={_ => _.n > 100}
+      vars={{n: {from: 0, to: 200}}}
+      code="n > 100"
+    />
+
+1.  <Checker 
+      label={<b><code>n</code> между 50 и 100 (включительно)</b>}
+      expected={_ => _.n >= 50 && _.n <= 100}
+      vars={{n: {from: 0, to: 200}}}
+    />
+
+1.  <Checker 
+      label={<b><code>n</code> равно 77</b>}
+      expected={_ => _.n === 77}
+      vars={{n: {from: 0, to: 200}}}
+    />
+
+1.  <Checker 
+      label={<b><code>n</code> равно 77, 88 или 99</b>}
+      expected={_ => _.n === 77 || _.n === 88 || _.n === 99}
+      vars={{n: {from: 0, to: 200}}}
+    />
+
+1.  <Checker 
+      label={<b><code>n</code> не равно ни 77, ни 88, ни 99</b>}
+      expected={_ => _.n !== 77 && _.n !== 88 && _.n !== 99}
+      vars={{n: {from: 0, to: 200}}}
+    />
+
+1.  <Checker
+      label={<b><code>n</code> между 50 и 100 (включительно), но не 77</b>}
+      expected={_ => _.n >= 50 && _.n <= 100 && _.n !== 77}
+      vars={{n: {from: 0, to: 200}}}
+     />
+  
+1.  <Checker
+      label={<b><code>n</code> между 10 и 20, или между 50 и 60</b>}
+      expected={_ => (_.n >= 10 && _.n <= 20) || (_.n >= 50 && _.n <= 60)}
+      vars={{n: {from: 0, to: 200}}}
+     />
+
+1.  <Checker
+      label={<b><code>n</code> находится между <code>a</code> и <code>b</code></b>}
+      expected={_ => _.a <= _.n && _.n <= _.b}
+      vars={{n: {from: 0, to: 10}, a: {from: 0, to: 10}, b: {from: 0, to: 10}}}
+     />
+
+## Зоны
+
+Сделайте, чтобы круг менял цвета в разных зонах экрана.
+
+Чтобы круг бегал за мышкой, можно написать: `circle(mouseX, mouseY, 30)`
+
+<Boxes>
+  <Box>
+    ### Две зоны
+    <P5 sketch={(p5) => {
+      p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
+      p5.draw = () => {
+        p5.background(220)
+        p5.line(p5.width / 2, 0, p5.width / 2, p5.height)
+        if (p5.mouseX < p5.width / 2) p5.fill('red'); else p5.fill('green')
+        p5.circle(p5.mouseX, p5.mouseY, 30)
+      }
+    }} />
+  </Box>
+
+  <Box>
+    ### Три зоны
+    <P5 sketch={(p5) => {
+      p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
+      p5.draw = () => {
+        p5.background(220)
+        p5.line(p5.width / 3, 0, p5.width / 3, p5.height)
+        p5.line(p5.width * 2 / 3, 0, p5.width * 2 / 3, p5.height)
+        if (p5.mouseX < p5.width / 3) p5.fill('red')
+        else if (p5.mouseX < p5.width * 2 / 3) p5.fill('green')
+        else p5.fill('blue')
+        p5.circle(p5.mouseX, p5.mouseY, 30)
+      }
+    }} />
+  </Box>
+
+  <Box>
+    ### Девять зон (3 на 3)
+    <P5 sketch={(p5) => {
+      p5.setup = () => p5.createCanvas(200, 200, p5.P2D)
+      p5.draw = () => {
+        p5.background(220)
+        p5.line(p5.width / 3, 0, p5.width / 3, p5.height)
+        p5.line(p5.width * 2 / 3, 0, p5.width * 2 / 3, p5.height)
+        p5.line(0, p5.height / 3, p5.width, p5.height / 3)
+        p5.line(0, p5.height * 2 / 3, p5.width, p5.height * 2 / 3)
+        if (p5.mouseX < p5.width / 3) {
+          if (p5.mouseY < p5.height / 3) p5.fill('red')
+          else if (p5.mouseY < p5.height * 2 / 3) p5.fill('green')
+          else p5.fill('blue')
+        } else if (p5.mouseX < p5.width * 2 / 3) {
+          if (p5.mouseY < p5.height / 3) p5.fill('yellow')
+          else if (p5.mouseY < p5.height * 2 / 3) p5.fill('cyan')
+          else p5.fill('magenta')
+        } else {
+          if (p5.mouseY < p5.height / 3) p5.fill('black')
+          else if (p5.mouseY < p5.height * 2 / 3) p5.fill('white')
+          else p5.fill('gray')
+        }
+        p5.circle(p5.mouseX, p5.mouseY, 30)
+      }
+    }} />
+  </Box>
+</Boxes>

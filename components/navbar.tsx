@@ -20,6 +20,7 @@ function DropdownJavaScript() {
       <B.NavDropdown.Item href="/js/codeforces">Codeforces</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/js/tasks/loops">Задания на циклы</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/tasks/bools">Задания на булевы операции</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/js/let">
         <code>let</code>
