@@ -116,23 +116,11 @@ function DropdownWordle() {
 }
 
 export function Navbar() {
-  useEffect(() => {
-    // @ts-ignore
-    Canny('initChangelog', {
-      appID: '6335c47c11dd7644b98287fd',
-      position: 'bottom',
-      align: 'left',
-    })
-  })
   return (
     <div className="navbar-wrapper">
       <B.Navbar bg="light" expand="lg">
         <B.Container>
           <B.Navbar.Brand href="/">Веб-разработка</B.Navbar.Brand>
-
-          <B.Button data-canny-changelog className="me-2">
-            Что нового?
-          </B.Button>
 
           <B.Navbar.Toggle aria-controls="basic-navbar-nav" />
           <B.Navbar.Collapse id="basic-navbar-nav">
