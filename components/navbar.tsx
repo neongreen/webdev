@@ -111,14 +111,6 @@ function DropdownInterview() {
   )
 }
 
-function DropdownWordle() {
-  return (
-    <B.NavDropdown title={<s>Wordle</s>}>
-      <B.NavDropdown.Item href="/wordle/1">1. Первый урок</B.NavDropdown.Item>
-    </B.NavDropdown>
-  )
-}
-
 export function Navbar() {
   return (
     <div className="navbar-wrapper">
@@ -133,7 +125,6 @@ export function Navbar() {
               <DropdownBasics />
               <DropdownJavaScript />
               <DropdownP5 />
-              <DropdownWordle />
               <DropdownReact />
               <DropdownAntDesign />
               <DropdownNextjs />
