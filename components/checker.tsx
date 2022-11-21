@@ -47,7 +47,7 @@ export function Checker(props: {
   const validate = React.useMemo(() => {
     const syntaxError = checkSyntax(code)
     if (syntaxError) {
-      return `Ошибка ситаксиса: ${syntaxError}`
+      return `Ошибка синтаксиса: ${syntaxError}`
     }
     const fun = new Function('context', `with (context) {return ${code}}`)
     for (let value of enumerate(props.vars)) {
