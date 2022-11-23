@@ -1,0 +1,87 @@
+import { P5 } from '@components/p5'
+
+# Как добавить p5 поверх страницы
+
+Шаг первый: установить `react-p5-wrapper`:
+
+```bash
+npm i -S react-p5-wrapper
+```
+
+Шаг второй: создать компонент (если используете Next.js):
+
+```jsx components/p5.js
+import dynamic from 'next/dynamic'
+import { P5WrapperProps } from 'react-p5-wrapper'
+
+export const P5 = dynamic(
+  () => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper),
+  { ssr: false }
+)
+```
+
+Шаг третий: добавить `<div>` поверх всей страницы (`position: fixed`), и создать внутри него компонент `P5`:
+
+```jsx
+import { P5 } from '../components/p5'
+
+// это должно быть внутри компонента страницы
+<div style={{
+  position: "fixed", 
+  top: "0", 
+  left: "0", 
+  width: "100vw",
+  height: "100vh", 
+  pointerEvents: "none",
+}}>
+  <P5 sketch={(p5) => {
+    p5.setup = () => p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.P2D)
+    p5.windowResized = () => p5.resizeCanvas(p5.windowWidth, p5.windowHeight)
+    p5.draw = () => {
+      p5.clear()
+      // Вот здесь можно рисовать
+      p5.fill('red')
+      p5.circle(p5.mouseX - 40, p5.mouseY, 15)
+      p5.circle(p5.mouseX + 40, p5.mouseY, 15)
+      p5.circle(p5.mouseX, p5.mouseY - 40, 15)
+      p5.circle(p5.mouseX, p5.mouseY + 40, 15)
+    }
+  }} />
+</div>
+```
+
+## Как спрятать курсор
+
+Для этого надо добавить `cursor: none` для всех элементов:
+
+```jsx
+<style>
+  {`
+  * {
+    cursor: none !important;
+  }
+  `}
+</style>
+```
+
+<div style={{
+  position: "fixed", 
+  top: "0", 
+  left: "0", 
+  width: "100vw",
+  height: "100vh", 
+  pointerEvents: "none"
+}}>
+  <P5 sketch={(p5) => {
+    p5.setup = () => p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.P2D)
+    p5.windowResized = () => p5.resizeCanvas(p5.windowWidth, p5.windowHeight)
+    p5.draw = () => {
+      p5.clear()
+      p5.fill('red')
+      p5.circle(p5.mouseX - 40, p5.mouseY, 15)
+      p5.circle(p5.mouseX + 40, p5.mouseY, 15)
+      p5.circle(p5.mouseX, p5.mouseY - 40, 15)
+      p5.circle(p5.mouseX, p5.mouseY + 40, 15)
+    }
+  }} />
+</div>

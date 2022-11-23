@@ -73,6 +73,7 @@ function DropdownReact() {
       <B.NavDropdown.Item href="/react/telegram-embed">
         Как вставить пост из телеграм-канала на сайт
       </B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/react/p5-over">Как добавить p5 поверх страницы</B.NavDropdown.Item>
     </B.NavDropdown>
   )
 }
