@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import '@code-hike/mdx/dist/index.css'
+import '@fontsource/iosevka'
 import Layout from '@components/layout'
 import * as B from 'react-bootstrap'
 import type { AppProps } from 'next/app'

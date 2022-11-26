@@ -1,0 +1,37 @@
+import { RegexChecker } from '@components/regex-checker'
+
+# Задания на регулярные выражения
+
+1.  <RegexChecker
+      label={<b>Фильмы до 2000 года:</b>}
+      toMatch={["Форрест Гамп (1994)", "12 стульев (1971)", "Золушка (1949)"]}
+      toFail={["Догвилль (2003)", "Клаус (2019)", "1915 (2015)"]}
+    />
+
+1.  <RegexChecker
+      label={<b>Повторение "ab":</b>}
+      toMatch={["ab", "abab", "ababab"]}
+      toFail={["aba", "abba", "abbab", "abababa"]}
+      regexLengthLimit={7}
+    />
+
+1.  <RegexChecker
+      label={<b>Строчки, в которых определяется переменная:</b>}
+      toMatch={["let a = 1", "let b=2", "let   c = 3"]}
+      toFail={["lets()", "console.log('let ')", "i = 1"]}
+      regexLengthLimit={5}
+    />
+
+1.  <RegexChecker
+      label={<b>Файлы с расширением .pdf:</b>}
+      toMatch={["file.pdf", "Form (final).pdf", "_.pdf"]}
+      toFail={["pdfpdf", "important.pdf.exe"]}
+      regexLengthLimit={6}
+    />
+
+1.  <RegexChecker
+      label={<b>Номера телефонов:</b>}
+      toMatch={["174-785-018", "861-634-176", "937-753-331"]}
+      toFail={["123456789", "abc-def-ghi", "123-456-7890"]}
+      regexLengthLimit={15}
+    />

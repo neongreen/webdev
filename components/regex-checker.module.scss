@@ -1,0 +1,36 @@
+.highlightGood {
+  text-decoration: underline;
+  background-color: #00ff5143;
+  padding: 0;
+}
+
+.highlightBad {
+  text-decoration: underline;
+  background-color: #ff2f0043;
+  padding: 0;
+}
+
+.resultTable {
+  thead tr {
+    border-bottom: 1px solid black;
+  }
+  tbody tr {
+    td {
+      white-space: pre;
+    }
+    td:nth-child(1) {
+      width: 1.5rem;
+    }
+    td:nth-child(2) {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.resultTableFail {
+  tbody tr {
+    td:nth-child(2) {
+      color: #888;
+    }
+  }
+}

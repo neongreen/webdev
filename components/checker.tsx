@@ -71,7 +71,7 @@ export function Checker(props: {
         <B.Form.Group>
           <B.Form.Label>{props.label}</B.Form.Label>
           <B.Form.Control
-            style={{ fontFamily: 'monospace', fontSize: '1.2em' }}
+            className="mono"
             type="text"
             value={code}
             onChange={(e) => setCode(e.target.value)}

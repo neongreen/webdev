@@ -107,8 +107,10 @@ main {
   margin-bottom: 0.83em;
 }
 
-code {
-  font-family: 'Fira Mono', monospace !important;
+code,
+.mono {
+  font-family: 'Iosevka' !important;
+  font-variant-ligatures: none;
   font-size: 100%;
 }
 

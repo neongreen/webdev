@@ -46,7 +46,7 @@ import * as B from 'react-bootstrap'
 
 <Boxes>
   <Box>
-    ```js mark=8:17
+    ```js mark=8:19
     function setup() {
       createCanvas(200, 200);
     }
@@ -54,6 +54,7 @@ import * as B from 'react-bootstrap'
     function draw() {
       background(220);
 
+      push()
       stroke(180);
       textSize(7);
       for (let x = 20; x < 200; x += 20) {
@@ -64,6 +65,7 @@ import * as B from 'react-bootstrap'
         line(15, y, 200, y);
         text(y, 0, y);
       }
+      pop()
 
       stroke('black');
       line(60, 100, 140, 100);
@@ -83,6 +85,7 @@ import * as B from 'react-bootstrap'
       p5.draw = () => {
         p5.background(220)
 
+        p5.push()
         p5.stroke(180)
         p5.textSize(7)
         for (let x = 20; x < 200; x += 20) {
@@ -93,6 +96,7 @@ import * as B from 'react-bootstrap'
           p5.line(15, y, 200, y)
           p5.text(y, 0, y)
         }
+        p5.pop()
 
         p5.stroke('black')
         p5.line(60, 100, 140, 100)
