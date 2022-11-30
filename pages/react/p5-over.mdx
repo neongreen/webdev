@@ -12,7 +12,6 @@ npm i -S react-p5-wrapper
 
 ```jsx components/p5.js
 import dynamic from 'next/dynamic'
-import { P5WrapperProps } from 'react-p5-wrapper'
 
 export const P5 = dynamic(
   () => import('react-p5-wrapper').then((mod) => mod.ReactP5Wrapper),
@@ -25,7 +24,7 @@ export const P5 = dynamic(
 ```jsx
 import { P5 } from '../components/p5'
 
-// это должно быть внутри компонента страницы
+{/* это должно быть внутри компонента страницы */}
 <div style={{
   position: "fixed", 
   top: "0", 
