@@ -57,7 +57,12 @@ export function Search() {
           <Select.Option key={result.item.link} value={result.item.link}>
             <div className={styles.selectOption}>
               <div className={styles.category}>{result.item.category}</div>
-              <div className={styles.title}>{result.item.title}</div>
+              <div className={styles.title}>
+                {result.item.title}
+                {result.item.subtitle && (
+                  <div className={styles.subtitle}>{result.item.subtitle}</div>
+                )}
+              </div>
             </div>
           </Select.Option>
         ))}

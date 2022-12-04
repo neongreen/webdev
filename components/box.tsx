@@ -1,3 +1,5 @@
+import * as _ from 'lodash'
+
 export function Boxes(props: {
   children: React.ReactNode
   type?: 'green' | 'plain'
@@ -6,7 +8,9 @@ export function Boxes(props: {
   const type = props.type ? props.type : 'plain'
   return (
     <>
-      <div className="boxes">{props.children}</div>
+      <div className="boxes" {..._.omit(props, ['children', 'type', 'center'])}>
+        {props.children}
+      </div>
       <style jsx>{`
         .boxes {
           display: grid;
@@ -46,7 +50,7 @@ export function Boxes(props: {
 
 export function Box(props: { children: React.ReactNode }) {
   return (
-    <div className="box" {...props}>
+    <div className="box" {..._.omit(props, ['children'])}>
       {props.children}
       <style jsx>{`
         .box > :global(.ch-codeblock),

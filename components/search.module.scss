@@ -15,5 +15,11 @@
   .title {
     font-weight: bold;
     width: 70%;
+    .subtitle {
+      font-weight: normal;
+      font-size: 0.55rem;
+      color: #999;
+      margin-top: -7px;
+    }
   }
 }

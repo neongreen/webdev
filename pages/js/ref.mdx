@@ -1,5 +1,7 @@
 import { CodeAnn } from '@components/code-ann'
 import { Box, Boxes } from '@components/box'
+import { InlineMath } from 'react-katex'
+import { Figure } from '@components/figure'
 
 <style jsx>{`
   h2 {
@@ -69,6 +71,8 @@ import { Box, Boxes } from '@components/box'
 <Boxes>
   <Box>
     `*=` и `/=` тоже существуют, но используются реже.
+
+    <small>А `%=` и `**=` — еще реже.</small>
   </Box>
   <Box>
     <CodeAnn ok="Теперь c = 200, d = 50">
@@ -80,6 +84,95 @@ import { Box, Boxes } from '@components/box'
     </CodeAnn>
   </Box>
 </Boxes>
+
+<div id="eq-neq">
+## Операторы `===` и `!==`
+</div>
+
+<Boxes>
+  <Box>
+    Операторы `===` и `!==` значат "равно" и "не равно":
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит false и true">
+      ```js
+      console.log(100 === 3);
+      console.log(100 !== 3);
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="eqeqeq">
+  <Box>
+    **В отличие от `==` и `!=`, операторы `===` и `!==` не приводят разные типы друг к другу.**
+
+    Лучше всегда использовать `===` и `!==`, чтобы избежать ошибок. Стайлгайды многих компаний запрещают использовать `==` и `!=`.
+
+    <small>Подробные правила сравнения, которыми пользуется JavaScript, описаны в [The Abstract Equality Comparison Algorithm](https://262.ecma-international.org/5.1/#sec-11.9.3).</small>
+  </Box>
+  <Box>
+    <CodeAnn warn="Во всех этих случаях == дает true, а === дает false">
+      ```js
+      console.log( 100 == ' 100',     100 === ' 100'   );
+      console.log(   1 == true,         1 === true     );
+      console.log(null == undefined, null === undefined);
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="less-more">
+## Операторы `>`, `<`, `>=`, `<=`
+</div>
+
+<Boxes>
+  <Box>
+    Операторы `>` и `<` значат "больше" и "меньше":
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит true и false">
+      ```js
+      console.log(100 > 3);
+      console.log(100 < 3);
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Операторы `>=` и `<=` значат "больше или равно" и "меньше или равно", как знаки <InlineMath math="\geq"/> и <InlineMath math="\leq"/> в математике:
+  </Box>
+  <Box>
+    <CodeAnn ok="Оба выводят true">
+      ```js
+      console.log(100 >= 3);
+      console.log(100 >= 100);
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Эти операторы работают не только для чисел, но и для строк.
+
+    Они сравнивают строки так, как они располагались бы в словаре. Например, `"a"` меньше `"b"`, потому что "a" идёт раньше "b" в алфавите. Большие буквы идут перед маленькими.
+  </Box>
+  <Box>
+    <CodeAnn ok="Оба выводят true">
+      ```js
+      console.log("a" < "b");
+      console.log("A" < "a");
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+Ниже приведен порядок, в котором цифры, символы и латинские буквы упорядочены в JavaScript:
+
+<Figure image="/ascii.png" />
 
 <div id="let">
 ## `let` 
@@ -112,22 +205,20 @@ import { Box, Boxes } from '@components/box'
   </Box>
 </Boxes>
 
-<div id="cannot-declare-a-let-variable-twice">
-  <Boxes>
-    <Box>
-      Если переменная с таким именем уже есть, будет ошибка:
-    </Box>
-    <Box>
-      <CodeAnn error="Cannot declare a let variable twice: 'a'.">
-        ```js
-        let a = 5;
-        // mark
-        let a = 6;
-        ```
-      </CodeAnn>
-    </Box>
-  </Boxes>
-</div>
+<Boxes id="cannot-declare-a-let-variable-twice">
+  <Box>
+    Если переменная с таким именем уже есть, будет ошибка:
+  </Box>
+  <Box>
+    <CodeAnn error="Cannot declare a let variable twice: 'a'.">
+      ```js
+      let a = 5;
+      // mark
+      let a = 6;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
 
 <div id="if">
 ## `if`
@@ -148,24 +239,22 @@ import { Box, Boxes } from '@components/box'
   </Box>
 </Boxes>
 
-<div id="if-else">
-  <Boxes>
-    <Box>
-      Можно добавить `else`, который выполнится, если условие не верно:
-    </Box>
-    <Box>
-      <CodeAnn ok="Выводит 'Неверно'">
-        ```js
-        if (2 * 2 === 5) {
-          console.log('Верно')
-        } else {
-          console.log('Неверно')
-        }
-        ```
-      </CodeAnn>
-    </Box>
-  </Boxes>
-</div>
+<Boxes id="if-else">
+  <Box>
+    Можно добавить `else`, который выполнится, если условие не верно:
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 'Неверно'">
+      ```js
+      if (2 * 2 === 5) {
+        console.log('Верно')
+      } else {
+        console.log('Неверно')
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
 
 <Boxes>
   <Box>
@@ -275,3 +364,67 @@ import { Box, Boxes } from '@components/box'
     </CodeAnn>
   </Box>
 </Boxes>
+
+<div id="function">
+## `function`
+</div>
+
+<Boxes>
+  <Box>
+    `function` создает функцию.
+    
+    У функции есть имя, параметры и тело — то, что функция будет делать.
+  </Box>
+  <Box>
+    <CodeAnn ok="Функция объявлена и ее можно использовать: hello()">
+      ```js
+      function hello() {
+        console.log('Hello');
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="return">
+  <Box>
+    Еще функция может **возвращать результат** с помощью слова `return`.
+    
+    Например, функция `max` возвращает большее из двух чисел:
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 10">
+      ```js
+      function max(a, b) {
+        if (a > b) return a; else return b;
+      }
+
+      // mark
+      console.log(max(5, 10));
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="return">
+  <Box>
+    **Как только `return` выполняется, функция заканчивается.**
+
+    (Если хочется сделать несколько проверок, то можно использовать `else if` или создать отдельную переменную `result` и возвращать ее в самом конце функции.)
+  </Box>
+  <Box>
+    <CodeAnn warn="Вернет 10, потому что 'return' закончил функцию">
+      ```js
+      function max3(a, b, c) {
+        // mark
+        if (a > b) return a;
+        if (b > c) return b;
+        if (c > a) return c;
+      }
+
+      console.log(max3(10, 5, 9999));
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+

@@ -23,6 +23,7 @@
     "endent": "^2.1.0",
     "fuse.js": "^6.6.2",
     "katex": "^0.16.3",
+    "lodash": "^4.17.21",
     "next": "12.2.5",
     "plural-ru": "^2.0.2",
     "prop-types": "^15.8.1",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@types/katex": "^0",
+    "@types/lodash": "^4",
     "@types/node": "^18.7.14",
     "@types/prop-types": "^15",
     "@types/react": "^18.0.18",

@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/mdx", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.5"],\
             ["@testing-library/dom", "npm:8.19.0"],\
             ["@types/katex", "npm:0.14.0"],\
+            ["@types/lodash", "npm:4.14.191"],\
             ["@types/node", "npm:18.7.14"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/react", "npm:18.0.18"],\
@@ -55,6 +56,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.5"],\
             ["fuse.js", "npm:6.6.2"],\
             ["katex", "npm:0.16.3"],\
+            ["lodash", "npm:4.17.21"],\
             ["next", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.5"],\
             ["plural-ru", "npm:2.0.2"],\
             ["prop-types", "npm:15.8.1"],\
@@ -1035,6 +1037,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-katex-npm-0.14.0-acd5bc3e87-330e0d0337.zip/node_modules/@types/katex/",\
           "packageDependencies": [\
             ["@types/katex", "npm:0.14.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/lodash", [\
+        ["npm:4.14.191", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.191-67a04a969b-ba0d5434e1.zip/node_modules/@types/lodash/",\
+          "packageDependencies": [\
+            ["@types/lodash", "npm:4.14.191"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10725,6 +10736,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/mdx", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.5"],\
             ["@testing-library/dom", "npm:8.19.0"],\
             ["@types/katex", "npm:0.14.0"],\
+            ["@types/lodash", "npm:4.14.191"],\
             ["@types/node", "npm:18.7.14"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/react", "npm:18.0.18"],\
@@ -10737,6 +10749,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.5"],\
             ["fuse.js", "npm:6.6.2"],\
             ["katex", "npm:0.16.3"],\
+            ["lodash", "npm:4.17.21"],\
             ["next", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:12.2.5"],\
             ["plural-ru", "npm:2.0.2"],\
             ["prop-types", "npm:15.8.1"],\
