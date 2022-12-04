@@ -85,6 +85,47 @@ import { Figure } from '@components/figure'
   </Box>
 </Boxes>
 
+<div id="modulo">
+## Оператор `%`
+</div>
+
+<Boxes>
+  <Box>
+    Оператор `%` возвращает остаток от деления одного числа на другое.
+
+    Например:
+    
+    * `100 % 3` будет равно `1`, потому что <InlineMath math="100 = 33 \times 3 + 1" />.
+    * `100 % 4` будет равно `0`, потому что <InlineMath math="100" /> делится на <InlineMath math="4" /> нацело.
+  </Box>
+  <Box>
+    <CodeAnn ok="Напечатает 0, 0, 1, 0">
+      ```js
+      let a = 100;
+      console.log(a % 1, a % 2, a % 3, a % 4);
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Еще `%` часто используют, чтобы сбрасывать чиcло до нуля, когда оно дошло до какого-то предела:
+  </Box>
+  <Box>
+    <CodeAnn ok="Напечатает 0, 1 .. 99 и так десять раз">
+      ```js
+      let n = 0;
+      for (let i = 0; i < 1000; i++) {
+        // mark
+        n = (n+1) % 100;  // n ограничено между 0 и 99
+        console.log(n);
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
 <div id="eq-neq">
 ## Операторы `===` и `!==`
 </div>
@@ -109,7 +150,7 @@ import { Figure } from '@components/figure'
 
     Лучше всегда использовать `===` и `!==`, чтобы избежать ошибок. Стайлгайды многих компаний запрещают использовать `==` и `!=`.
 
-    <small>Подробные правила сравнения, которыми пользуется JavaScript, описаны в [The Abstract Equality Comparison Algorithm](https://262.ecma-international.org/5.1/#sec-11.9.3).</small>
+    <p className="small">Подробные правила сравнения, которыми пользуется JavaScript, описаны в [The Abstract Equality Comparison Algorithm](https://262.ecma-international.org/5.1/#sec-11.9.3).</p>
   </Box>
   <Box>
     <CodeAnn warn="Во всех этих случаях == дает true, а === дает false">

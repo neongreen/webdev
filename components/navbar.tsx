@@ -16,9 +16,6 @@ function DropdownJavaScript() {
   return (
     <B.NavDropdown title="JavaScript">
       <B.NavDropdown.Item href="/js/ref">⭐️ Справка</B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/js/cheatsheet">
-        <s>Шпаргалка</s>
-      </B.NavDropdown.Item>
       <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/codeforces">Codeforces</B.NavDropdown.Item>
       <B.NavDropdown.Divider />

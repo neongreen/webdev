@@ -12,6 +12,12 @@ const jsReference = [
   },
   {
     category: 'JS',
+    title: 'Оператор %',
+    subtitle: 'Остаток от деления',
+    link: '/js/ref#modulo',
+  },
+  {
+    category: 'JS',
     title: 'Операторы === и !==',
     subtitle: 'Равно и не равно',
     link: '/js/ref#eq-neq',
