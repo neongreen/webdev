@@ -18,12 +18,11 @@ function DropdownJavaScript() {
       <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/codeforces">Codeforces</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
-      <B.NavDropdown.Item href="/js/tasks/loops">Задания на циклы</B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/js/tasks/bools">Задания на булевы операции</B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/js/tasks/functions">Задания на функции</B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/js/tasks/regexes">
-        Задания на регулярные выражения
-      </B.NavDropdown.Item>
+      <B.NavDropdown.Header>Задания</B.NavDropdown.Header>
+      <B.NavDropdown.Item href="/js/tasks/loops">Циклы</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/tasks/bools">Булевы операции</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/tasks/functions">Функции</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/tasks/regexes">Регулярные выражения</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/js/let">
         <s>
