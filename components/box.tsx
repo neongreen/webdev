@@ -49,7 +49,8 @@ export function Box(props: { children: React.ReactNode }) {
     <div className="box" {...props}>
       {props.children}
       <style jsx>{`
-        .box > :global(.ch-codeblock) {
+        .box > :global(.ch-codeblock),
+        .box > :global(.code-ann) {
           margin-top: 0;
           margin-bottom: 0;
         }

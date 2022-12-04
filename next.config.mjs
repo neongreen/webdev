@@ -17,7 +17,7 @@ const withMDX = createMDX({
       [
         remarkCodeHike,
         {
-          theme: await shiki.loadTheme('themes/min-light.json'),
+          theme: await shiki.loadTheme('themes/light-plus.json'),
           showCopyButton: true,
         },
       ],

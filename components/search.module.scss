@@ -1,0 +1,19 @@
+.select {
+  width: 320px;
+}
+
+.selectOption {
+  display: flex;
+  .category,
+  .title {
+    font-size: 0.7rem;
+  }
+  .category {
+    color: #999;
+    width: 30%;
+  }
+  .title {
+    font-weight: bold;
+    width: 70%;
+  }
+}

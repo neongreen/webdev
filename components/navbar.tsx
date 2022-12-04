@@ -1,4 +1,5 @@
 import * as B from 'react-bootstrap'
+import { Search } from '@components/search'
 
 function DropdownBasics() {
   return (
@@ -14,7 +15,10 @@ function DropdownBasics() {
 function DropdownJavaScript() {
   return (
     <B.NavDropdown title="JavaScript">
-      <B.NavDropdown.Item href="/js/cheatsheet">Шпаргалка</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/ref">⭐️ Справка</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/cheatsheet">
+        <s>Шпаргалка</s>
+      </B.NavDropdown.Item>
       <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/codeforces">Codeforces</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
@@ -24,21 +28,6 @@ function DropdownJavaScript() {
       <B.NavDropdown.Item href="/js/tasks/functions">Функции</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/tasks/regexes">Регулярные выражения</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
-      <B.NavDropdown.Item href="/js/let">
-        <s>
-          <code>let</code>
-        </s>
-      </B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/js/if">
-        <s>
-          <code>if</code>
-        </s>
-      </B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/js/for">
-        <s>
-          <code>for</code>
-        </s>
-      </B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/arrays">
         <s>Массивы</s>
       </B.NavDropdown.Item>
@@ -141,6 +130,7 @@ export function Navbar() {
               <DropdownNextjs />
               <DropdownInterview />
             </B.Nav>
+            <Search />
           </B.Navbar.Collapse>
         </B.Container>
       </B.Navbar>

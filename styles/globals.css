@@ -119,6 +119,10 @@ code,
   font-size: 15px !important;
 }
 
+.ch-code-multiline-mark {
+  background-color: rgba(253, 255, 0, 0.2) !important;
+}
+
 main li {
   margin-top: 1rem;
   margin-bottom: 1rem;

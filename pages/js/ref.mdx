@@ -1,0 +1,277 @@
+import { CodeAnn } from '@components/code-ann'
+import { Box, Boxes } from '@components/box'
+
+<style jsx>{`
+  h2 {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #bbb;
+  }
+`}</style>`
+
+# Справка по JavaScript
+
+<div id="inc-dec">
+## Операторы `++` и `--`
+</div>
+
+<Boxes>
+  <Box>
+    Операторы `++` и `--` увеличивают и уменьшают переменную на 1 соответственно.
+  </Box>
+  <Box>
+    <CodeAnn ok="Теперь a = 2, b = 9">
+      ```js
+      let a = 1, b = 10;
+      a++;
+      b--;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    С помощью `++` и `--` можно увеличивать или уменьшать **только на 1.** Например, `a++2` не сработает.
+  </Box>
+  <Box>
+    <CodeAnn error="Unexpected number">
+      ```js
+      // mark
+      a++2;
+      
+      // Правильно было бы либо a += 2, либо a = a + 2
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="autoassign">
+## Операторы `+=`, `-=`, `*=`, `/=`
+</div>
+
+<Boxes>
+  <Box>
+    Операторы `+=` и `-=` — это сокращенные операции присваивания.
+    
+    Например, `a += 2` — это то же самое, что и `a = a + 2`. То есть, `a` увеличится на 2.
+  </Box>
+  <Box>
+    <CodeAnn ok="Теперь a = 102, b = 98">
+      ```js
+      let a = 100, b = 100;
+      a += 2;
+      b -= 2;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    `*=` и `/=` тоже существуют, но используются реже.
+  </Box>
+  <Box>
+    <CodeAnn ok="Теперь c = 200, d = 50">
+      ```js
+      let c = 100, d = 100;
+      c *= 2;
+      d /= 2;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="let">
+## `let` 
+</div>
+
+<Boxes>
+  <Box>
+    `let` создает новую переменную. Если не указано значение, то переменная будет равна `undefined`.
+  </Box>
+  <Box>
+    <CodeAnn ok="a = 5, b = undefined">
+      ```js
+      let a = 5;   // Создает новую переменную со значением 5
+      let b;       // Создает пустую переменную
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Можно создавать несколько переменных сразу:
+  </Box>
+  <Box>
+    <CodeAnn ok="a = 5, b = 6, c = undefined">
+      ```js
+      let a = 5, b = 6, c;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="cannot-declare-a-let-variable-twice">
+  <Boxes>
+    <Box>
+      Если переменная с таким именем уже есть, будет ошибка:
+    </Box>
+    <Box>
+      <CodeAnn error="Cannot declare a let variable twice: 'a'.">
+        ```js
+        let a = 5;
+        // mark
+        let a = 6;
+        ```
+      </CodeAnn>
+    </Box>
+  </Boxes>
+</div>
+
+<div id="if">
+## `if`
+</div>
+
+<Boxes>
+  <Box>
+    `if` проверяет условие и выполняет код внутри фигурных скобок, если условие верно.
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 'Верно'">
+      ```js
+      if (2 * 2 === 4) {
+        console.log('Верно')
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="if-else">
+  <Boxes>
+    <Box>
+      Можно добавить `else`, который выполнится, если условие не верно:
+    </Box>
+    <Box>
+      <CodeAnn ok="Выводит 'Неверно'">
+        ```js
+        if (2 * 2 === 5) {
+          console.log('Верно')
+        } else {
+          console.log('Неверно')
+        }
+        ```
+      </CodeAnn>
+    </Box>
+  </Boxes>
+</div>
+
+<Boxes>
+  <Box>
+    Если забыть скобки вокруг условия, то будет ошибка:
+  </Box>
+  <Box>
+    <CodeAnn error="Unexpected number">
+      ```js
+      // mark
+      if 2 * 2 === 4 {
+        console.log('Верно')
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Если надо выполнить только одну команду, можно не использовать фигурные скобки.
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 'Верно'">
+      ```js
+      if (2 * 2 === 4) console.log('Верно');
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+    
+<Boxes>
+  <Box>
+    Но если забыть про фигурные скобки, когда команд больше одной, **то все команды, кроме первой, просто не попадут в `if`:**
+  </Box>
+  <Box>
+    <CodeAnn warn="Выделенная строчка выполнится, хотя не должна">
+      ```js
+      // mark[42:53]
+      if (2 * 2 === 5) console.log('Неверно'); failCount++;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="for">
+## `for`
+</div>
+
+<Boxes>
+  <Box>
+    `for` создает цикл. Он будет выполняться, **пока условие верно.** Например:
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 1, 2, 3, 4, 5, 6, 7, 8, 9, 10">
+      ```js
+      for (let i = 1; i <= 10; i++) {
+        console.log(i);
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Вместо `i++` можно использовать любую другую команду. Например, умножаем `i` на 2:
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 1, 2, 4, 8, 16, 32">
+      ```js
+      for (let i = 1; i <= 50; i *= 2) {
+        console.log(i);
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Если забыть изменять счетчик, то цикл будет бесконечным:
+  </Box>
+  <Box>
+    <CodeAnn warn="i + 1 не изменяет переменную, поэтому цикл зависнет">
+      ```js
+      // mark[24:28]
+      for (let i = 0; i < 3; i + 1) {
+        console.log('Hello');
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Если неправильно написать условие, цикл тоже может стать бесконечным или, наоборот, не выполнится ни разу:
+  </Box>
+  <Box>
+    <CodeAnn warn="i > 3 уже сразу не выполняется, поэтому цикл ничего не сделает">
+      ```js
+      // mark[17:21]
+      for (let i = 0; i > 3; i++) {
+        console.log('Hello');
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>

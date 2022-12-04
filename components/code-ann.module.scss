@@ -1,0 +1,46 @@
+.codeAnn {
+  // taken from codehike styles
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3),
+    0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+
+  & :global(.ch-codeblock) {
+    box-shadow: none;
+    border-radius: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.error,
+.warn,
+.ok {
+  display: block;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  background-color: hsl(var(--hue), 100%, 93%);
+  color: hsl(var(--hue), 60%, 30%);
+  border-top: 1px solid hsl(var(--hue), 90%, 87%);
+  .icon {
+    color: hsl(var(--hue), 90%, 50%);
+    font-size: 1.15rem;
+    margin-right: 0.3rem;
+  }
+}
+
+.error {
+  --hue: 0;
+}
+
+.warn {
+  --hue: 40;
+}
+
+.ok {
+  --hue: 80;
+}
