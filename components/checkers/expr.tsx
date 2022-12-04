@@ -1,40 +1,8 @@
 import * as B from 'react-bootstrap'
 import * as React from 'react'
+import { checkJsSyntax, enumerateVars, stringifyVars, Vars } from '@lib/checker-util'
 
-type Vars = Record<string, { from: number; to: number; step?: number }>
-
-function enumerate(vars: Vars): Record<string, number>[] {
-  if (Object.keys(vars).length === 0) {
-    return [{}]
-  } else {
-    const [name, { from, to, step = 1 }] = Object.entries(vars)[0]
-    const rest = enumerate(Object.fromEntries(Object.entries(vars).slice(1)))
-    let result: Record<string, number>[] = []
-    for (let i = from; i <= to; i += step) {
-      result = [...result, ...rest.map((r) => ({ ...r, [name]: i }))]
-    }
-    return result
-  }
-}
-
-function checkSyntax(code: string): string | null {
-  try {
-    eval(code)
-  } catch (e) {
-    if (e instanceof SyntaxError) {
-      return e.message
-    }
-  }
-  return null
-}
-
-function stringifyVars(values: Record<string, any>) {
-  return Object.entries(values)
-    .map(([k, v]) => `${k}=${v}`)
-    .join(', ')
-}
-
-export function Checker(props: {
+export function ExprChecker(props: {
   label: React.ReactNode[]
   // Expression providing the correct result
   expected: (values: Record<string, number>) => number
@@ -45,12 +13,12 @@ export function Checker(props: {
 }) {
   let [code, setCode] = React.useState(props.code || '')
   const validate = React.useMemo(() => {
-    const syntaxError = checkSyntax(code)
+    const syntaxError = checkJsSyntax(code)
     if (syntaxError) {
       return `Ошибка синтаксиса: ${syntaxError}`
     }
     const fun = new Function('context', `with (context) {return ${code}}`)
-    for (let value of enumerate(props.vars)) {
+    for (let value of enumerateVars(props.vars)) {
       try {
         const expectedResult = props.expected(value)
         const actualResult = fun(value)

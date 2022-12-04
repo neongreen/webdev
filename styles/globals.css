@@ -108,7 +108,8 @@ main {
 }
 
 code,
-.mono {
+.mono,
+.cm-content {
   font-family: 'Iosevka' !important;
   font-variant-ligatures: none;
   font-size: 100%;

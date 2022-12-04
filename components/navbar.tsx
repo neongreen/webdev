@@ -23,6 +23,7 @@ function DropdownJavaScript() {
       <B.NavDropdown.Item href="/js/tasks/regexes">
         Задания на регулярные выражения
       </B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/tasks/functions">Задания на функции</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/js/let">
         <s>

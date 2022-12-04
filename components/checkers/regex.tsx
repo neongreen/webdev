@@ -4,7 +4,7 @@ import { BsFillCheckSquareFill, BsFillQuestionSquareFill, BsFillXSquareFill } fr
 import plural from 'plural-ru'
 
 import { HighlightMatches } from '@components/highlight-matches'
-import styles from './regex-checker.module.scss'
+import styles from './regex.module.scss'
 
 function check(args: { regex: RegExp; toMatch: string[]; toFail: string[] }): {
   toMatch: { text: string; success: boolean }[]
