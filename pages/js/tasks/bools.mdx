@@ -9,6 +9,7 @@ import { ExprChecker } from '@components/checkers/expr'
 Запишите условия в виде булевых выражений. (Первое условие уже написано.)
 
 1.  <ExprChecker 
+      taskId=">100"
       label={<b><code>n</code> больше 100</b>}
       expected={_ => _.n > 100}
       vars={{n: {from: 0, to: 200}}}
@@ -16,42 +17,49 @@ import { ExprChecker } from '@components/checkers/expr'
     />
 
 1.  <ExprChecker 
+      taskId="50..100"
       label={<b><code>n</code> между 50 и 100 (включительно)</b>}
       expected={_ => _.n >= 50 && _.n <= 100}
       vars={{n: {from: 0, to: 200}}}
     />
 
 1.  <ExprChecker 
+      taskId="==77"
       label={<b><code>n</code> равно 77</b>}
       expected={_ => _.n === 77}
       vars={{n: {from: 0, to: 200}}}
     />
 
 1.  <ExprChecker 
+      taskId="778899"
       label={<b><code>n</code> равно 77, 88 или 99</b>}
       expected={_ => _.n === 77 || _.n === 88 || _.n === 99}
       vars={{n: {from: 0, to: 200}}}
     />
 
 1.  <ExprChecker 
+      taskId="!778899"
       label={<b><code>n</code> не равно ни 77, ни 88, ни 99</b>}
       expected={_ => _.n !== 77 && _.n !== 88 && _.n !== 99}
       vars={{n: {from: 0, to: 200}}}
     />
 
 1.  <ExprChecker
+      taskId="50..100!77"
       label={<b><code>n</code> между 50 и 100 (включительно), но не 77</b>}
       expected={_ => _.n >= 50 && _.n <= 100 && _.n !== 77}
       vars={{n: {from: 0, to: 200}}}
      />
   
 1.  <ExprChecker
+      taskId="10..20,50..60"
       label={<b><code>n</code> между 10 и 20, или между 50 и 60</b>}
       expected={_ => (_.n >= 10 && _.n <= 20) || (_.n >= 50 && _.n <= 60)}
       vars={{n: {from: 0, to: 200}}}
      />
 
 1.  <ExprChecker
+      taskId=">=a&<=b"
       label={<b><code>n</code> находится между <code>a</code> и <code>b</code></b>}
       expected={_ => _.a <= _.n && _.n <= _.b}
       vars={{n: {from: 0, to: 10}, a: {from: 0, to: 10}, b: {from: 0, to: 10}}}

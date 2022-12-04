@@ -1,8 +1,11 @@
 import * as B from 'react-bootstrap'
 import * as React from 'react'
 import { checkJsSyntax, enumerateVars, stringifyVars, Vars } from '@lib/checker-util'
+import { NoSSR } from '@components/noSsr'
+import { useStorage } from '@lib/use-storage'
 
 export function ExprChecker(props: {
+  taskId: string
   label: React.ReactNode[]
   // Expression providing the correct result
   expected: (values: Record<string, number>) => number
@@ -11,7 +14,7 @@ export function ExprChecker(props: {
   // Initial code string
   code?: string
 }) {
-  let [code, setCode] = React.useState(props.code || '')
+  let [code, setCode] = useStorage<string>('ExprChecker', props.taskId)(props.code || '')
   const validate = React.useMemo(() => {
     const syntaxError = checkJsSyntax(code)
     if (syntaxError) {
@@ -34,7 +37,8 @@ export function ExprChecker(props: {
     return null
   }, [code, props])
   return (
-    <>
+    // Using NoSSR because useStorage is not SSR-safe
+    <NoSSR>
       <B.Form>
         <B.Form.Group>
           <B.Form.Label>{props.label}</B.Form.Label>
@@ -53,6 +57,6 @@ export function ExprChecker(props: {
           )}
         </B.Form.Group>
       </B.Form>
-    </>
+    </NoSSR>
   )
 }

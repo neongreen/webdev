@@ -5,6 +5,8 @@ import plural from 'plural-ru'
 
 import { HighlightMatches } from '@components/highlight-matches'
 import styles from './regex.module.scss'
+import { NoSSR } from '@components/noSsr'
+import { useStorage } from '@lib/use-storage'
 
 function check(args: { regex: RegExp; toMatch: string[]; toFail: string[] }): {
   toMatch: { text: string; success: boolean }[]
@@ -117,12 +119,13 @@ function ToFailTable(props: {
 }
 
 export function RegexChecker(props: {
+  taskId: string
   label: React.ReactNode[]
   toMatch: string[]
   toFail: string[]
   regexLengthLimit?: number
 }) {
-  let [code, setCode] = React.useState('')
+  let [code, setCode] = useStorage<string>('RegexChecker', props.taskId)('')
 
   const regexError = React.useMemo(() => {
     try {
@@ -145,7 +148,8 @@ export function RegexChecker(props: {
         overall: null,
       }
   return (
-    <>
+    // Using NoSSR because useStorage is not SSR-safe
+    <NoSSR>
       <B.Form>
         <div>{props.label}</div>
         <div className="d-flex flex-row align-items-top">
@@ -185,6 +189,6 @@ export function RegexChecker(props: {
           </div>
         </div>
       </B.Form>
-    </>
+    </NoSSR>
   )
 }

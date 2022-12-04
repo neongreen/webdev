@@ -5,8 +5,11 @@ import CodeMirror from '@uiw/react-codemirror'
 import { javascript } from '@codemirror/lang-javascript'
 import { autocompletion } from '@codemirror/autocomplete'
 import styles from './function.module.scss'
+import { useStorage } from '@lib/use-storage'
+import { NoSSR } from '@components/noSsr'
 
 export function FunctionChecker(props: {
+  taskId: string
   // Expression providing the correct result
   expected: (args: number[]) => number
   // Arguments to check
@@ -14,7 +17,7 @@ export function FunctionChecker(props: {
   // Initial code string
   code?: string
 }) {
-  let [code, setCode] = React.useState(props.code || '')
+  let [code, setCode] = useStorage<string>('FunctionChecker', props.taskId)(props.code || '')
   const validate = React.useMemo(() => {
     const syntaxError = checkJsSyntax(code)
     if (syntaxError) {
@@ -46,7 +49,8 @@ export function FunctionChecker(props: {
     return null
   }, [code, props])
   return (
-    <>
+    // Using NoSSR because useStorage is not SSR-safe
+    <NoSSR>
       <B.Form>
         <B.Form.Group>
           <CodeMirror
@@ -65,6 +69,6 @@ export function FunctionChecker(props: {
           )}
         </B.Form.Group>
       </B.Form>
-    </>
+    </NoSSR>
   )
 }

@@ -8,7 +8,8 @@ import { InlineMath } from 'react-katex';
 
 1.  **Функция <code>max</code> должна возвращать наибольшее из двух чисел:**
 
-    <FunctionChecker 
+    <FunctionChecker
+      taskId="max"
       expected={([a,b]) => Math.max(a,b)}
       args={[{from: 0, to: 5}, {from: 0, to: 5}]}
       code={endent`
@@ -25,6 +26,7 @@ import { InlineMath } from 'react-katex';
 1.  **Функция `max3` должна возвращать наибольшее из трех чисел:**
 
     <FunctionChecker 
+      taskId="max3"
       expected={([a,b,c]) => Math.max(a,b,c)}
       args={[{from: 0, to: 5}, {from: 0, to: 5}, {from: 0, to: 5}]}
     />
@@ -32,6 +34,7 @@ import { InlineMath } from 'react-katex';
 1.  **Функция `factorial(n)` должна перемножать числа от 1 до `n`.** Например, `factorial(4)` должна возвращать 24, потому что <InlineMath math="1 \times 2 \times 3 \times 4 = 24" />.
 
     <FunctionChecker 
+      taskId="factorial"
       expected={([n]) => {
         let result = 1
         for (let i = 1; i <= n; i++) result *= i;
@@ -45,6 +48,7 @@ import { InlineMath } from 'react-katex';
     Год считается високосным, если он делится на 4, но не делится на 100. Однако, если год делится на 400, то он также является високосным. Например, 2000 год является високосным, но 1900 и 2100 года — нет.
 
     <FunctionChecker
+      taskId="isLeap"
       expected={([year]) => year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)}
       args={[{from: 1900, to: 2400}]}
     />
