@@ -4,6 +4,8 @@
 
 .selectOption {
   display: flex;
+  line-height: 1.5;
+
   .category,
   .title {
     font-size: 0.7rem;
@@ -15,11 +17,12 @@
   .title {
     font-weight: bold;
     width: 70%;
+    white-space: normal;
     .subtitle {
       font-weight: normal;
       font-size: 0.55rem;
       color: #999;
-      margin-top: -7px;
+      // margin-top: -7px;
     }
   }
 }

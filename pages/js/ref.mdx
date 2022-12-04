@@ -36,7 +36,7 @@ import { Figure } from '@components/figure'
     С помощью `++` и `--` можно увеличивать или уменьшать **только на 1.** Например, `a++2` не сработает.
   </Box>
   <Box>
-    <CodeAnn error="Unexpected number">
+    <CodeAnn error="SyntaxError: Unexpected number">
       ```js
       // mark
       a++2;
@@ -174,6 +174,82 @@ import { Figure } from '@components/figure'
 
 <Figure image="/ascii.png" />
 
+<div id="rounding">
+## Округление: `Math.floor`, `Math.ceil`, `Math.round`, `Math.trunc`
+</div>
+
+<Boxes id="floor">
+  <Box>
+    <InlineMath math="\lfloor x \rfloor"/> — `Math.floor` — округляет число **вниз до целого:**
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 3 и -4">
+      ```js
+      console.log(Math.floor(3.9));
+      console.log(Math.floor(-3.9));
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="ceil">
+  <Box>
+    <InlineMath math="\lceil x \rceil"/> — `Math.ceil` — округляет число **вверх до целого:**
+  </Box>
+  <Box>
+    <CodeAnn ok="Выводит 4 и -3">
+      ```js
+      console.log(Math.floor(3.1));
+      console.log(Math.floor(-3.1));
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="round">
+  <Box>
+    `Math.round` округляет число **до ближайшего целого.** 0.5 округляется вверх.
+  </Box>
+  <Box>
+    <CodeAnn ok="Все строчки выводят 4">
+      ```js
+      console.log(Math.round(3.5));
+      console.log(Math.round(3.9));
+      console.log(Math.round(4.2));
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="trunc">
+  <Box>
+    `Math.trunc` **отрезает от числа дробную часть.**
+  </Box>
+  <Box>
+    <CodeAnn ok="Все строчки выводят 4">
+      ```js
+      console.log(Math.trunc(4.1));
+      console.log(Math.trunc(4.9));
+      console.log(Math.trunc(-4.1));
+      console.log(Math.trunc(-4.9));
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="math-is-not-defined">
+  <Box>
+    В JavaScript есть разница между большими и маленькими буквами. Если написать `math.floor` вместо `Math.floor`, то будет ошибка:
+  </Box>
+  <Box>
+    <CodeAnn error="ReferenceError: math is not defined">
+      ```js
+      console.log(math.trunc(4.1));
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
 <div id="let">
 ## `let` 
 </div>
@@ -205,12 +281,12 @@ import { Figure } from '@components/figure'
   </Box>
 </Boxes>
 
-<Boxes id="cannot-declare-a-let-variable-twice">
+<Boxes id="identifier-has-already-been-declared">
   <Box>
     Если переменная с таким именем уже есть, будет ошибка:
   </Box>
   <Box>
-    <CodeAnn error="Cannot declare a let variable twice: 'a'.">
+    <CodeAnn error="SyntaxError: Identifier 'a' has already been declared">
       ```js
       let a = 5;
       // mark
@@ -261,7 +337,7 @@ import { Figure } from '@components/figure'
     Если забыть скобки вокруг условия, то будет ошибка:
   </Box>
   <Box>
-    <CodeAnn error="Unexpected number">
+    <CodeAnn error="SyntaxError: Unexpected number">
       ```js
       // mark
       if 2 * 2 === 4 {

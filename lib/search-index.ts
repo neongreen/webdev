@@ -30,6 +30,30 @@ const jsReference = [
   },
   {
     category: 'JS',
+    title: 'Math.floor(x)',
+    subtitle: 'Округление вниз',
+    link: '/js/ref#floor',
+  },
+  {
+    category: 'JS',
+    title: 'Math.ceil(x)',
+    subtitle: 'Округление вверх',
+    link: '/js/ref#ceil',
+  },
+  {
+    category: 'JS',
+    title: 'Math.round(x)',
+    subtitle: 'Округление к ближайшему целому',
+    link: '/js/ref#round',
+  },
+  {
+    category: 'JS',
+    title: 'Math.trunc(x)',
+    subtitle: 'Отрезает дробную часть',
+    link: '/js/ref#trunc',
+  },
+  {
+    category: 'JS',
     title: 'let',
     subtitle: 'Объявляет переменную',
     link: '/js/ref#let',
@@ -65,11 +89,17 @@ const jsReference = [
   },
 ]
 
+// NB: all are V8 errors
 const jsErrors = [
   {
     category: 'Ошибки (JS)',
-    title: 'Cannot declare a let variable twice',
-    link: '/js/ref#cannot-declare-a-let-variable-twice',
+    title: 'SyntaxError: Identifier ... has already been declared',
+    link: '/js/ref#identifier-has-already-been-declared',
+  },
+  {
+    category: 'Ошибки (JS)',
+    title: 'ReferenceError: math is not defined',
+    link: '/js/ref#math-is-not-defined',
   },
 ]
 
