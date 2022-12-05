@@ -4685,6 +4685,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mdast-heading-id@npm:*":
+  version: 1.0.0
+  resolution: "mdast-heading-id@npm:1.0.0"
+  checksum: facc98318b87d71794c495f6c909861ebc67f85f5b1eba12bfd4b5f319443ae9a0d3dc5bb493b75c2092ed07a2eca4cd273ab4d4a3ade6afbfa0d0efe1bcf888
+  languageName: node
+  linkType: hard
+
 "mdast-util-definitions@npm:^4.0.0":
   version: 4.0.0
   resolution: "mdast-util-definitions@npm:4.0.0"
@@ -5046,6 +5053,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"micromark-heading-id@npm:*":
+  version: 1.0.0
+  resolution: "micromark-heading-id@npm:1.0.0"
+  dependencies:
+    micromark-util-symbol: ^1.0.1
+  checksum: 1f0478153dbf607a19403a2c8d61e1882c911d53a8aa10ab3543ef652886e7565428a92e695b4df316129dd71537586df0331cd39cb0c788e0e6c8a2328d072c
+  languageName: node
+  linkType: hard
+
 "micromark-util-character@npm:^1.0.0":
   version: 1.1.0
   resolution: "micromark-util-character@npm:1.1.0"
@@ -5177,7 +5193,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromark-util-symbol@npm:^1.0.0":
+"micromark-util-symbol@npm:^1.0.0, micromark-util-symbol@npm:^1.0.1":
   version: 1.0.1
   resolution: "micromark-util-symbol@npm:1.0.1"
   checksum: c6a3023b3a7432c15864b5e33a1bcb5042ac7aa097f2f452e587bef45433d42d39e0a5cce12fbea91e0671098ba0c3f62a2b30ce1cde66ecbb5e8336acf4391d
@@ -7155,6 +7171,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"remark-custom-heading-id@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "remark-custom-heading-id@npm:1.0.0"
+  dependencies:
+    mdast-heading-id: "*"
+    micromark-heading-id: "*"
+    unist-util-visit: ^4.1.0
+  checksum: c6971008efa21a9d6ebebea0abd73a3fd81a5c512b7ccff7ef70b482065fa8ad7f195cf029db0dc43d93e454aa71fee73a6c8505a2ca947c92c680a89da06c57
+  languageName: node
+  linkType: hard
+
 "remark-mdx@npm:^2.0.0":
   version: 2.1.2
   resolution: "remark-mdx@npm:2.1.2"
@@ -8427,6 +8454,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unist-util-visit-parents@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "unist-util-visit-parents@npm:5.1.1"
+  dependencies:
+    "@types/unist": ^2.0.0
+    unist-util-is: ^5.0.0
+  checksum: c699d18f5b26461dee37612b84c243fd5457c98f4c0540d9ba8bee05062aece5f3b4fb1af6b07423ce6750d8926e8c01fc2b1a4de1e54925ef6795c177ed8e18
+  languageName: node
+  linkType: hard
+
 "unist-util-visit@npm:^2.0.0":
   version: 2.0.3
   resolution: "unist-util-visit@npm:2.0.3"
@@ -8446,6 +8483,17 @@ __metadata:
     unist-util-is: ^5.0.0
     unist-util-visit-parents: ^5.0.0
   checksum: 3521abee2ed4535092aac073d05f46255475c89781b8e9d8c951a473d91b5d6e4d5912ae4a68a4c1cf17a42ed0108cb93103c7f5c736977529969997451363fb
+  languageName: node
+  linkType: hard
+
+"unist-util-visit@npm:^4.1.0":
+  version: 4.1.1
+  resolution: "unist-util-visit@npm:4.1.1"
+  dependencies:
+    "@types/unist": ^2.0.0
+    unist-util-is: ^5.0.0
+    unist-util-visit-parents: ^5.1.1
+  checksum: c4a63734b0a5b439c62d20901bb472bdafdbbcd80c383e254aedeb98b23d0bae815a331e776ce7d63ea3c8018a54318abb8709d07cdf7dd094f79b2f07bb39f0
   languageName: node
   linkType: hard
 
@@ -8732,6 +8780,7 @@ __metadata:
     react-markdown: ^8.0.3
     react-p5-wrapper: ^3.3.0
     react-telegram-embed: ^0.1.1
+    remark-custom-heading-id: ^1.0.0
     sass: ^1.54.6
     shiki: ^0.11.1
     styled-jsx: ^5.0.4

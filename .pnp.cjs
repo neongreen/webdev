@@ -69,6 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-markdown", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:8.0.3"],\
             ["react-p5-wrapper", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:3.3.0"],\
             ["react-telegram-embed", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:0.1.1"],\
+            ["remark-custom-heading-id", "npm:1.0.0"],\
             ["sass", "npm:1.54.6"],\
             ["shiki", "npm:0.11.1"],\
             ["styled-jsx", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:5.0.4"],\
@@ -5682,6 +5683,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["mdast-heading-id", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/mdast-heading-id-npm-1.0.0-4c626c6d91-facc98318b.zip/node_modules/mdast-heading-id/",\
+          "packageDependencies": [\
+            ["mdast-heading-id", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["mdast-util-definitions", [\
         ["npm:4.0.0", {\
           "packageLocation": "./.yarn/cache/mdast-util-definitions-npm-4.0.0-207d18be98-2325f20b82.zip/node_modules/mdast-util-definitions/",\
@@ -6094,6 +6104,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["micromark-util-character", "npm:1.1.0"],\
             ["micromark-util-symbol", "npm:1.0.1"],\
             ["micromark-util-types", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["micromark-heading-id", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/micromark-heading-id-npm-1.0.0-4be95e101a-1f0478153d.zip/node_modules/micromark-heading-id/",\
+          "packageDependencies": [\
+            ["micromark-heading-id", "npm:1.0.0"],\
+            ["micromark-util-symbol", "npm:1.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -9007,6 +9027,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["remark-custom-heading-id", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/remark-custom-heading-id-npm-1.0.0-a3982aa12d-c6971008ef.zip/node_modules/remark-custom-heading-id/",\
+          "packageDependencies": [\
+            ["remark-custom-heading-id", "npm:1.0.0"],\
+            ["mdast-heading-id", "npm:1.0.0"],\
+            ["micromark-heading-id", "npm:1.0.0"],\
+            ["unist-util-visit", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["remark-mdx", [\
         ["npm:2.1.2", {\
           "packageLocation": "./.yarn/cache/remark-mdx-npm-2.1.2-e177732033-0b74fe4efd.zip/node_modules/remark-mdx/",\
@@ -10413,6 +10445,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["unist-util-visit-parents", "npm:5.1.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/unist-util-visit-npm-4.1.1-d4ebc5dd61-c4a63734b0.zip/node_modules/unist-util-visit/",\
+          "packageDependencies": [\
+            ["unist-util-visit", "npm:4.1.1"],\
+            ["@types/unist", "npm:2.0.6"],\
+            ["unist-util-is", "npm:5.1.1"],\
+            ["unist-util-visit-parents", "npm:5.1.1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["unist-util-visit-parents", [\
@@ -10429,6 +10471,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/unist-util-visit-parents-npm-5.1.0-5b9348080b-7c413dbb3d.zip/node_modules/unist-util-visit-parents/",\
           "packageDependencies": [\
             ["unist-util-visit-parents", "npm:5.1.0"],\
+            ["@types/unist", "npm:2.0.6"],\
+            ["unist-util-is", "npm:5.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:5.1.1", {\
+          "packageLocation": "./.yarn/cache/unist-util-visit-parents-npm-5.1.1-fe9eee5f6b-c699d18f5b.zip/node_modules/unist-util-visit-parents/",\
+          "packageDependencies": [\
+            ["unist-util-visit-parents", "npm:5.1.1"],\
             ["@types/unist", "npm:2.0.6"],\
             ["unist-util-is", "npm:5.1.1"]\
           ],\
@@ -10762,6 +10813,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-markdown", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:8.0.3"],\
             ["react-p5-wrapper", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:3.3.0"],\
             ["react-telegram-embed", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:0.1.1"],\
+            ["remark-custom-heading-id", "npm:1.0.0"],\
             ["sass", "npm:1.54.6"],\
             ["shiki", "npm:0.11.1"],\
             ["styled-jsx", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:5.0.4"],\

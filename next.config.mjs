@@ -1,5 +1,6 @@
 import createMDX from '@next/mdx'
 import { remarkCodeHike } from '@code-hike/mdx'
+// import { remarkHeadingId } from 'remark-custom-heading-id' // doesn't work for now, see https://github.com/Eyas/md-heading-id/issues/2
 import shiki from 'shiki'
 
 /** @type {import('next').NextConfig} */
@@ -15,6 +16,7 @@ const withMDX = createMDX({
   options: {
     remarkPlugins: [
       [
+        // remarkHeadingId,
         remarkCodeHike,
         {
           theme: await shiki.loadTheme('themes/light-plus.json'),
