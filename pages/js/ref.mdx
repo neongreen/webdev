@@ -403,9 +403,23 @@ import { Figure } from '@components/figure'
   </Box>
 </Boxes>
 
+<Boxes>
+  <Box>
+    Еще можно раскидать массив или объект по переменным — подробнее об этом читайте на learn.javascript.ru в статье [Деструктурирующее присваивание](https://learn.javascript.ru/destructuring-assignment).
+  </Box>
+  <Box>
+    <CodeAnn ok="x = 'hello', y = 'world'">
+      ```js
+      // mark
+      let [x, y] = "hello world".split(' ');
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
 <Boxes id="identifier-has-already-been-declared">
   <Box>
-    Если переменная с таким именем уже есть, будет ошибка:
+    Если переменная, которую пытается создать `let`, уже есть, то будет ошибка:
   </Box>
   <Box>
     <CodeAnn error="SyntaxError: Identifier 'a' has already been declared">

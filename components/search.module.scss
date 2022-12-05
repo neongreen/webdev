@@ -18,6 +18,11 @@
     font-weight: bold;
     width: 70%;
     white-space: normal;
+    .externalLink {
+      margin-right: 0.2rem;
+      padding-bottom: 1px;
+      color: #777;
+    }
     .subtitle {
       font-weight: normal;
       font-size: 0.55rem;

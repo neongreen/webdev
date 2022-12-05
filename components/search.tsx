@@ -5,6 +5,7 @@ import 'antd/dist/antd.css'
 import styles from './search.module.scss'
 import { searchIndex } from '@lib/search-index'
 import { useRouter } from 'next/router'
+import { BiLinkExternal } from 'react-icons/bi'
 
 const fuseOptions = {
   // isCaseSensitive: false,
@@ -20,7 +21,7 @@ const fuseOptions = {
   // ignoreLocation: false,
   // ignoreFieldNorm: false,
   // fieldNormWeight: 1,
-  keys: ['title'],
+  keys: ['title', 'category'],
 }
 
 const fuse = new Fuse(searchIndex, fuseOptions)
@@ -53,19 +54,25 @@ export function Search() {
           router.push(link)
         }}
       >
-        {searchResults.map((result) => (
-          <Select.Option key={result.item.link} value={result.item.link}>
-            <div className={styles.selectOption}>
-              <div className={styles.category}>{result.item.category}</div>
-              <div className={styles.title}>
-                {result.item.title}
-                {result.item.subtitle && (
-                  <div className={styles.subtitle}>{result.item.subtitle}</div>
-                )}
+        {searchResults.map((result) => {
+          let uniq = `${result.item.title}::${result.item.link}`
+          return (
+            <Select.Option key={uniq} value={result.item.link}>
+              <div className={styles.selectOption}>
+                <div className={styles.category}>{result.item.category}</div>
+                <div className={styles.title}>
+                  {result.item.link.startsWith('http') && (
+                    <BiLinkExternal className={styles.externalLink} />
+                  )}
+                  {result.item.title}
+                  {result.item.subtitle && (
+                    <div className={styles.subtitle}>{result.item.subtitle}</div>
+                  )}
+                </div>
               </div>
-            </div>
-          </Select.Option>
-        ))}
+            </Select.Option>
+          )
+        })}
       </Select>
     </>
   )
