@@ -358,6 +358,41 @@ const jsReference = [
     subtitle: 'Удаляет первый элемент массива',
     link: 'https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/shift',
   },
+  {
+    category: 'JS: вопросы',
+    title: 'Когда надо ставить точку с запятой (;)?',
+    subtitle: 'Довольно редко',
+    link: 'https://learn.javascript.ru/structure#semicolon',
+  },
+  {
+    category: 'JS',
+    title: '// Однострочные комментарии',
+    subtitle: 'Продолжаются до конца строки',
+    link: 'https://learn.javascript.ru/structure#kommentarii',
+  },
+  {
+    category: 'JS',
+    title: '/* Многострочные комментарии */',
+    subtitle: 'Могут идти несколько строк',
+    link: 'https://learn.javascript.ru/structure#kommentarii',
+  },
+  {
+    category: 'JS: вопросы',
+    title: 'Что будет, если написать & вместо && или | вместо || ?',
+    subtitle: 'Будет вообще не то, что ожидалось',
+    link: 'https://learn.javascript.ru/bitwise-operators',
+  },
+  {
+    category: 'JS',
+    title: 'export и import',
+    link: 'https://learn.javascript.ru/modules-intro#chto-takoe-modul',
+  },
+  {
+    category: 'JS',
+    title: 'const',
+    subtitle: 'Объявляет константу',
+    link: 'https://learn.javascript.ru/variables#konstanty',
+  },
 ]
 
 // NB: all are V8 errors
