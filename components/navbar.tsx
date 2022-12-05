@@ -24,10 +24,6 @@ function DropdownJavaScript() {
       <B.NavDropdown.Item href="/js/tasks/bools">Булевы операции</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/tasks/functions">Функции</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/tasks/regexes">Регулярные выражения</B.NavDropdown.Item>
-      <B.NavDropdown.Divider />
-      <B.NavDropdown.Item href="/js/arrays">
-        <s>Массивы</s>
-      </B.NavDropdown.Item>
     </B.NavDropdown>
   )
 }

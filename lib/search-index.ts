@@ -1,6 +1,12 @@
 const jsReference = [
   {
     category: 'JS',
+    title: 'Оператор =',
+    subtitle: 'Изменяет переменную',
+    link: '/js/ref#assign',
+  },
+  {
+    category: 'JS',
     title: 'Операторы ++ и --',
     subtitle: 'Увеличивают и уменьшают на 1',
     link: '/js/ref#inc-dec',
@@ -100,12 +106,19 @@ const jsErrors = [
   {
     category: 'Ошибки (JS)',
     title: 'SyntaxError: Identifier ... has already been declared',
+    subtitle: 'Нельзя объявлять переменную дважды',
     link: '/js/ref#identifier-has-already-been-declared',
   },
   {
     category: 'Ошибки (JS)',
     title: 'ReferenceError: math is not defined',
+    subtitle: 'Math должно быть с большой буквы',
     link: '/js/ref#math-is-not-defined',
+  },
+  {
+    category: 'Ошибки (JS)',
+    title: 'SyntaxError: Invalid left-hand side in assignment',
+    link: '/js/ref#invalid-left-hand-side-in-assignment',
   },
 ]
 

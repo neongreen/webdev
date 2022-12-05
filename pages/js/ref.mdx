@@ -12,6 +12,87 @@ import { Figure } from '@components/figure'
 
 # Справка по JavaScript
 
+<div id="assign">
+## Оператор `=`
+</div>
+
+<Boxes>
+  <Box>
+    Оператор `=` ("присваивание") меняет значение переменной:
+  </Box>
+  <Box>
+    <CodeAnn ok="Теперь в message будет 'Bye'">
+      ```js
+      let message = 'Hello';
+      // mark
+      message = 'Bye';
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Еще `=` может менять элементы массива:
+  </Box>
+  <Box>
+    <CodeAnn ok="arr = ['X', 'b', 'c']">
+      ```js
+      let arr = ['a', 'b', 'c'];
+      // mark
+      arr[0] = 'X';
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    А также менять свойства объекта и добавлять новые:
+  </Box>
+  <Box>
+    <CodeAnn ok="character = { name: 'Noelle', species: 'reindeer' }">
+      ```js
+      let character = { name: 'Kris' };
+      // mark
+      character.name = 'Noelle';
+      // mark
+      character.species = 'reindeer';
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    **Справа от `=` может быть любое выражение.** Например, можно сослаться на ту же саму переменную:
+  </Box>
+  <Box>
+    <CodeAnn ok="x = 36">
+      ```js
+      let x = 6;
+      // mark
+      x = x * x;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes id="invalid-left-hand-side-in-assignment">
+  <Box>
+    **А вот слева от `=` может быть только что-то, что можно менять.** Иначе будет ошибка:
+  </Box>
+  <Box>
+    <CodeAnn error="SyntaxError: Invalid left-hand side in assignment">
+      ```js
+      let message = 'Hello';
+      // mark
+      'Bye' = message;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
 <div id="inc-dec">
 ## Операторы `++` и `--`
 </div>
