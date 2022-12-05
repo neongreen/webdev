@@ -9,6 +9,7 @@
   .category,
   .title {
     font-size: 0.7rem;
+    white-space: normal;
   }
   .category {
     color: #999;
@@ -17,7 +18,6 @@
   .title {
     font-weight: bold;
     width: 70%;
-    white-space: normal;
     .externalLink {
       margin-right: 0.2rem;
       padding-bottom: 1px;
