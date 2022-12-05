@@ -321,8 +321,8 @@ import { Figure } from '@components/figure'
   <Box>
     <CodeAnn ok="Выводит 4 и -3">
       ```js
-      console.log(Math.floor(3.1));
-      console.log(Math.floor(-3.1));
+      console.log(Math.ceil(3.1));
+      console.log(Math.ceil(-3.1));
       ```
     </CodeAnn>
   </Box>
@@ -366,7 +366,7 @@ import { Figure } from '@components/figure'
   <Box>
     <CodeAnn error="ReferenceError: math is not defined">
       ```js
-      console.log(math.trunc(4.1));
+      console.log(math.floor(4.1));
       ```
     </CodeAnn>
   </Box>
