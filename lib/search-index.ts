@@ -416,7 +416,104 @@ const jsErrors = [
   },
 ]
 
+const htmlReference = [
+  {
+    category: 'HTML',
+    title: '<a>',
+    subtitle: 'Ссылка',
+    link: 'https://itproger.com/spravka/html5/a',
+  },
+  {
+    category: 'HTML',
+    title: '<b>',
+    subtitle: 'Жирный текст',
+    link: 'https://itproger.com/spravka/html5/b',
+  },
+  {
+    category: 'HTML',
+    title: '<i>',
+    subtitle: 'Курсивный текст',
+    link: 'https://itproger.com/spravka/html5/i',
+  },
+  {
+    category: 'HTML',
+    title: '<body>',
+    subtitle: 'Тело страницы',
+    link: 'https://itproger.com/spravka/html5/body',
+  },
+  {
+    category: 'HTML',
+    title: '<code>',
+    subtitle: 'Кусочек кода',
+    link: 'https://itproger.com/spravka/html5/code',
+  },
+  {
+    category: 'HTML',
+    title: '<p>',
+    subtitle: 'Абзац',
+    link: 'https://itproger.com/spravka/html5/p',
+  },
+  {
+    category: 'HTML',
+    title: '<div>',
+    subtitle: 'Блочный элемент',
+    link: 'https://itproger.com/spravka/html5/div',
+  },
+  {
+    category: 'HTML',
+    title: '<span>',
+    subtitle: 'Строчный элемент',
+    link: 'https://itproger.com/spravka/html5/span',
+  },
+  {
+    category: 'HTML',
+    title: '<h1>',
+    subtitle: 'Заголовок',
+    link: 'https://itproger.com/spravka/html5/h1',
+  },
+  {
+    category: 'HTML',
+    title: '<h2>',
+    subtitle: 'Подзаголовок',
+    link: 'https://itproger.com/spravka/html5/h2',
+  },
+  {
+    category: 'HTML',
+    title: '<ul>',
+    subtitle: 'Ненумерованный список',
+    link: 'https://itproger.com/spravka/html5/ul',
+  },
+  {
+    category: 'HTML',
+    title: '<ol>',
+    subtitle: 'Нумерованный список',
+    link: 'https://itproger.com/spravka/html5/ol',
+  },
+  {
+    category: 'HTML',
+    title: '<li>',
+    subtitle: 'Элемент списка',
+    link: 'https://itproger.com/spravka/html5/li',
+  },
+  {
+    category: 'HTML',
+    title: '<meta>',
+    link: 'https://itproger.com/spravka/html5/meta',
+  },
+  {
+    category: 'HTML',
+    title: '<title>',
+    link: 'https://itproger.com/spravka/html5/title',
+  },
+  {
+    category: 'HTML',
+    title: '<img>',
+    link: 'https://itproger.com/spravka/html5/img',
+  },
+]
+
 export const searchIndex: { category: string; title: string; subtitle?: string; link: string }[] = [
   ...jsReference,
   ...jsErrors,
+  ...htmlReference,
 ]
