@@ -48,10 +48,10 @@ export function Search() {
         filterOption={false}
         notFoundContent={searchQuery.trim() === '' ? null : 'Ничего не найдено'}
         onSearch={(input) => setSearchQuery(input)}
-        onSelect={(link: string) => {
+        onSelect={async (link: string) => {
           setSearchQuery('')
           selectRef.current!.blur()
-          router.push(link)
+          await router.push(link)
         }}
       >
         {searchResults.map((result) => {

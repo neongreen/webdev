@@ -46,6 +46,7 @@ export function stringifyVars(values: Record<string, any>) {
     .join(', ')
 }
 
+// TODO remove in favor of eval.ts
 export function checkJsSyntax(code: string): string | null {
   try {
     eval(code)

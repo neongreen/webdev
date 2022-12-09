@@ -307,8 +307,8 @@ import { Figure } from '@components/figure'
   <Box>
     <CodeAnn ok="Выводит 3 и -4">
       ```js
-      console.log(Math.floor(3.9));
-      console.log(Math.floor(-3.9));
+      console.log(Math.floor(3.9));   // 3
+      console.log(Math.floor(-3.9));  // -4
       ```
     </CodeAnn>
   </Box>
@@ -321,8 +321,8 @@ import { Figure } from '@components/figure'
   <Box>
     <CodeAnn ok="Выводит 4 и -3">
       ```js
-      console.log(Math.ceil(3.1));
-      console.log(Math.ceil(-3.1));
+      console.log(Math.ceil(3.1));   // 4
+      console.log(Math.ceil(-3.1));  // -3
       ```
     </CodeAnn>
   </Box>
@@ -335,9 +335,9 @@ import { Figure } from '@components/figure'
   <Box>
     <CodeAnn ok="Все строчки выводят 4">
       ```js
-      console.log(Math.round(3.5));
-      console.log(Math.round(3.9));
-      console.log(Math.round(4.2));
+      console.log(Math.round(3.5));  // 4
+      console.log(Math.round(3.9));  // 4
+      console.log(Math.round(4.2));  // 4
       ```
     </CodeAnn>
   </Box>
@@ -350,10 +350,10 @@ import { Figure } from '@components/figure'
   <Box>
     <CodeAnn ok="Все строчки выводят 4">
       ```js
-      console.log(Math.trunc(4.1));
-      console.log(Math.trunc(4.9));
-      console.log(Math.trunc(-4.1));
-      console.log(Math.trunc(-4.9));
+      console.log(Math.trunc(4.1));   // 4
+      console.log(Math.trunc(4.9));   // 4
+      console.log(Math.trunc(-4.1));  // 4
+      console.log(Math.trunc(-4.9));  // 4
       ```
     </CodeAnn>
   </Box>
