@@ -9,7 +9,6 @@ export type EvalError =
 function makeWorker(fn: string) {
   const response = '(' + fn + ')()'
   const blob = new Blob([response], { type: 'application/javascript' })
-  // eslint-disable-next-line compat/compat
   return new Worker(URL.createObjectURL(blob))
 }
 
