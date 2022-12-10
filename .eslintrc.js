@@ -9,7 +9,6 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   extends: [
-    'plugin:compat/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',

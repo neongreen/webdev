@@ -12,6 +12,224 @@ import { Figure } from '@components/figure'
 
 # Справка по JavaScript
 
+<div id="plus">
+## Оператор `+`
+</div>
+
+У оператора `+` есть два смысла:
+
+<Boxes>
+  <Box>
+    **Сложение чисел:**
+  </Box>
+  <Box>
+    <CodeAnn ok="a = 3">
+      ```js
+      let a = 1 + 2;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    **Конкатенация (склеивание) строк:**
+  </Box>
+  <Box>
+    <CodeAnn ok="message = 'Hello, world!'">
+      ```js
+      let message = 'Hello, ' + 'world!';
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Если один из операндов — строка, то остальные будут автоматически преобразованы в строку:
+  </Box>
+  <Box>
+    <CodeAnn ok="message = 'Прошло 7 дней'">
+      ```js
+      let days = 7;
+      let message = 'Прошло ' + days + ' дней';
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="minus">
+## Оператор `-`
+</div>
+
+<Boxes>
+  <Box>
+    Оператор `-` вычитает числа:
+  </Box>
+  <Box>
+    <CodeAnn ok="a = 3">
+      ```js
+      let a = 5 - 2;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Также можно написать `-` перед выражением, чтобы поменять его знак:
+  </Box>
+  <Box>
+    <CodeAnn ok="Работает">
+      ```js
+      let a = 3;
+      console.log(-a);     // Выводит -3
+      console.log(-(-a));  // Выводит 3
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    **Нельзя использовать `-`, чтобы отрезать от строки кусочек.**
+    
+    Оператор `-` просто попытается преобразовать обе строки в числа, не сможет этого сделать и вернет `NaN` ("not a number").
+    
+    Чтобы отрезать кусочек строки, используйте метод `.slice`.
+  </Box>
+  <Box>
+    <CodeAnn warn="В string будет NaN, а не 'a'">
+      ```js
+      let string = 'ab' - 'b';  // NaN
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="multiply">
+## Оператор `*`
+</div>
+
+<Boxes>
+  <Box>
+    Оператор `*` умножает числа:
+  </Box>
+  <Box>
+    <CodeAnn ok="a = 6">
+      ```js
+      let a = 2 * 3;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="divide">
+## Оператор `/`
+</div>
+
+<Boxes>
+  <Box>
+    Оператор `/` делит числа:
+  </Box>
+  <Box>
+    <CodeAnn ok="a = 2">
+      ```js
+      let a = 6 / 3;
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Чтобы поделить нацело, можно округлить число после деления с помощью `Math.floor`.
+
+    <p className="small">Чтобы узнать, делится ли одно число нацело на другое, лучше использовать оператор `%`. Прочитайте про него в соответствующем разделе.</p>
+  </Box>
+  <Box>
+    <CodeAnn ok="a = 2.5, b = 2">
+      ```js
+      let a = 10 / 4;                // 2.5
+      let b = Math.floor(10 / 4);    // 2
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Деление на ноль возвращает `Infinity` или `-Infinity`. Деление `0 / 0` возвращает `NaN`.
+  </Box>
+  <Box>
+    <CodeAnn ok="Так можно">
+      ```js
+      let a = 1 / 0;     // Infinity
+      let b = -1 / 0;    // -Infinity
+      let c = 0 / 0;     // NaN
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="modulo">
+## Оператор `%`
+</div>
+
+<Boxes>
+  <Box>
+    Оператор `%` возвращает остаток от деления одного числа на другое.
+
+    Например:
+    
+    * `100 % 3` будет равно `1`, потому что <InlineMath math="100 = 33 \times 3 + 1" />.
+    * `100 % 4` будет равно `0`, потому что <InlineMath math="100" /> делится на <InlineMath math="4" /> нацело.
+  </Box>
+  <Box>
+    <CodeAnn ok="Напечатает 0, 0, 1, 0">
+      ```js
+      let a = 100;
+      console.log(a % 1, a % 2, a % 3, a % 4);
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Оператор `%` часто используется для проверки, делится ли одно число нацело на другое. Если делится, остаток будет 0.
+  </Box>
+  <Box>
+    <CodeAnn ok="Напечатает 'Делится'">
+      ```js
+      let a = 100;
+      // mark[5:15]
+      if (a % 2 === 0) {
+        console.log('Делится');
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Еще `%` можно использовать, чтобы сбрасывать чиcло до нуля, когда оно дошло до какого-то предела:
+  </Box>
+  <Box>
+    <CodeAnn ok="Напечатает 0, 1 .. 99 и так десять раз">
+      ```js
+      let n = 0;
+      for (let i = 0; i < 1000; i++) {
+        // mark[3:17]
+        n = (n+1) % 100;  // n ограничено между 0 и 99
+        console.log(n);
+      }
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
 <div id="assign">
 ## Оператор `=`
 </div>
@@ -161,47 +379,6 @@ import { Figure } from '@components/figure'
       let c = 100, d = 100;
       c *= 2;
       d /= 2;
-      ```
-    </CodeAnn>
-  </Box>
-</Boxes>
-
-<div id="modulo">
-## Оператор `%`
-</div>
-
-<Boxes>
-  <Box>
-    Оператор `%` возвращает остаток от деления одного числа на другое.
-
-    Например:
-    
-    * `100 % 3` будет равно `1`, потому что <InlineMath math="100 = 33 \times 3 + 1" />.
-    * `100 % 4` будет равно `0`, потому что <InlineMath math="100" /> делится на <InlineMath math="4" /> нацело.
-  </Box>
-  <Box>
-    <CodeAnn ok="Напечатает 0, 0, 1, 0">
-      ```js
-      let a = 100;
-      console.log(a % 1, a % 2, a % 3, a % 4);
-      ```
-    </CodeAnn>
-  </Box>
-</Boxes>
-
-<Boxes>
-  <Box>
-    Еще `%` часто используют, чтобы сбрасывать чиcло до нуля, когда оно дошло до какого-то предела:
-  </Box>
-  <Box>
-    <CodeAnn ok="Напечатает 0, 1 .. 99 и так десять раз">
-      ```js
-      let n = 0;
-      for (let i = 0; i < 1000; i++) {
-        // mark
-        n = (n+1) % 100;  // n ограничено между 0 и 99
-        console.log(n);
-      }
       ```
     </CodeAnn>
   </Box>

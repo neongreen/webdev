@@ -21,7 +21,7 @@ const fuseOptions = {
   // ignoreLocation: false,
   // ignoreFieldNorm: false,
   // fieldNormWeight: 1,
-  keys: ['title', 'category'],
+  keys: ['title', 'category', 'seo'],
 }
 
 const fuse = new Fuse(searchIndex, fuseOptions)

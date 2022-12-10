@@ -1,14 +1,40 @@
 const jsReference = [
   {
     category: 'JS',
-    title: 'Оператор =',
+    title: 'Оператор + (сложение или конкатенация)',
+    seo: 'плюс',
+    link: '/js/ref#plus',
+  },
+  {
+    category: 'JS',
+    title: 'Оператор - (вычитание)',
+    seo: 'минус',
+    link: '/js/ref#minus',
+  },
+  {
+    category: 'JS',
+    title: 'Оператор * (умножение)',
+    seo: 'звездочка',
+    link: '/js/ref#multiply',
+  },
+  {
+    category: 'JS',
+    title: 'Оператор / (деление)',
+    seo: 'слеш слэш',
+    link: '/js/ref#divide',
+  },
+  {
+    category: 'JS',
+    title: 'Оператор = (присваивание)',
     subtitle: 'Изменяет переменную',
+    seo: 'равно',
     link: '/js/ref#assign',
   },
   {
     category: 'JS',
-    title: 'Операторы ++ и --',
+    title: 'Операторы ++ и -- (инкремент и декремент)',
     subtitle: 'Увеличивают и уменьшают на 1',
+    seo: 'плюс плюс, минус минус',
     link: '/js/ref#inc-dec',
   },
   {
@@ -26,6 +52,7 @@ const jsReference = [
     category: 'JS',
     title: 'Операторы === и !==',
     subtitle: 'Равно и не равно',
+    seo: 'сравнение',
     link: '/js/ref#eq-neq',
   },
   {
@@ -74,16 +101,18 @@ const jsReference = [
     category: 'JS',
     title: 'if',
     subtitle: 'Проверяет условие',
+    seo: 'если',
     link: '/js/ref#if',
   },
   {
     category: 'JS',
     title: 'if ... else',
+    seo: 'если иначе',
     link: '/js/ref#if-else',
   },
   {
     category: 'JS',
-    title: 'for',
+    title: 'Цикл for',
     subtitle: 'Цикл со счётчиком',
     link: '/js/ref#for',
   },
@@ -138,14 +167,16 @@ const jsReference = [
   },
   {
     category: 'JS',
-    title: 'while',
+    title: 'Цикл while',
     subtitle: 'Самый простой вариант цикла',
+    seo: 'пока',
     link: 'https://itproger.com/spravka/javascript/while',
   },
   {
     category: 'JS',
-    title: 'do ... while',
+    title: 'Цикл do ... while',
     subtitle: 'Цикл с проверкой в конце',
+    seo: 'пока',
     link: 'https://itproger.com/spravka/javascript/do-while',
   },
   {
@@ -202,24 +233,28 @@ const jsReference = [
   {
     category: 'JS',
     title: '\\n и эскейпинг',
+    seo: 'строка перенос',
     link: 'https://learn.javascript.ru/string#spetssimvoly',
   },
   {
     category: 'JS',
     title: 'Оператор ||',
-    subtitle: '"Или"',
+    subtitle: 'Булево "или" — хотя бы одно должно быть true',
+    seo: 'boolean булеан',
     link: 'https://learn.javascript.ru/logical-operators#ili',
   },
   {
     category: 'JS',
     title: 'Оператор &&',
-    subtitle: '"И"',
+    subtitle: 'Булево "и" — все должны быть true',
+    seo: 'boolean булеан',
     link: 'https://learn.javascript.ru/logical-operators#i',
   },
   {
     category: 'JS',
     title: 'Оператор !',
-    subtitle: '"Не"',
+    subtitle: 'Булево "не", инвертирует значение',
+    seo: 'boolean булеан',
     link: 'https://learn.javascript.ru/logical-operators#ne',
   },
   {
@@ -260,12 +295,14 @@ const jsReference = [
     category: 'JS: String',
     title: '.toLowerCase и .toUpperCase',
     subtitle: 'Делает буквы маленькими / большими',
+    seo: 'строка регистр',
     link: 'https://learn.javascript.ru/string#izmenenie-registra',
   },
   {
     category: 'JS: вопросы',
     title: 'В чем разница между одинарными (\') и двойными (") кавычками?',
     subtitle: 'Ни в чем',
+    seo: 'строка',
     link: 'https://learn.javascript.ru/string#kavychki',
   },
   {
@@ -512,7 +549,15 @@ const htmlReference = [
   },
 ]
 
-export const searchIndex: { category: string; title: string; subtitle?: string; link: string }[] = [
+type SearchEntry = {
+  category: string
+  title: string
+  subtitle?: string
+  seo?: string
+  link: string
+}
+
+export const searchIndex: SearchEntry[] = [
   ...jsReference,
   ...jsErrors,
   ...htmlReference,
