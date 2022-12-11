@@ -2,6 +2,7 @@ import { CodeAnn } from '@components/code-ann'
 import { Box, Boxes } from '@components/box'
 import { InlineMath } from 'react-katex'
 import { Figure } from '@components/figure'
+import * as B from 'react-bootstrap'
 
 <style jsx>{`
   h2 {
@@ -350,18 +351,27 @@ import { Figure } from '@components/figure'
 ## Операторы `+=`, `-=`, `*=`, `/=`
 </div>
 
+<B.Alert variant="info">
+  Операторы `+=`, `-=`, `*=`, `/=` — это сокращенные операции присваивания.
+
+  * Сложение: `a += n` значит `a = a + n`
+  * Вычитание: `a -= n` значит `a = a - n`
+  * Умножение: `a *= n` значит `a = a * n`
+  * Деление: `a /= n` значит `a = a / n`
+</B.Alert>
+
 <Boxes>
   <Box>
-    Операторы `+=` и `-=` — это сокращенные операции присваивания.
+    Например, `a += 10` увеличит переменную `a` на 10.
     
-    Например, `a += 2` — это то же самое, что и `a = a + 2`. То есть, `a` увеличится на 2.
+    Соответственно, `b -= 10` уменьшит переменную `b` на 10.
   </Box>
   <Box>
-    <CodeAnn ok="Теперь a = 102, b = 98">
+    <CodeAnn ok="Теперь a = 110, b = 90">
       ```js
-      let a = 100, b = 100;
-      a += 2;
-      b -= 2;
+      let a = 110, b = 90;
+      a += 10;
+      b -= 10;
       ```
     </CodeAnn>
   </Box>
@@ -369,9 +379,9 @@ import { Figure } from '@components/figure'
 
 <Boxes>
   <Box>
-    `*=` и `/=` тоже существуют, но используются реже.
+    Операторы `*=` и `/=` тоже существуют, но используются реже. Они умножают и делят переменную соответственно.
 
-    <small>А `%=` и `**=` — еще реже.</small>
+    <small>`%=` и `**=` тоже есть, но они вообще редкие.</small>
   </Box>
   <Box>
     <CodeAnn ok="Теперь c = 200, d = 50">
