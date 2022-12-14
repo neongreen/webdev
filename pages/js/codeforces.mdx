@@ -1,3 +1,6 @@
+import { CodeAnn } from '@components/code-ann'
+import { Box, Boxes } from '@components/box'
+
 # Codeforces
 
 [Codeforces](https://codeforces.com) — это сайт с олимпиадными задачами (на русском и английском) и соревнованиями по программированию.
@@ -31,14 +34,60 @@ function main() {
 
 ## Как читать ввод
 
-Если ввод — это одно число:
+<Boxes>
+  <Box>
+    **Строчка с одним числом,** например:
+    * `5`
+  </Box>
+  <Box>
+    <CodeAnn ok="n = 5">
+      ```js
+      let n = Number(readline())
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
 
-```js
-  let n = Number(readline())
-```
+<Boxes>
+  <Box>
+    **Строчка с тремя числами,** например:
+    * `3 5 8`
+  </Box>
+  <Box>
+    <CodeAnn ok="n = 3, m = 5, k = 8">
+      ```js
+      let [n, m, k] = readline().split(" ").map(Number)
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
 
-Если ввод — это три числа в одной строке:
+<Boxes>
+  <Box>
+    **Строчка с каким-то произвольным количеством чисел,** например:
+    * `3 5 8 13 21`
+  </Box>
+  <Box>
+    <CodeAnn ok="xs = [3, 5, 8, 13, 21]">
+      ```js
+      let xs = readline().split(" ").map(Number)
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
 
-```js
-  let [n, m, k] = readline().split(" ").map(Number)
-```
+<Boxes>
+  <Box>
+    **Просто строка,** например:
+    * `abacaba`
+  </Box>
+  <Box>
+    <CodeAnn ok="s = 'abacaba'">
+      ```js
+      let s = readline()
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+
