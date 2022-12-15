@@ -19,16 +19,16 @@ process.stdin.setEncoding("utf-8")
 let __input = "", __line = 0
 process.stdin.on("data", s => __input += s)
 process.stdin.on("end", _ => {
-  __input = __input.trim().split("\n").map(s => s.trim())
-  main()
+    __input = __input.trim().split("\n").map(s => s.trim())
+    main()
 })
 function readline() { return __input[__line++] }
 
 function main() {
-  // Решение писать здесь.
-  // 
-  // * Функция `readline()` возвращает одну строку из ввода.
-  // * Выводить можно с помощью `console.log()`.
+    // Решение писать здесь.
+    // 
+    // * Функция `readline()` возвращает одну строку из ввода.
+    // * Выводить можно с помощью `console.log()`.
 }
 ```
 
