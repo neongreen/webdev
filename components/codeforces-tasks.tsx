@@ -17,6 +17,7 @@ export function CodeforcesTasks() {
 
   return (
     <ProList
+      className={styles.list}
       rowKey="code"
       expandable={{
         expandedRowKeys,
@@ -27,30 +28,28 @@ export function CodeforcesTasks() {
         title: {
           render: (_, task) => {
             return (
-              <Space size={0}>
-                <span onClick={() => toggle(task.code)}>
-                  <b>
-                    {task.code} — {task.title}
-                  </b>
+              <Space
+                size={
+                  ['large', 'small'] // large horizontally, small vertically
+                }
+                wrap
+                className={styles.item}
+              >
+                <span onClick={() => toggle(task.code)} className={styles.title}>
+                  <span className={styles.taskCode}>{task.code}</span>
+                  {task.title}
                 </span>
-              </Space>
-            )
-          },
-        },
-        subTitle: {
-          render: (_, task) => {
-            return (
-              <Space size="large">
-                <Space size={0}>
+                <a href={task.link} target="_blank" rel="noreferrer" className={styles.cfLink}>
+                  <BiLinkExternal className={styles.cfLinkIcon} />
+                  Codeforces
+                </a>
+                <Space size={0} className={styles.tags}>
                   {task.tags.map((tag, i) => (
                     <Tag color="red" key={i}>
                       {tag}
                     </Tag>
                   ))}
                 </Space>
-                <a href={task.link} target="_blank" rel="noreferrer">
-                  <BiLinkExternal /> Codeforces
-                </a>
               </Space>
             )
           },

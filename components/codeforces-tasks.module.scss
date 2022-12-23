@@ -13,3 +13,40 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+.list {
+  :global(.ant-pro-card-body) {
+    padding: 0;
+  }
+  :global(.ant-pro-list-row-title):hover {
+    // Don't change anything on hover
+    color: rgba(0, 0, 0, 0.88);
+    cursor: auto;
+  }
+  :global(.ant-list-item) {
+    padding: 12px;
+  }
+}
+
+.item {
+  .title {
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+    }
+    .taskCode {
+      font-weight: normal;
+      width: 3rem;
+      display: inline-block;
+      color: gray;
+      margin-right: 0.8rem;
+    }
+  }
+  .cfLink {
+    .cfLinkIcon {
+      margin-right: 0.25rem;
+    }
+  }
+  .tags {
+  }
+}
