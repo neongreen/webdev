@@ -1,0 +1,13 @@
+diff --git a/lib/index.js b/lib/index.js
+index 89143faaab6fff491e10071d6b10f08110a3a4a0..485893e60be1bc8b81d37e2944ff8cd771e694ca 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -48,7 +48,7 @@ var _createForOfIteratorHelper2 = _interopRequireDefault(require("@babel/runtime
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _cssinjs = require("@ant-design/cssinjs");
+ var _antd = require("antd");
+-var _zh_CN = _interopRequireDefault(require("antd/es/locale/zh_CN"));
++var _zh_CN = _interopRequireDefault(require("antd/lib/locale/zh_CN"));
+ var _react = _interopRequireWildcard(require("react"));
+ var _swr = require("swr");
+ var _ar_EG = _interopRequireDefault(require("./locale/ar_EG"));

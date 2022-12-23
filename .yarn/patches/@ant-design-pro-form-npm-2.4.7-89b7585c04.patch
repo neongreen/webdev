@@ -1,0 +1,27 @@
+diff --git a/lib/index.js b/lib/index.js
+index ecbd186dd4db569bf88f4d5bdf33af3c3658165f..856cee647699e1706bb079e35521363fc4f367d6 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -46,14 +46,14 @@ Object.keys(_layouts).forEach(function (key) {
+     }
+   });
+ });
+-require("antd/es/drawer/style");
+-require("antd/es/form/style");
+-require("antd/es/modal/style");
+-require("antd/es/rate/style");
+-require("antd/es/row/style");
+-require("antd/es/steps/style");
+-require("antd/es/tabs/style");
+-require("antd/es/upload/style");
++require("antd/lib/drawer/style");
++require("antd/lib/form/style");
++require("antd/lib/modal/style");
++require("antd/lib/rate/style");
++require("antd/lib/row/style");
++require("antd/lib/steps/style");
++require("antd/lib/tabs/style");
++require("antd/lib/upload/style");
+ var _proUtils = require("@ant-design/pro-utils");
+ var _components = require("./components");
+ Object.keys(_components).forEach(function (key) {

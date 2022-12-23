@@ -1,0 +1,26 @@
+diff --git a/lib/components/FilterDropdown/index.js b/lib/components/FilterDropdown/index.js
+index 75f1bb9c41854cbd785a61aa2374c7f5f4ad362e..bc1d7e1af65970f8894db5b7c38e00f3bde8529e 100644
+--- a/lib/components/FilterDropdown/index.js
++++ b/lib/components/FilterDropdown/index.js
+@@ -11,7 +11,7 @@ var _antd = require("antd");
+ var _react = require("react");
+ var _DropdownFooter = require("../DropdownFooter");
+ var _style = require("./style");
+-require("antd/es/dropdown/style");
++require("antd/lib/dropdown/style");
+ var _openVisibleCompatible = require("../../compareVersions/openVisibleCompatible");
+ var FilterDropdown = function FilterDropdown(props) {
+   var children = props.children,
+diff --git a/lib/useEditableArray/index.js b/lib/useEditableArray/index.js
+index 50ff6f8b0d4b6fa996162406191762f5ee8f1ac2..f02655163721a68856b05b72e3347d0ce106620a 100644
+--- a/lib/useEditableArray/index.js
++++ b/lib/useEditableArray/index.js
+@@ -23,7 +23,7 @@ var _jsxRuntime = require("react/jsx-runtime");
+ var _icons = require("@ant-design/icons");
+ var _proProvider = require("@ant-design/pro-provider");
+ var _antd = require("antd");
+-var _useLazyKVMap3 = _interopRequireDefault(require("antd/es/table/hooks/useLazyKVMap"));
++var _useLazyKVMap3 = _interopRequireDefault(require("antd/lib/table/hooks/useLazyKVMap"));
+ var _useMergedState3 = _interopRequireDefault(require("rc-util/lib/hooks/useMergedState"));
+ var _get = _interopRequireDefault(require("rc-util/lib/utils/get"));
+ var _set = _interopRequireDefault(require("rc-util/lib/utils/set"));

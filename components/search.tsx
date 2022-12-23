@@ -1,7 +1,6 @@
 import Fuse from 'fuse.js'
 import React from 'react'
 import { Select, RefSelectProps } from 'antd'
-import 'antd/dist/antd.css'
 import styles from './search.module.scss'
 import { searchIndex } from '@lib/search-index'
 import { useRouter } from 'next/router'

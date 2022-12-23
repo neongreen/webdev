@@ -1,0 +1,28 @@
+diff --git a/lib/components/StatisticCard/index.js b/lib/components/StatisticCard/index.js
+index 18752b6088becea591687c5698d72becffb76b6c..60843642aa9bca953c1c1f603ad88a127525161e 100644
+--- a/lib/components/StatisticCard/index.js
++++ b/lib/components/StatisticCard/index.js
+@@ -17,8 +17,8 @@ var _Divider = _interopRequireDefault(require("../Divider"));
+ var _Operation = _interopRequireDefault(require("../Operation"));
+ var _Statistic = _interopRequireDefault(require("../Statistic"));
+ var _style = require("./style");
+-require("antd/es/divider/style");
+-require("antd/es/statistic/style");
++require("antd/lib/divider/style");
++require("antd/lib/statistic/style");
+ var _excluded = ["children", "statistic", "className", "chart", "chartPlacement", "footer"];
+ var StatisticCard = function StatisticCard(props) {
+   var _classNames;
+diff --git a/lib/index.js b/lib/index.js
+index bbc74612fb3c4487fd73d9b7250993473c1e4dd6..81e48af1a9fc305d77df3512b51cbaec45b42e6c 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -33,6 +33,6 @@ var _CheckCard = _interopRequireDefault(require("./components/CheckCard"));
+ var _Statistic = _interopRequireDefault(require("./components/Statistic"));
+ var _StatisticCard = _interopRequireDefault(require("./components/StatisticCard"));
+ var _ProCard = _interopRequireDefault(require("./ProCard"));
+-require("antd/es/card/style");
++require("antd/lib/card/style");
+ var _default = _ProCard.default;
+ exports.default = _default;
+\ No newline at end of file

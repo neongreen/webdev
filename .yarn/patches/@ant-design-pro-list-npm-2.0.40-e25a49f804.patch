@@ -1,0 +1,30 @@
+diff --git a/lib/ListView.js b/lib/ListView.js
+index 20fea620085ddc352509b9923a71fa91e26a227b..1adada1e4cd1545a9799c57fb2b83bc9a2c48eab 100644
+--- a/lib/ListView.js
++++ b/lib/ListView.js
+@@ -13,9 +13,9 @@ var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/h
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _proProvider = require("@ant-design/pro-provider");
+ var _antd = require("antd");
+-var _useLazyKVMap3 = _interopRequireDefault(require("antd/es/table/hooks/useLazyKVMap"));
+-var _usePagination3 = _interopRequireDefault(require("antd/es/table/hooks/usePagination"));
+-var _useSelection3 = _interopRequireDefault(require("antd/es/table/hooks/useSelection"));
++var _useLazyKVMap3 = _interopRequireDefault(require("antd/lib/table/hooks/useLazyKVMap"));
++var _usePagination3 = _interopRequireDefault(require("antd/lib/table/hooks/usePagination"));
++var _useSelection3 = _interopRequireDefault(require("antd/lib/table/hooks/useSelection"));
+ var _classnames = _interopRequireDefault(require("classnames"));
+ var _get = _interopRequireDefault(require("rc-util/lib/utils/get"));
+ var _react = _interopRequireWildcard(require("react"));
+diff --git a/lib/index.js b/lib/index.js
+index bd8a1c6f902fc8f0bff73c6cabe2e6cf992b2ca9..236bded2fdc31e2ca838ad32efa2284ace864317 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -17,7 +17,7 @@ var _classnames = _interopRequireDefault(require("classnames"));
+ var _react = require("react");
+ var _ListView = _interopRequireDefault(require("./ListView"));
+ var _index = require("./style/index");
+-require("antd/es/list/style");
++require("antd/lib/list/style");
+ var _excluded = ["metas", "split", "footer", "rowKey", "tooltip", "className", "options", "search", "expandable", "showActions", "showExtra", "rowSelection", "pagination", "itemLayout", "renderItem", "grid", "itemCardProps", "onRow", "onItem", "rowClassName", "locale", "itemHeaderRender", "itemTitleRender"];
+ function ProList(props) {
+   var metals = props.metas,

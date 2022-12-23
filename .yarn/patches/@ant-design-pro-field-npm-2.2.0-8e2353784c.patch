@@ -1,0 +1,348 @@
+diff --git a/lib/components/Cascader/index.js b/lib/components/Cascader/index.js
+index bb17449c4cdf3fda3982bb90eddfb43d3b31e87e..477fce50a0c0220257248ea782dd4ba7628b394e 100644
+--- a/lib/components/Cascader/index.js
++++ b/lib/components/Cascader/index.js
+@@ -17,7 +17,7 @@ var _antd = require("antd");
+ var _classnames = _interopRequireDefault(require("classnames"));
+ var _react = _interopRequireWildcard(require("react"));
+ var _Select = require("../Select");
+-require("antd/es/cascader/style");
++require("antd/lib/cascader/style");
+ var _excluded = ["radioType", "renderFormItem", "mode", "render", "label", "light"];
+ /**
+  * 级联选择组件
+diff --git a/lib/components/Checkbox/index.js b/lib/components/Checkbox/index.js
+index ffbb4b6b88b453ccbac8b9c4ff19b84e42d54179..dd2ce5844eecab361831bd81cec6650e0276c19f 100644
+--- a/lib/components/Checkbox/index.js
++++ b/lib/components/Checkbox/index.js
+@@ -16,7 +16,7 @@ var _antd = require("antd");
+ var _classnames = _interopRequireDefault(require("classnames"));
+ var _react = _interopRequireWildcard(require("react"));
+ var _Select = require("../Select");
+-require("antd/es/checkbox/style");
++require("antd/lib/checkbox/style");
+ var _excluded = ["layout", "renderFormItem", "mode", "render"];
+ //----------------------
+ /**
+diff --git a/lib/components/Code/index.js b/lib/components/Code/index.js
+index 328c0c9501847d4a68b91f81d7187bbca3eb6dcc..5e12ddb205e27f50f63179ee642729eecd388414 100644
+--- a/lib/components/Code/index.js
++++ b/lib/components/Code/index.js
+@@ -9,7 +9,7 @@ var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/obje
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/input/style");
++require("antd/lib/input/style");
+ // 兼容代码-----------
+ 
+ //----------------------
+diff --git a/lib/components/DatePicker/index.js b/lib/components/DatePicker/index.js
+index 5a08cfc43e57dc30d3f49b5c965a0d4eaaa4a932..804bde31e38ff75834128b9848bb28b54e5fcf2d 100644
+--- a/lib/components/DatePicker/index.js
++++ b/lib/components/DatePicker/index.js
+@@ -16,7 +16,7 @@ var _antd = require("antd");
+ var _dayjs = _interopRequireDefault(require("dayjs"));
+ var _weekOfYear = _interopRequireDefault(require("dayjs/plugin/weekOfYear"));
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/date-picker/style");
++require("antd/lib/date-picker/style");
+ // 兼容代码-----------
+ 
+ //----------------------
+diff --git a/lib/components/Digit/index.js b/lib/components/Digit/index.js
+index 4ba026b735116a5f4bee042311bbce0ddef54a99..c39c34856afd2480d30804ad8cbc090f38282d8a 100644
+--- a/lib/components/Digit/index.js
++++ b/lib/components/Digit/index.js
+@@ -11,7 +11,7 @@ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _react = _interopRequireWildcard(require("react"));
+ var _omit = _interopRequireDefault(require("omit.js"));
+-require("antd/es/input-number/style");
++require("antd/lib/input-number/style");
+ var _proProvider = require("@ant-design/pro-provider");
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/DigitRange/index.js b/lib/components/DigitRange/index.js
+index 107f9230852cafb9292e169de96641c4d43496a9..a8dfbae5a8c71d2672fd2205a0ddd7e4085a25b9 100644
+--- a/lib/components/DigitRange/index.js
++++ b/lib/components/DigitRange/index.js
+@@ -12,7 +12,7 @@ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _useMergedState3 = _interopRequireDefault(require("rc-util/lib/hooks/useMergedState"));
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/input-number/style");
++require("antd/lib/input-number/style");
+ var _proProvider = require("@ant-design/pro-provider");
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/FromNow/index.js b/lib/components/FromNow/index.js
+index e74efbf4a96697068292e27bbfcf61f0d0a5c550..d0a02de5268a79c0467d642cc28e9d2845211b4f 100644
+--- a/lib/components/FromNow/index.js
++++ b/lib/components/FromNow/index.js
+@@ -12,7 +12,7 @@ var _proUtils = require("@ant-design/pro-utils");
+ var _antd = require("antd");
+ var _dayjs = _interopRequireDefault(require("dayjs"));
+ var _relativeTime = _interopRequireDefault(require("dayjs/plugin/relativeTime"));
+-require("antd/es/date-picker/style");
++require("antd/lib/date-picker/style");
+ var _react = _interopRequireDefault(require("react"));
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/Image/index.js b/lib/components/Image/index.js
+index 83f1bfa0ab67d2c4881f15acd288a1dcca0da778..c25a4f7e10f074461201a0d9a06f58e880a017b5 100644
+--- a/lib/components/Image/index.js
++++ b/lib/components/Image/index.js
+@@ -9,7 +9,7 @@ var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/obje
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/image/style");
++require("antd/lib/image/style");
+ var _proProvider = require("@ant-design/pro-provider");
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/Money/index.js b/lib/components/Money/index.js
+index 6ebe9daa7984838d7393532b84c26337f8112548..85f6d0d5a802f7a78c9e1723860dbc7271cadcd1 100644
+--- a/lib/components/Money/index.js
++++ b/lib/components/Money/index.js
+@@ -15,8 +15,8 @@ var _antd = require("antd");
+ var _omit = _interopRequireDefault(require("omit.js"));
+ var _useMergedState3 = _interopRequireDefault(require("rc-util/lib/hooks/useMergedState"));
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/input-number/style");
+-require("antd/es/popover/style");
++require("antd/lib/input-number/style");
++require("antd/lib/popover/style");
+ var _proUtils = require("@ant-design/pro-utils");
+ var _excluded = ["content", "numberFormatOptions", "numberPopoverRender", "open"],
+   _excluded2 = ["text", "mode", "render", "renderFormItem", "fieldProps", "proFieldKey", "plain", "valueEnum", "placeholder", "locale", "customSymbol", "numberFormatOptions", "numberPopoverRender"];
+diff --git a/lib/components/Options/index.js b/lib/components/Options/index.js
+index 474eb677a8dfd0a56d3b4a1635cd63721edee7c8..76f5ce20f2270f1904ebec7650aa8279f6711d70 100644
+--- a/lib/components/Options/index.js
++++ b/lib/components/Options/index.js
+@@ -10,7 +10,7 @@ var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/obje
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/space/style");
++require("antd/lib/space/style");
+ // 兼容代码-----------
+ 
+ //----------------------
+diff --git a/lib/components/Password/index.js b/lib/components/Password/index.js
+index e5ffc521e19afe88b55a9439f6886237b39a9568..d53a71d476f1012ce504980bf3903a38031ae70d 100644
+--- a/lib/components/Password/index.js
++++ b/lib/components/Password/index.js
+@@ -14,8 +14,8 @@ var _proProvider = require("@ant-design/pro-provider");
+ var _antd = require("antd");
+ var _useMergedState3 = _interopRequireDefault(require("rc-util/lib/hooks/useMergedState"));
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/input/style");
+-require("antd/es/space/style");
++require("antd/lib/input/style");
++require("antd/lib/space/style");
+ var _excluded = ["text", "mode", "render", "renderFormItem", "fieldProps", "proFieldKey"];
+ //----------------------
+ /**
+diff --git a/lib/components/Percent/index.js b/lib/components/Percent/index.js
+index 3fa7048e6c39dc147ae8c80bc06fc081116ab8b9..c419947febd6a044d8b7390bf8eceba8a1685577 100644
+--- a/lib/components/Percent/index.js
++++ b/lib/components/Percent/index.js
+@@ -12,7 +12,7 @@ var _antd = require("antd");
+ var _lodash = _interopRequireDefault(require("lodash.tonumber"));
+ var _react = _interopRequireWildcard(require("react"));
+ var _util = require("./util");
+-require("antd/es/input-number/style");
++require("antd/lib/input-number/style");
+ var _proProvider = require("@ant-design/pro-provider");
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/Progress/index.js b/lib/components/Progress/index.js
+index ba680d4d5b51fd85eedf0b8b0be13f9a01fe7b06..48de469740d1af37edf0eecc7b30d6b850f5b2df 100644
+--- a/lib/components/Progress/index.js
++++ b/lib/components/Progress/index.js
+@@ -12,8 +12,8 @@ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _lodash = _interopRequireDefault(require("lodash.tonumber"));
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/input-number/style");
+-require("antd/es/progress/style");
++require("antd/lib/input-number/style");
++require("antd/lib/progress/style");
+ var _proProvider = require("@ant-design/pro-provider");
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/Radio/index.js b/lib/components/Radio/index.js
+index 47695bc4287b4b3b42a278dad577a176ba363deb..8e092c5bcd4845a67b91790eadfa58570bfa550a 100644
+--- a/lib/components/Radio/index.js
++++ b/lib/components/Radio/index.js
+@@ -16,7 +16,7 @@ var _antd = require("antd");
+ var _classnames = _interopRequireDefault(require("classnames"));
+ var _react = _interopRequireWildcard(require("react"));
+ var _Select = require("../Select");
+-require("antd/es/radio/style");
++require("antd/lib/radio/style");
+ var _excluded = ["radioType", "renderFormItem", "mode", "render"];
+ /**
+  * 单选组件
+diff --git a/lib/components/RangePicker/index.js b/lib/components/RangePicker/index.js
+index 4e48e64843b88f93d2a0342ad3009fb085c86fd4..0426e02f79a6c824cdf94323d311bed93e22d08d 100644
+--- a/lib/components/RangePicker/index.js
++++ b/lib/components/RangePicker/index.js
+@@ -14,7 +14,7 @@ var _proUtils = require("@ant-design/pro-utils");
+ var _antd = require("antd");
+ var _dayjs = _interopRequireDefault(require("dayjs"));
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/date-picker/style");
++require("antd/lib/date-picker/style");
+ // 兼容代码-----------
+ 
+ //------------
+diff --git a/lib/components/Rate/index.js b/lib/components/Rate/index.js
+index 11641040f40342e55595b91b06f69a0fb35b2439..36b3ea6950950d4115ab3e268dc77b9b4e0959c7 100644
+--- a/lib/components/Rate/index.js
++++ b/lib/components/Rate/index.js
+@@ -9,7 +9,7 @@ var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/obje
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/rate/style");
++require("antd/lib/rate/style");
+ // 兼容代码-----------
+ 
+ //------------
+diff --git a/lib/components/Second/index.js b/lib/components/Second/index.js
+index 73551bfd3ae7eeaa39395f0cbac1d33989eb7a62..263ce26584cede5e9a69b5e298a6450648d97ab4 100644
+--- a/lib/components/Second/index.js
++++ b/lib/components/Second/index.js
+@@ -10,7 +10,7 @@ var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/obje
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/input-number/style");
++require("antd/lib/input-number/style");
+ var _proProvider = require("@ant-design/pro-provider");
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/Segmented/index.js b/lib/components/Segmented/index.js
+index c89f734bf20d987c3cba0eb69a7b412a73cdee21..0c61a92617c9d3cf7963d34e811b7d7d2af6ae37 100644
+--- a/lib/components/Segmented/index.js
++++ b/lib/components/Segmented/index.js
+@@ -15,8 +15,8 @@ var _antd = require("antd");
+ var _react = _interopRequireWildcard(require("react"));
+ var _omit = _interopRequireDefault(require("omit.js"));
+ var _Select = require("../Select");
+-require("antd/es/segmented/style");
+-require("antd/es/spin/style");
++require("antd/lib/segmented/style");
++require("antd/lib/spin/style");
+ var _excluded = ["mode", "render", "renderFormItem", "fieldProps", "emptyText"];
+ /**
+  * Segmented https://ant.design/components/segmented-cn/
+diff --git a/lib/components/Select/index.js b/lib/components/Select/index.js
+index be48eee61f823788c3ada0905547d537beb159f0..f90d15fb463a1dae9653e33be89b1e06df2ed027 100644
+--- a/lib/components/Select/index.js
++++ b/lib/components/Select/index.js
+@@ -21,7 +21,7 @@ var _swr = _interopRequireDefault(require("swr"));
+ var _Status = _interopRequireWildcard(require("../Status"));
+ var _LightSelect = _interopRequireDefault(require("./LightSelect"));
+ var _SearchSelect = _interopRequireDefault(require("./SearchSelect"));
+-require("antd/es/select/style");
++require("antd/lib/select/style");
+ var _excluded = ["value", "text"],
+   _excluded2 = ["mode", "valueEnum", "render", "renderFormItem", "request", "fieldProps", "plain", "children", "light", "proFieldKey", "params", "label", "bordered", "id", "lightLabel", "labelTrigger"];
+ var ObjToMap = function ObjToMap(value) {
+diff --git a/lib/components/Slider/index.js b/lib/components/Slider/index.js
+index 38b9ff949a0843549384c79e556c5ed4ee059b2b..bbf613f77d332ef1b0ee40abe91dd26a84f31d2c 100644
+--- a/lib/components/Slider/index.js
++++ b/lib/components/Slider/index.js
+@@ -9,7 +9,7 @@ var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/obje
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/slider/style");
++require("antd/lib/slider/style");
+ // 兼容代码-----------
+ 
+ //------------
+diff --git a/lib/components/Status/index.js b/lib/components/Status/index.js
+index 9643faabfe51a0b8e1bd2e722b5bff0f4b741d0c..ad266f6c53a9ece49dc3ed23fc955e75042a6e18 100644
+--- a/lib/components/Status/index.js
++++ b/lib/components/Status/index.js
+@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
+ exports.default = exports.ProFieldBadgeColor = void 0;
+ var _jsxRuntime = require("react/jsx-runtime");
+ var _antd = require("antd");
+-require("antd/es/badge/style");
++require("antd/lib/badge/style");
+ // 兼容代码-----------
+ 
+ /** 快捷操作，用于快速的展示一个状态 */
+diff --git a/lib/components/Switch/index.js b/lib/components/Switch/index.js
+index e22b9636b94f3a067244f040038136a29ee775b6..e570f74287e94cd767ce6988d3d6d1d395723435 100644
+--- a/lib/components/Switch/index.js
++++ b/lib/components/Switch/index.js
+@@ -12,7 +12,7 @@ var _proProvider = require("@ant-design/pro-provider");
+ var _antd = require("antd");
+ var _omit = _interopRequireDefault(require("omit.js"));
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/switch/style");
++require("antd/lib/switch/style");
+ // 兼容代码-----------
+ 
+ //------------
+diff --git a/lib/components/Text/index.js b/lib/components/Text/index.js
+index a7b320e68ea04f49b031a39b6cb0a359bf4f2b1e..d81eb3179f87abf166840f9a3239d0aa21d0e0c9 100644
+--- a/lib/components/Text/index.js
++++ b/lib/components/Text/index.js
+@@ -11,7 +11,7 @@ var _jsxRuntime = require("react/jsx-runtime");
+ var _proProvider = require("@ant-design/pro-provider");
+ var _antd = require("antd");
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/input/style");
++require("antd/lib/input/style");
+ // 兼容代码-----------
+ 
+ //------------
+diff --git a/lib/components/TextArea/index.js b/lib/components/TextArea/index.js
+index e3260137a6450cc46fae8d2a538adf4063c8ff2b..9c15bc5cd53c388618d4d09b79fb0a7a6325fb3e 100644
+--- a/lib/components/TextArea/index.js
++++ b/lib/components/TextArea/index.js
+@@ -10,7 +10,7 @@ var _jsxRuntime = require("react/jsx-runtime");
+ var _proProvider = require("@ant-design/pro-provider");
+ var _antd = require("antd");
+ var _react = _interopRequireDefault(require("react"));
+-require("antd/es/input/style");
++require("antd/lib/input/style");
+ // 兼容代码-----------
+ 
+ //------------
+diff --git a/lib/components/TimePicker/index.js b/lib/components/TimePicker/index.js
+index 7133988b9b8017d5a21fa5d700aedc9aa1e268e4..b00c8babc36cfc31dced7c2689ff1ae41d060dcf 100644
+--- a/lib/components/TimePicker/index.js
++++ b/lib/components/TimePicker/index.js
+@@ -13,7 +13,7 @@ var _proUtils = require("@ant-design/pro-utils");
+ var _antd = require("antd");
+ var _dayjs = _interopRequireDefault(require("dayjs"));
+ var _react = _interopRequireWildcard(require("react"));
+-require("antd/es/date-picker/style");
++require("antd/lib/date-picker/style");
+ var _DatePicker = require("../DatePicker");
+ // 兼容代码-----------
+ 
+diff --git a/lib/components/TreeSelect/index.js b/lib/components/TreeSelect/index.js
+index 22e560768d4d18e623f89b565fab1b47b0340eba..33e9daca712b33384823edbdccee90ef14dde8c9 100644
+--- a/lib/components/TreeSelect/index.js
++++ b/lib/components/TreeSelect/index.js
+@@ -16,8 +16,8 @@ var _classnames = _interopRequireDefault(require("classnames"));
+ var _useMergedState3 = _interopRequireDefault(require("rc-util/lib/hooks/useMergedState"));
+ var _react = _interopRequireWildcard(require("react"));
+ var _Select = require("../Select");
+-require("antd/es/spin/style");
+-require("antd/es/tree-select/style");
++require("antd/lib/spin/style");
++require("antd/lib/tree-select/style");
+ var _proProvider = require("@ant-design/pro-provider");
+ var _excluded = ["radioType", "renderFormItem", "mode", "light", "label", "render"],
+   _excluded2 = ["onSearch", "onClear", "onChange", "onBlur", "showSearch", "autoClearSearchValue", "treeData", "searchValue"];

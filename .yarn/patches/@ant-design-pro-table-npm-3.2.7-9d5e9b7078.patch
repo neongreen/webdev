@@ -1,0 +1,13 @@
+diff --git a/lib/Table.js b/lib/Table.js
+index a9a330ab8ffd147f1949a2b0f191075b65b3d6db..03e7e11002c33585b51a945d68ea0a9c08599699 100644
+--- a/lib/Table.js
++++ b/lib/Table.js
+@@ -16,7 +16,7 @@ var _objectSpread4 = _interopRequireDefault(require("@babel/runtime/helpers/obje
+ var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
+ var _react = _interopRequireWildcard(require("react"));
+ var _jsxRuntime = require("react/jsx-runtime");
+-require("antd/es/table/style");
++require("antd/lib/table/style");
+ var _proCard = _interopRequireDefault(require("@ant-design/pro-card"));
+ var _proForm = _interopRequireDefault(require("@ant-design/pro-form"));
+ var _proProvider = require("@ant-design/pro-provider");
