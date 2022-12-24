@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import endent from 'endent'
 import rehypeRaw from 'rehype-raw'
+// @ts-ignore
 import { InlineMath } from 'react-katex'
 
 export type CodeforcesTaskData = {
@@ -89,6 +90,30 @@ const task282A: CodeforcesTaskData = {
     `,
     markdown`
       Чтобы выполнить команду, можно просто написать \`if\`. Например, \`if (s === '++X') { x++ }\`.
+    `,
+  ],
+}
+
+const task271A: CodeforcesTaskData = {
+  code: '271A',
+  title: 'Красивый год',
+  link: 'https://codeforces.com/problemset/problem/271/A',
+  tags: ['Цикл for', 'Условия'],
+  statement: markdown`
+    Дано целое число N от 1000 до 9000.
+
+    Найдите минимальное число, которое больше заданного и в котором все цифры различны.
+  `,
+  hints: [
+    markdown`
+      Достаточно сделать цикл \`for\` или \`while\`, который будет начинаться с N+1. И выдать первое найденное число, в котором все цифры различны.
+    `,
+    markdown`
+      Как узнать, что все цифры различны? Есть несколько способов:
+
+      * можно перевести число в строку и проверить, что каждый символ в строке не встречается нигде после себя — для этого понадобятся \`.slice\` и \`.includes\`;
+      * можно проверить для всех цифр от 0 до 9, что каждая встречается в числе не больше одного раза — для этого тоже надо будет перевести число в строку, а потом пройтись по ней циклом для каждой цифры;
+      * наконец, можно воспользоваться \`Set\` — добавить все цифры в него, а потом проверить, что размер множества равен 4. Но для этого надо знать, что такое \`Set\`.
     `,
   ],
 }
@@ -242,6 +267,7 @@ export const codeforcesTasks: CodeforcesTaskData[] = [
   task231A,
   task71A,
   task282A,
+  task271A,
   task339A,
   task1512A,
   task58A,
