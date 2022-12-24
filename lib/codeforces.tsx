@@ -239,6 +239,23 @@ const task479A: CodeforcesTaskData = {
   ],
 }
 
+const task1716A: CodeforcesTaskData = {
+  code: '1716A',
+  title: '2-3 ходы',
+  link: 'https://codeforces.com/problemset/problem/1716/A',
+  tags: ['Математика'],
+  statement: markdown`
+    Вы сейчас в точке $0$, надо попасть в точку $N$. Можно перемещаться на $2$ или $3$ влево или вправо. Сколько минимально ходов надо сделать?
+
+    Другими словами: если $2 a + 3 b = N$, надо минимизировать $a + b$.
+  `,
+  hints: [
+    markdown`
+      Три хода на $2$ всегда можно заменить на два хода на $3$.
+    `,
+  ],
+}
+
 const task58A: CodeforcesTaskData = {
   code: '58A',
   title: 'Чат',
@@ -342,16 +359,17 @@ const task489C: CodeforcesTaskData = {
 }
 
 export const codeforcesTasks: CodeforcesTaskData[] = [
-  task4A,
-  task231A,
-  task71A,
-  task282A,
-  task758A,
-  task271A,
-  task339A,
-  task1512A,
-  task479A,
-  task58A,
-  task189A,
-  task489C,
+  task4A, // Арбуз
+  task231A, // Команда
+  task71A, // Слишком длинные слова
+  task282A, // Bit++
+  task758A, // Праздник равенства
+  task271A, // Красивый год
+  task339A, // Математика спешит на помощь
+  task1512A, // Шпион обнаружен!
+  task479A, // Выражение
+  task1716A, // 2-3 ходы
+  task58A, // Чат
+  task189A, // Разрежь ленточку
+  task489C, // Даны длина и сумма цифр...
 ]
