@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import endent from 'endent'
 import rehypeRaw from 'rehype-raw'
+import { InlineMath } from 'react-katex'
 
 export type CodeforcesTaskData = {
   code: string
@@ -197,6 +198,45 @@ const task58A: CodeforcesTaskData = {
   ],
 }
 
+const task189A: CodeforcesTaskData = {
+  code: '189A',
+  title: 'Разрежь ленточку',
+  link: 'https://codeforces.com/problemset/problem/189/A',
+  tags: ['Строки'],
+  statement: markdown`
+    Даны числа N (сумма) и A, B, C (возможные слагаемые). Все числа положительные. N не больше 4000.
+
+    Надо найти **максимальное** количество слагаемых, на которые можно разбить N. Гарантируется, что это всегда можно сделать.
+
+    Например:
+      * если надо разбить 10 на 1, 2, 5, то ответ — 10 (десять единичек);
+      * если надо разбить 10 на 5, 4, 3, то ответ — 3 (3+3+4).
+    
+    Саму сумму выдавать не нужно. Только максимальное количество слагаемых.
+  `,
+  hints: [
+    markdown`
+      В этой задаче важно то, что N не очень большое. Ее можно решить без математики.
+    `,
+    <>
+      {markdown`Есть два решения.`}
+      <p>
+        Для одного придется перебрать <InlineMath math="N \times N" /> комбинаций (в худшем случае
+        16 миллионов, компьютер успеет).
+      </p>
+      <p>
+        Для другого — хватит одного цикла, который будет проходить до <InlineMath math="N" />, но
+        его сложнее придумать. В общем случае это называется "метод динамического программирования".
+      </p>
+    </>,
+    markdown`
+      Если хотите решить задачу методом динамического программирования, то подумайте вот о чем: 
+      
+      _Если бы у вас уже были ответы для всех сумм от 1 до какого-то K, как бы вы могли их использовать, чтобы узнать ответ для суммы K+1?_
+    `,
+  ],
+}
+
 export const codeforcesTasks: CodeforcesTaskData[] = [
   task4A,
   task231A,
@@ -205,4 +245,5 @@ export const codeforcesTasks: CodeforcesTaskData[] = [
   task339A,
   task1512A,
   task58A,
+  task189A,
 ]
