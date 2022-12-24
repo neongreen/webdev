@@ -15,8 +15,12 @@ function DropdownBasics() {
 function DropdownJavaScript() {
   return (
     <B.NavDropdown title="JavaScript">
-      <B.NavDropdown.Item href="/js/ref">⭐️ Справка</B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/codewars">Задания с Codewars</B.NavDropdown.Item>
+      <B.NavDropdown.Header>Справка</B.NavDropdown.Header>
+      <B.NavDropdown.Item href="/js/ref">Основы</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/js/arrays">🚧 Массивы</B.NavDropdown.Item>
+      <B.NavDropdown.Divider />
+      <B.NavDropdown.Header>Другие сайты</B.NavDropdown.Header>
+      <B.NavDropdown.Item href="/codewars">Codewars</B.NavDropdown.Item>
       <B.NavDropdown.Item href="/js/codeforces">Codeforces</B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Header>Задания</B.NavDropdown.Header>
@@ -46,9 +50,11 @@ function DropdownP5() {
 function DropdownReact() {
   return (
     <B.NavDropdown title="React">
-      <B.NavDropdown.Item href="/react/cheatsheet">Шпаргалка</B.NavDropdown.Item>
-      <B.NavDropdown.Item href="/react/intro">
-        <s>Введение в React</s>
+      <B.NavDropdown.Header>Справка</B.NavDropdown.Header>
+      <B.NavDropdown.Item href="/react/ref">🚧 Основы</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/react/jsx">🚧 JSX</B.NavDropdown.Item>
+      <B.NavDropdown.Item href="/react/cheatsheet">
+        <s>Шпаргалка</s>
       </B.NavDropdown.Item>
       <B.NavDropdown.Divider />
       <B.NavDropdown.Item href="/react/tasks/state">

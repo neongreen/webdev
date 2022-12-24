@@ -432,6 +432,29 @@ const jsReference = [
   },
 ]
 
+const jsArrays = [
+  {
+    category: 'JS: массивы',
+    title: 'Справка по массивам',
+    seo: 'array []',
+    link: '/js/arrays',
+  },
+  {
+    category: 'JS: массивы',
+    title: 'Создание массивов',
+    subtitle: 'let arr = [1, 2, 3]',
+    seo: 'array []',
+    link: '/js/arrays#construction',
+  },
+  {
+    category: 'JS: массивы',
+    title: 'Доступ к элементам массива',
+    subtitle: 'arr[i]',
+    seo: 'array []',
+    link: '/js/arrays#access',
+  },
+]
+
 // NB: all are V8 errors
 const jsErrors = [
   {
@@ -549,6 +572,40 @@ const htmlReference = [
   },
 ]
 
+const jsxReference = [
+  {
+    category: 'JSX: вопросы',
+    title: 'Что такое /> в конце тега?',
+    subtitle: 'Это самозакрывающийся тег',
+    link: '/react/jsx#self-closing-tags',
+  },
+  {
+    category: 'JSX',
+    title: '<...> — создание элементов',
+    link: '/react/jsx#elements',
+  },
+  {
+    category: 'JSX',
+    title: '<> ... </> — фрагменты',
+    link: '/react/jsx#fragments',
+  },
+]
+
+const jsxErrors = [
+  {
+    category: 'Ошибки (React/JSX)',
+    title: 'JSX fragment has no corresponding closing tag',
+    subtitle: 'Забыли закрыть тег',
+    link: '/react/jsx#jsx-fragment-has-no-corresponding-closing-tag',
+  },
+  {
+    category: 'Ошибки (React/JSX)',
+    title: 'JSX expressions must have one parent element',
+    subtitle: 'Надо обернуть элементы в <> </>',
+    link: '/react/jsx#jsx-expressions-must-have-one-parent-element',
+  },
+]
+
 type SearchEntry = {
   category: string
   title: string
@@ -559,6 +616,9 @@ type SearchEntry = {
 
 export const searchIndex: SearchEntry[] = [
   ...jsReference,
+  ...jsArrays,
   ...jsErrors,
   ...htmlReference,
+  ...jsxReference,
+  ...jsxErrors,
 ]

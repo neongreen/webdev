@@ -1,0 +1,120 @@
+import { CodeAnn } from '@components/code-ann'
+import { Box, Boxes } from '@components/box'
+import { InlineMath } from 'react-katex'
+import { Figure } from '@components/figure'
+import * as B from 'react-bootstrap'
+
+<style jsx>{`
+  h2 {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #bbb;
+  }
+`}</style>
+
+# Справка по JavaScript — массивы
+
+<B.Alert variant="info">
+  Массивы — это последовательности значений. Например, `['a', 'b', 'c']` — это массив.
+
+  Запись `arr[i]` значит "элемент массива `arr` по номеру `i`". Элементы нумеруются с нуля.
+</B.Alert>
+
+<div id="construction">
+## Создание массивов
+</div>
+
+<Boxes>
+  <Box>
+    Массивы создаются с помощью квадратных скобок `[ ]`. Элементы перечисляются через запятую.
+  </Box>
+  <Box>
+    <CodeAnn ok="">
+      ```js
+      let arr = [1, 2, 3];   // Массив с тремя элементами
+      let empty = [];        // Пустой массив
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Элементы в массивах могут быть разных типов:
+  </Box>
+  <Box>
+    <CodeAnn ok="Массив с четырьмя элементами, один из которых — тоже массив">
+      ```js
+      let arr = [1, 'two', true, []];
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    С помощью вложенных массивов можно представлять таблицы или матрицы. Например, игровое поле <InlineMath math="3 \times 3" /> для крестиков-ноликов можно представить как массив массивов.
+    
+    Здесь элементы записаны в несколько строк для удобства чтения, но это не обязательно. Можно писать как угодно.
+  </Box>
+  <Box>
+    <CodeAnn ok="Массив с тремя элементами, в каждом — еще по три элемента">
+      ```js
+      let field = [
+        ['X' , 'O' , null],
+        [null, 'X' , null],
+        ['X' , null, 'O' ],
+      ];
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<div id="access">
+## Доступ к элементам
+</div>
+
+<Boxes>
+  <Box>
+    Чтобы получить элемент в массиве `arr` по номеру `i`, надо написать `arr[i]`. Элементы нумеруются с нуля.
+  </Box>
+  <Box>
+    <CodeAnn ok="">
+      ```js
+      let arr = ['a', 'b', 'c'];
+      console.log(arr[0]);  // Выводит 'a'
+      console.log(arr[1]);  // Выводит 'b'
+      console.log(arr[2]);  // Выводит 'c'
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Чтобы получить **последний элемент,** можно использовать `arr[arr.length - 1]`.
+    
+    Например, если в массиве четыре элемента, то индекс последнего будет `3` (длина массива минус 1).
+  </Box>
+  <Box>
+    <CodeAnn ok="">
+      ```js
+      let arr = ['a', 'b', 'c'];
+      console.log(arr[arr.length - 1]);  // Выводит 'c'
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
+
+<Boxes>
+  <Box>
+    Если элемента с индексом `i` нет, то результатом `arr[i]` будет `undefined`.
+  </Box>
+  <Box>
+    <CodeAnn ok="">
+      ```js
+      let arr = ['a', 'b', 'c'];
+      console.log(arr[3]);  // Выводит undefined
+      ```
+    </CodeAnn>
+  </Box>
+</Boxes>
