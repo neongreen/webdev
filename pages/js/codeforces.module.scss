@@ -1,0 +1,11 @@
+.inputTable {
+  td {
+    vertical-align: middle;
+  }
+  :global(.ch-codeblock) {
+    margin: 0;
+    box-shadow: none;
+    border: 2px dashed #ccc;
+    max-width: 450px;
+  }
+}

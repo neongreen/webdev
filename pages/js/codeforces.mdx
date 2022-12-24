@@ -1,6 +1,9 @@
 import { CodeAnn } from '@components/code-ann'
 import { Box, Boxes } from '@components/box'
+import * as B from 'react-bootstrap'
 import { CodeforcesTasks } from '@components/codeforces-tasks'
+import { InlineMath } from 'react-katex'
+import styles from './codeforces.module.scss'
 
 # Codeforces
 
@@ -38,61 +41,71 @@ function main() {
 
 ## Как читать ввод
 
-<Boxes>
-  <Box>
-    **Строчка с одним числом,** например:
-    * `5`
-  </Box>
-  <Box>
-    <CodeAnn ok="n = 5">
-      ```js
-      let n = Number(readline())
-      ```
-    </CodeAnn>
-  </Box>
-</Boxes>
-
-<Boxes>
-  <Box>
-    **Строчка с тремя числами,** например:
-    * `3 5 8`
-  </Box>
-  <Box>
-    <CodeAnn ok="n = 3, m = 5, k = 8">
-      ```js
-      let [n, m, k] = readline().split(" ").map(Number)
-      ```
-    </CodeAnn>
-  </Box>
-</Boxes>
-
-<Boxes>
-  <Box>
-    **Строчка с каким-то произвольным количеством чисел,** например:
-    * `3 5 8 13 21`
-  </Box>
-  <Box>
-    <CodeAnn ok="xs = [3, 5, 8, 13, 21]">
-      ```js
-      let xs = readline().split(" ").map(Number)
-      ```
-    </CodeAnn>
-  </Box>
-</Boxes>
-
-<Boxes>
-  <Box>
-    **Просто строка,** например:
-    * `abacaba`
-  </Box>
-  <Box>
-    <CodeAnn ok="s = 'abacaba'">
-      ```js
-      let s = readline()
-      ```
-    </CodeAnn>
-  </Box>
-</Boxes>
+<B.Table className={styles.inputTable}>
+  <thead>
+    <tr>
+      <th>Ввод</th>
+      <th>Пример ввода</th>
+      <th>Как читать</th>
+      <th>Результат</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Число</td>
+      <td>`5`</td>
+      <td>
+        ```js
+        let n = Number(readline())
+        ```
+      </td>
+      <td>`n = 5`</td>
+    </tr>
+    <tr>
+      <td>Ровно 3 числа</td>
+      <td>`3 5 8`</td>
+      <td>
+        ```js
+        let [n, m, k] = readline().split(" ").map(Number)
+        ```
+      </td>
+      <td>`n = 3, m = 5, k = 8`</td>
+    </tr>
+    <tr>
+      <td>Много чисел</td>
+      <td>`1 1 4 3 0`</td>
+      <td>
+        ```js
+        let xs = readline().split(" ").map(Number)
+        ```
+      </td>
+      <td>`xs = [1, 1, 4, 3, 0]`</td>
+    </tr>
+    <tr>
+      <td>Строка</td>
+      <td>`abacaba`</td>
+      <td>
+        ```js
+        let s = readline()
+        ```
+      </td>
+      <td>`s = "abacaba"`</td>
+    </tr>
+    <tr>
+      <td>
+        Большое число<br/>
+        <span style={{fontSize: '80%'}}>(больше <InlineMath math="9 \times 10^{15}"/>)</span>
+      </td>
+      <td>`18014398509481984`</td>
+      <td>
+        ```js
+        let x = BigInt(readline())
+        ```
+      </td>
+      <td>`x = 18014398509481984n`</td>
+    </tr>
+  </tbody>
+</B.Table>
 
 ## Задачи
 
