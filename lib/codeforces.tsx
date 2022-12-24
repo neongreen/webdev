@@ -142,6 +142,28 @@ const task71A: CodeforcesTaskData = {
   ],
 }
 
+const task1512A: CodeforcesTaskData = {
+  code: '1512A',
+  title: 'Шпион обнаружен!',
+  link: 'https://codeforces.com/problemset/problem/1512/A',
+  tags: ['Массивы', 'Условия', 'Цикл for'],
+  statement: markdown`
+    Дано несколько наборов чисел.
+    
+    В каждом наборе все числа одинаковые, кроме одного. Надо вывести номер этого числа (нумерация с 1).
+
+    Например, когда даны числа \`3 3 3 10\`, надо вывести \`4\`, потому что отличается четвертое число.
+  `,
+  hints: [
+    markdown`
+      Чтобы найти отличающееся число, достаточно один раз пройтись по массиву циклом \`for\`.
+    `,
+    markdown`
+      Можно точно узнать, отличающееся ли число, если сравнить его с соседями слева и справа.
+    `,
+  ],
+}
+
 const task58A: CodeforcesTaskData = {
   code: '58A',
   title: 'Чат',
@@ -181,5 +203,6 @@ export const codeforcesTasks: CodeforcesTaskData[] = [
   task71A,
   task282A,
   task339A,
+  task1512A,
   task58A,
 ]
