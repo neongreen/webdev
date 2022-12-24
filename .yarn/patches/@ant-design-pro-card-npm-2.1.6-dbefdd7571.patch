@@ -1,3 +1,31 @@
+diff --git a/es/components/Card/style.js b/es/components/Card/style.js
+index 3751792bef1c5d24795c738006ae2ff38595ceb0..adb82dfa23b577aed155543255ff01d080c1bd64 100644
+--- a/es/components/Card/style.js
++++ b/es/components/Card/style.js
+@@ -24,8 +24,7 @@ var genProCardStyle = function genProCardStyle(token) {
+     borderRadius: token.borderRadius
+   }, resetComponent === null || resetComponent === void 0 ? void 0 : resetComponent(token)), {}, (_objectSpread2 = {
+     '*': {
+-      boxSizing: 'border-box',
+-      fontFamily: token.fontFamily
++      boxSizing: 'border-box'
+     },
+     '&-box-shadow': {
+       boxShadow: '0 1px 2px -2px #00000029, 0 3px 6px #0000001f, 0 5px 12px 4px #00000017',
+diff --git a/lib/components/Card/style.js b/lib/components/Card/style.js
+index 8d25066eac53170cfdb4bbb1c43632455ae8e9b2..da57aefb4bbbb725222c157dd73f755bb774a505 100644
+--- a/lib/components/Card/style.js
++++ b/lib/components/Card/style.js
+@@ -31,8 +31,7 @@ var genProCardStyle = function genProCardStyle(token) {
+     borderRadius: token.borderRadius
+   }, _proUtils.resetComponent === null || _proUtils.resetComponent === void 0 ? void 0 : (0, _proUtils.resetComponent)(token)), {}, (_objectSpread2 = {
+     '*': {
+-      boxSizing: 'border-box',
+-      fontFamily: token.fontFamily
++      boxSizing: 'border-box'
+     },
+     '&-box-shadow': {
+       boxShadow: '0 1px 2px -2px #00000029, 0 3px 6px #0000001f, 0 5px 12px 4px #00000017',
 diff --git a/lib/components/StatisticCard/index.js b/lib/components/StatisticCard/index.js
 index 18752b6088becea591687c5698d72becffb76b6c..60843642aa9bca953c1c1f603ad88a127525161e 100644
 --- a/lib/components/StatisticCard/index.js

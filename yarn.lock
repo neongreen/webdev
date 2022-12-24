@@ -92,7 +92,7 @@ __metadata:
 
 "@ant-design/pro-card@patch:@ant-design/pro-card@npm%3A2.1.6#./.yarn/patches/@ant-design-pro-card-npm-2.1.6-dbefdd7571.patch::locator=webdev%40workspace%3A.":
   version: 2.1.6
-  resolution: "@ant-design/pro-card@patch:@ant-design/pro-card@npm%3A2.1.6#./.yarn/patches/@ant-design-pro-card-npm-2.1.6-dbefdd7571.patch::version=2.1.6&hash=0f7dc5&locator=webdev%40workspace%3A."
+  resolution: "@ant-design/pro-card@patch:@ant-design/pro-card@npm%3A2.1.6#./.yarn/patches/@ant-design-pro-card-npm-2.1.6-dbefdd7571.patch::version=2.1.6&hash=275990&locator=webdev%40workspace%3A."
   dependencies:
     "@ant-design/icons": ^4.2.1
     "@ant-design/pro-provider": 2.2.0
@@ -104,7 +104,7 @@ __metadata:
   peerDependencies:
     antd: ">=4.23.0"
     react: ">=16.9.0"
-  checksum: 3a747d1d314d04179c189bf94b959ef6d17bf34e965da040a483ae1a6143d5a4785f69f7388880bf2ad64bd54083d0d0511007b087dd52e30d050a9678c9300c
+  checksum: 6a40cd9c01956bb8dc67f3c8bdd4dbf9ad047510483cd909721939e8079c662b4e5a4d13246fdb5db082431b3feb91d906c0d5c37ef54adf2d1958005cd48100
   languageName: node
   linkType: hard
 
