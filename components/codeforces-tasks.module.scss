@@ -26,14 +26,15 @@
   :global(.ant-list-item) {
     padding: 12px;
   }
+  :global(.ant-pro-list-row-header-option):hover, // the expand icon
+  .title:hover {
+    cursor: pointer;
+  }
 }
 
 .item {
   .title {
     font-weight: bold;
-    &:hover {
-      cursor: pointer;
-    }
     .taskCode {
       font-weight: normal;
       width: 3rem;

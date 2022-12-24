@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import endent from 'endent'
+import rehypeRaw from 'rehype-raw'
 
 export type CodeforcesTaskData = {
   code: string
@@ -12,7 +13,7 @@ export type CodeforcesTaskData = {
 }
 
 function markdown(strings: TemplateStringsArray, ...values: any[]) {
-  return <ReactMarkdown>{endent(strings, ...values)}</ReactMarkdown>
+  return <ReactMarkdown rehypePlugins={[rehypeRaw]}>{endent(strings, ...values)}</ReactMarkdown>
 }
 
 const task4A: CodeforcesTaskData = {
@@ -141,4 +142,44 @@ const task71A: CodeforcesTaskData = {
   ],
 }
 
-export const codeforcesTasks: CodeforcesTaskData[] = [task4A, task231A, task71A, task282A, task339A]
+const task58A: CodeforcesTaskData = {
+  code: '58A',
+  title: 'Чат',
+  link: 'https://codeforces.com/problemset/problem/58/A',
+  tags: ['Строки'],
+  statement: markdown`
+    Дана строка. Надо узнать, можно ли убрать из нее какие-то символы так, чтобы в итоге осталось слово \`hello\`.
+
+    Например, для строк 
+      <code style="font-size:115%"><u>h</u>a<u>e</u>a<u>l</u>a<u>l</u>a<u>o</u>a</code> или
+      <code style="font-size:115%">a<u>h</u>h<u>e</u><u>l</u><u>l</u>lll<u>o</u>ou</code>
+    ответ \`YES\`. (Подчеркнутое — символы, которые надо оставить.)
+    
+    Для строки 
+      <code style="font-size:115%">hlelo</code>
+    ответ \`NO\`.
+  `,
+  hints: [
+    markdown`
+      Есть два способа — а) с помощью обычных операций на строках, б) через регулярные выражения.
+
+      С регулярными выражениями задача решается очень просто. Без них — придется написать несколько строчек кода.
+    `,
+    markdown`
+      Решение без регулярных выражений выглядит так: будем искать буквы \`h\`, \`e\`, \`l\`, \`l\`, \`o\` по очереди. Когда мы нашли очередную букву, следующую можно искать только после нее в строке (а не с самого начала).
+
+      Для такого решения понадобятся:
+        * либо цикл \`for\` (который ходит по данной строке) и переменная, которая будет хранить текущую позицию в слове \`hello\`;
+        * либо методы \`.indexOf\` и \`.slice\`.
+    `,
+  ],
+}
+
+export const codeforcesTasks: CodeforcesTaskData[] = [
+  task4A,
+  task231A,
+  task71A,
+  task282A,
+  task339A,
+  task58A,
+]
