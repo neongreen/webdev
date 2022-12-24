@@ -79,8 +79,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-markdown", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:8.0.4"],\
             ["react-p5-wrapper", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:3.3.0"],\
             ["react-telegram-embed", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:0.1.1"],\
+            ["rehype-katex", "npm:6.0.2"],\
             ["rehype-raw", "npm:6.1.1"],\
             ["remark-custom-heading-id", "npm:1.0.0"],\
+            ["remark-math", "npm:5.1.1"],\
             ["sass", "npm:1.54.6"],\
             ["shiki", "npm:0.11.1"],\
             ["styled-jsx", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:5.0.4"],\
@@ -1616,6 +1618,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/katex", [\
+        ["npm:0.11.1", {\
+          "packageLocation": "./.yarn/cache/@types-katex-npm-0.11.1-00a0d8409c-1e51988b4b.zip/node_modules/@types/katex/",\
+          "packageDependencies": [\
+            ["@types/katex", "npm:0.11.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.14.0", {\
           "packageLocation": "./.yarn/cache/@types-katex-npm-0.14.0-acd5bc3e87-330e0d0337.zip/node_modules/@types/katex/",\
           "packageDependencies": [\
@@ -5476,6 +5485,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["hast-util-is-element", [\
+        ["npm:2.1.2", {\
+          "packageLocation": "./.yarn/cache/hast-util-is-element-npm-2.1.2-cb265f5b0a-c5fe9f7cde.zip/node_modules/hast-util-is-element/",\
+          "packageDependencies": [\
+            ["hast-util-is-element", "npm:2.1.2"],\
+            ["@types/hast", "npm:2.3.4"],\
+            ["@types/unist", "npm:2.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["hast-util-parse-selector", [\
         ["npm:3.1.0", {\
           "packageLocation": "./.yarn/cache/hast-util-parse-selector-npm-3.1.0-330bd581c8-8be1a23346.zip/node_modules/hast-util-parse-selector/",\
@@ -5556,6 +5576,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["property-information", "npm:6.1.1"],\
             ["web-namespaces", "npm:2.0.1"],\
             ["zwitch", "npm:2.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["hast-util-to-text", [\
+        ["npm:3.1.1", {\
+          "packageLocation": "./.yarn/cache/hast-util-to-text-npm-3.1.1-5b88c2be4a-2312a818c8.zip/node_modules/hast-util-to-text/",\
+          "packageDependencies": [\
+            ["hast-util-to-text", "npm:3.1.1"],\
+            ["@types/hast", "npm:2.3.4"],\
+            ["hast-util-is-element", "npm:2.1.2"],\
+            ["unist-util-find-after", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -6497,6 +6529,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["katex", [\
+        ["npm:0.13.24", {\
+          "packageLocation": "./.yarn/cache/katex-npm-0.13.24-7ca4a080f2-1b7c829586.zip/node_modules/katex/",\
+          "packageDependencies": [\
+            ["katex", "npm:0.13.24"],\
+            ["commander", "npm:8.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:0.15.6", {\
+          "packageLocation": "./.yarn/cache/katex-npm-0.15.6-faa2037c46-2da808bbd1.zip/node_modules/katex/",\
+          "packageDependencies": [\
+            ["katex", "npm:0.15.6"],\
+            ["commander", "npm:8.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.16.3", {\
           "packageLocation": "./.yarn/cache/katex-npm-0.16.3-fc7ab9ff28-3ee588b642.zip/node_modules/katex/",\
           "packageDependencies": [\
@@ -6856,6 +6904,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["mdast-util-math", [\
+        ["npm:2.0.1", {\
+          "packageLocation": "./.yarn/cache/mdast-util-math-npm-2.0.1-bb039da961-7576b46627.zip/node_modules/mdast-util-math/",\
+          "packageDependencies": [\
+            ["mdast-util-math", "npm:2.0.1"],\
+            ["@types/mdast", "npm:3.0.10"],\
+            ["longest-streak", "npm:3.0.1"],\
+            ["mdast-util-to-markdown", "npm:1.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["mdast-util-mdx", [\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/mdast-util-mdx-npm-2.0.0-344d686584-4744bfbbd3.zip/node_modules/mdast-util-mdx/",\
@@ -7057,6 +7117,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["micromark-util-normalize-identifier", "npm:1.0.0"],\
             ["micromark-util-resolve-all", "npm:1.0.0"],\
             ["micromark-util-subtokenize", "npm:1.0.2"],\
+            ["micromark-util-symbol", "npm:1.0.1"],\
+            ["micromark-util-types", "npm:1.0.2"],\
+            ["uvu", "npm:0.5.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["micromark-extension-math", [\
+        ["npm:2.0.2", {\
+          "packageLocation": "./.yarn/cache/micromark-extension-math-npm-2.0.2-300e2f6536-c604d2e754.zip/node_modules/micromark-extension-math/",\
+          "packageDependencies": [\
+            ["micromark-extension-math", "npm:2.0.2"],\
+            ["@types/katex", "npm:0.11.1"],\
+            ["katex", "npm:0.13.24"],\
+            ["micromark-factory-space", "npm:1.0.0"],\
+            ["micromark-util-character", "npm:1.1.0"],\
             ["micromark-util-symbol", "npm:1.0.1"],\
             ["micromark-util-types", "npm:1.0.2"],\
             ["uvu", "npm:0.5.6"]\
@@ -10452,6 +10528,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["rehype-katex", [\
+        ["npm:6.0.2", {\
+          "packageLocation": "./.yarn/cache/rehype-katex-npm-6.0.2-3fb19e9e3c-ac8b348644.zip/node_modules/rehype-katex/",\
+          "packageDependencies": [\
+            ["rehype-katex", "npm:6.0.2"],\
+            ["@types/hast", "npm:2.3.4"],\
+            ["@types/katex", "npm:0.11.1"],\
+            ["hast-util-to-text", "npm:3.1.1"],\
+            ["katex", "npm:0.15.6"],\
+            ["rehype-parse", "npm:8.0.4"],\
+            ["unified", "npm:10.1.2"],\
+            ["unist-util-remove-position", "npm:4.0.1"],\
+            ["unist-util-visit", "npm:4.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["rehype-parse", [\
+        ["npm:8.0.4", {\
+          "packageLocation": "./.yarn/cache/rehype-parse-npm-8.0.4-e6b5072759-e678a5f9fa.zip/node_modules/rehype-parse/",\
+          "packageDependencies": [\
+            ["rehype-parse", "npm:8.0.4"],\
+            ["@types/hast", "npm:2.3.4"],\
+            ["hast-util-from-parse5", "npm:7.1.0"],\
+            ["parse5", "npm:6.0.1"],\
+            ["unified", "npm:10.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["rehype-raw", [\
         ["npm:6.1.1", {\
           "packageLocation": "./.yarn/cache/rehype-raw-npm-6.1.1-d8b5afcf82-a1f9d309e6.zip/node_modules/rehype-raw/",\
@@ -10472,6 +10578,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mdast-heading-id", "npm:1.0.0"],\
             ["micromark-heading-id", "npm:1.0.0"],\
             ["unist-util-visit", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["remark-math", [\
+        ["npm:5.1.1", {\
+          "packageLocation": "./.yarn/cache/remark-math-npm-5.1.1-6a0cb6e9f6-1baec5862e.zip/node_modules/remark-math/",\
+          "packageDependencies": [\
+            ["remark-math", "npm:5.1.1"],\
+            ["@types/mdast", "npm:3.0.10"],\
+            ["mdast-util-math", "npm:2.0.1"],\
+            ["micromark-extension-math", "npm:2.0.2"],\
+            ["unified", "npm:10.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -11935,6 +12054,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["unist-util-find-after", [\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/unist-util-find-after-npm-4.0.0-11b3b7fb4f-8381ef0bad.zip/node_modules/unist-util-find-after/",\
+          "packageDependencies": [\
+            ["unist-util-find-after", "npm:4.0.0"],\
+            ["@types/unist", "npm:2.0.6"],\
+            ["unist-util-is", "npm:5.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["unist-util-generated", [\
         ["npm:1.1.6", {\
           "packageLocation": "./.yarn/cache/unist-util-generated-npm-1.1.6-d1a50e4043-86239ff88a.zip/node_modules/unist-util-generated/",\
@@ -12505,8 +12635,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-markdown", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:8.0.4"],\
             ["react-p5-wrapper", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:3.3.0"],\
             ["react-telegram-embed", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:0.1.1"],\
+            ["rehype-katex", "npm:6.0.2"],\
             ["rehype-raw", "npm:6.1.1"],\
             ["remark-custom-heading-id", "npm:1.0.0"],\
+            ["remark-math", "npm:5.1.1"],\
             ["sass", "npm:1.54.6"],\
             ["shiki", "npm:0.11.1"],\
             ["styled-jsx", "virtual:d43d44fecaebf0fe2f09078e2745d641b04e7c91c0851e699460253b5b1cc1c4cbd146e94776c8223a043e8d965838cefc5adab9d2f7124b5df0c2335b287edd#npm:5.0.4"],\
