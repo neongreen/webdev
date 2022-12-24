@@ -21,21 +21,13 @@ Akademia Wsparcia:
 Вот шаблон для решения задач. Надо выбирать "Node.js" (а не "JavaScript") в выпадающем списке языков.
 
 ```js
-process.stdin.resume()
-process.stdin.setEncoding("utf-8")
-let __input = "", __line = 0
-process.stdin.on("data", s => __input += s)
-process.stdin.on("end", _ => {
-    __input = __input.trim().split("\n").map(s => s.trim())
-    main()
-})
-function readline() { return __input[__line++] }
+let __input = "", __line = 0, readline = () => __input[__line++]
+process.stdin.resume().setEncoding("utf-8")
+    .on("data", s => __input += s)
+    .on("end", _ => { __input = __input.trim().split("\n").map(s => s.trim()); main() })
 
 function main() {
-    // Решение писать здесь.
-    // 
-    // * Функция `readline()` возвращает одну строку из ввода.
-    // * Выводить можно с помощью `console.log()`.
+    // Решение писать здесь
 }
 ```
 
